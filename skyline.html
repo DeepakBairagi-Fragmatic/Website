@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>City Skyline Technical Architecture — PurpleWave</title>
+  <meta name="description" content="Technical case study on scalable cloud infrastructure and microservices architecture for smart city management systems." />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Page styles -->
+  <style>
+    @layer utilities {
+      @keyframes pulse-slow { 0%,100%{transform:scale(.96);opacity:.35} 50%{transform:scale(1.04);opacity:.55} }
+      .animate-pulse-slow { animation:pulse-slow 9s ease-in-out infinite }
+
+      @keyframes float { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-20px)} }
+      .animate-float { animation:float 6s ease-in-out infinite }
+
+      .focus-outline:focus { outline:2px solid #A78BFA; outline-offset:2px; }
+      
+      .tech-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #312e81 50%, #6366f1 75%, #8b5cf6 100%); }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-purple-200">
+
+  <!-- Navbar -->
+  <nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2 focus-outline">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
+             alt="PurpleWave logo" class="h-10 w-auto" loading="lazy" />
+        <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
+      </a>
+      <ul class="flex space-x-6 text-purple-200">
+        <li><a href="/" class="hover:text-white transition focus-outline">Home</a></li>
+        <li><a href="aboutus.html" class="hover:text-white transition focus-outline">About</a></li>
+        <li><a href="services.html" class="hover:text-white transition focus-outline">Services</a></li>
+        <li><a href="events.html" class="hover:text-white transition focus-outline">Events</a></li>
+        <li><a href="contact.html" class="hover:text-white transition focus-outline">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative isolate flex flex-col items-center justify-center min-h-[70vh] overflow-hidden tech-gradient">
+    <!-- Technical architecture pattern -->
+    <div class="absolute inset-0 opacity-20">
+      <svg class="w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
+        <!-- Network nodes and connections -->
+        <circle cx="200" cy="150" r="8" fill="currentColor" opacity="0.6"/>
+        <circle cx="400" cy="200" r="10" fill="currentColor" opacity="0.8"/>
+        <circle cx="600" cy="120" r="6" fill="currentColor" opacity="0.5"/>
+        <circle cx="800" cy="180" r="12" fill="currentColor" opacity="0.7"/>
+        <circle cx="1000" cy="140" r="8" fill="currentColor" opacity="0.6"/>
+        <circle cx="1200" cy="160" r="10" fill="currentColor" opacity="0.8"/>
+        
+        <!-- Connection lines -->
+        <line x1="200" y1="150" x2="400" y2="200" stroke="currentColor" opacity="0.3" stroke-width="2"/>
+        <line x1="400" y1="200" x2="600" y2="120" stroke="currentColor" opacity="0.3" stroke-width="2"/>
+        <line x1="600" y1="120" x2="800" y2="180" stroke="currentColor" opacity="0.3" stroke-width="2"/>
+        <line x1="800" y1="180" x2="1000" y2="140" stroke="currentColor" opacity="0.3" stroke-width="2"/>
+        <line x1="1000" y1="140" x2="1200" y2="160" stroke="currentColor" opacity="0.3" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <span class="absolute inset-0 bg-black/60"></span>
+    
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-6">
+        City Skyline
+      </h1>
+      <p class="text-xl sm:text-2xl text-purple-200/90 mb-8 max-w-3xl">
+        Scalable Cloud Infrastructure & Microservices Architecture
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <span class="px-4 py-2 bg-purple-600/30 rounded-full text-sm font-medium font-mono">Kubernetes</span>
+        <span class="px-4 py-2 bg-pink-600/30 rounded-full text-sm font-medium font-mono">AWS</span>
+        <span class="px-4 py-2 bg-indigo-600/30 rounded-full text-sm font-medium font-mono">Microservices</span>
+        <span class="px-4 py-2 bg-blue-600/30 rounded-full text-sm font-medium font-mono">React/Node.js</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TECHNICAL OVERVIEW -->
+  <section class="relative py-20 bg-gradient-to-b from-black via-purple-950 to-black">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold bg-clip-text text-transparent
+                   bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-6">
+          System Architecture
+        </h2>
+        <p class="text-xl text-purple-200/80 max-w-3xl mx-auto">
+          Enterprise-grade cloud infrastructure powering a smart city management platform with real-time data processing and scalable microservices architecture.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">Technical Challenges</h3>
+          <p class="text-purple-200/90 leading-relaxed mb-6">
+            Building a distributed system capable of handling 10M+ daily transactions, real-time IoT data streams, and providing sub-100ms response times across multiple geographic regions.
+          </p>
+          <div class="space-y-4 text-purple-200/80">
+            <div class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold font-mono">→</span>
+              <div>
+                <span class="font-semibold text-purple-100">High Availability:</span>
+                <span class="block text-sm">99.99% uptime SLA across multi-region deployment</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold font-mono">→</span>
+              <div>
+                <span class="font-semibold text-purple-100">Scalability:</span>
+                <span class="block text-sm">Auto-scaling from 100 to 10,000 concurrent users</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold font-mono">→</span>
+              <div>
+                <span class="font-semibold text-purple-100">Data Processing:</span>
+                <span class="block text-sm">Real-time analytics on 50GB+ daily IoT sensor data</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-purple-400 font-bold font-mono">→</span>
+              <div>
+                <span class="font-semibold text-purple-100">Security:</span>
+                <span class="block text-sm">Zero-trust architecture with end-to-end encryption</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl 
+                      border border-purple-500/20 p-8 font-mono text-sm animate-float">
+            <div class="text-purple-300 mb-4">// System Architecture</div>
+            <div class="text-green-400">const cityPlatform = {</div>
+            <div class="text-purple-200 ml-4">frontend: 'React + TypeScript',</div>
+            <div class="text-purple-200 ml-4">backend: 'Node.js + Express',</div>
+            <div class="text-purple-200 ml-4">database: 'MongoDB + Redis',</div>
+            <div class="text-purple-200 ml-4">queue: 'Apache Kafka',</div>
+            <div class="text-purple-200 ml-4">orchestration: 'Kubernetes',</div>
+            <div class="text-purple-200 ml-4">cloud: 'AWS Multi-AZ',</div>
+            <div class="text-purple-200 ml-4">monitoring: 'Prometheus + Grafana'</div>
+            <div class="text-green-400">};</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE METRICS -->
+  <section class="relative py-20 bg-gradient-to-r from-purple-900/10 to-pink-900/10">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
+        Performance Metrics
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
+          <div class="text-5xl font-extrabold text-purple-300 mb-2 font-mono">47ms</div>
+          <div class="text-purple-400 font-medium mb-2">API Response Time</div>
+          <div class="text-sm text-purple-200/60">P95 latency across all endpoints</div>
+        </div>
+        
+        <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
+          <div class="text-5xl font-extrabold text-pink-300 mb-2 font-mono">99.98%</div>
+          <div class="text-pink-400 font-medium mb-2">System Uptime</div>
+          <div class="text-sm text-purple-200/60">Measured over 12-month period</div>
+        </div>
+        
+        <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
+          <div class="text-5xl font-extrabold text-indigo-300 mb-2 font-mono">12M+</div>
+          <div class="text-indigo-400 font-medium mb-2">Daily Transactions</div>
+          <div class="text-sm text-purple-200/60">Peak load handling capacity</div>
+        </div>
+        
+        <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
+          <div class="text-5xl font-extrabold text-fuchsia-300 mb-2 font-mono">67%</div>
+          <div class="text-fuchsia-400 font-medium mb-2">Cost Reduction</div>
+          <div class="text-sm text-purple-200/60">Through cloud optimization</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL STACK -->
+  <section class="relative py-20 bg-gradient-to-b from-black via-purple-950 to-black">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-4xl font-extrabold text-center bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
+        Technology Stack
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl p-8 border border-purple-500/20">
+          <div class="text-4xl mb-4">☁️</div>
+          <h3 class="text-xl font-bold text-white mb-4 font-mono">Cloud Infrastructure</h3>
+          <p class="text-purple-200/80 mb-4">
+            Multi-region AWS deployment with auto-scaling groups, load balancers, and fault-tolerant architecture.
+          </p>
+          <div class="space-y-2 text-sm text-purple-300 font-mono">
+            <div>• <span class="text-pink-400">AWS EKS</span> - Kubernetes orchestration</div>
+            <div>• <span class="text-indigo-400">ALB/NLB</span> - Load balancing</div>
+            <div>• <span class="text-purple-400">CloudFront</span> - Global CDN</div>
+            <div>• <span class="text-green-400">Route 53</span> - DNS management</div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 rounded-2xl p-8 border border-purple-500/20">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold text-white mb-4 font-mono">Backend Services</h3>
+          <p class="text-purple-200/80 mb-4">
+            Microservices architecture with event-driven communication and distributed data processing.
+          </p>
+          <div class="space-y-2 text-sm text-purple-300 font-mono">
+            <div>• <span class="text-blue-400">Node.js</span> - Runtime environment</div>
+            <div>• <span class="text-yellow-400">Apache Kafka</span> - Message streaming</div>
+            <div>• <span class="text-red-400">Redis</span> - Caching layer</div>
+            <div>• <span class="text-green-400">MongoDB</span> - Document database</div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-2xl p-8 border border-purple-500/20">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold text-white mb-4 font-mono">Monitoring & DevOps</h3>
+          <p class="text-purple-200/80 mb-4">
+            Comprehensive observability stack with automated deployment pipelines and infrastructure as code.
+          </p>
+          <div class="space-y-2 text-sm text-purple-300 font-mono">
+            <div>• <span class="text-orange-400">Prometheus</span> - Metrics collection</div>
+            <div>• <span class="text-blue-400">Grafana</span> - Visualization</div>
+            <div>• <span class="text-purple-400">GitHub Actions</span> - CI/CD</div>
+            <div>• <span class="text-green-400">Terraform</span> - Infrastructure as Code</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPLEMENTATION PHASES -->
+  <section class="relative py-20 bg-gradient-to-r from-purple-900/10 to-pink-900/10">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h2 class="text-4xl font-extrabold text-center bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
+        Development Phases
+      </h2>
+      
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+            P1
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Infrastructure Setup & Architecture Design</h3>
+            <p class="text-purple-200/80 mb-3">Established cloud infrastructure, designed microservices architecture, and implemented CI/CD pipelines.</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">AWS Setup</span>
+              <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">Kubernetes</span>
+              <span class="px-2 py-1 bg-indigo-600/20 rounded text-xs font-mono">Terraform</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+            P2
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Core Services Development</h3>
+            <p class="text-purple-200/80 mb-3">Built authentication, user management, and data processing microservices with comprehensive API documentation.</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">Node.js APIs</span>
+              <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">JWT Auth</span>
+              <span class="px-2 py-1 bg-indigo-600/20 rounded text-xs font-mono">OpenAPI</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+            P3
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Real-time Processing & Analytics</h3>
+            <p class="text-purple-200/80 mb-3">Implemented Kafka-based event streaming, real-time dashboards, and machine learning pipelines for predictive analytics.</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">Apache Kafka</span>
+              <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">React Dashboards</span>
+              <span class="px-2 py-1 bg-indigo-600/20 rounded text-xs font-mono">ML Pipeline</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex gap-6 items-start">
+          <div class="flex-shrink-0 w-16 h-16 bg-fuchsia-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+            P4
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Monitoring & Optimization</h3>
+            <p class="text-purple-200/80 mb-3">Deployed comprehensive monitoring stack, implemented automated alerting, and optimized performance for production scale.</p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">Prometheus</span>
+              <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">Grafana</span>
+              <span class="px-2 py-1 bg-indigo-600/20 rounded text-xs font-mono">Performance Tuning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL OUTCOMES -->
+  <section class="relative py-20 bg-gradient-to-b from-black via-purple-950 to-black">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h2 class="text-4xl font-extrabold bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-8">
+        Technical Achievements
+      </h2>
+      <p class="text-xl text-purple-200/90 leading-relaxed mb-12 max-w-3xl mx-auto">
+        Delivered a production-ready, enterprise-scale platform that handles millions of concurrent users while maintaining 
+        sub-50ms response times and 99.98% uptime across multiple geographic regions.
+      </p>
+      
+      <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl p-8 border border-purple-500/20 mb-8 font-mono text-left">
+        <div class="text-purple-300 mb-4">// Key Technical Deliverables</div>
+        <div class="space-y-2 text-sm text-purple-200">
+          <div><span class="text-green-400">✓</span> Microservices architecture with 15+ independent services</div>
+          <div><span class="text-green-400">✓</span> Auto-scaling infrastructure handling 0-10K users seamlessly</div>
+          <div><span class="text-green-400">✓</span> Real-time data pipeline processing 50GB+ daily</div>
+          <div><span class="text-green-400">✓</span> Comprehensive monitoring with 200+ custom metrics</div>
+          <div><span class="text-green-400">✓</span> Zero-downtime deployments with blue-green strategy</div>
+          <div><span class="text-green-400">✓</span> Multi-region disaster recovery with RTO &
