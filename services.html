@@ -217,11 +217,7 @@
   </div>
 </section>
 
- <!-- News letter form  -->
-
- <div class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 px-4">
-
-  <!-- Left: Image with Gradient Overlay -->
+<div class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 px-4">
   <div class="w-full md:w-1/2 relative h-80 md:h-auto rounded-lg overflow-hidden">
     <img
       src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=870&q=80"
@@ -230,91 +226,74 @@
     />
     <div class="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-500 to-red-400 opacity-70"></div>
   </div>
-
-  <!-- Right: Contact Form -->
   <div class="w-full md:w-1/2 bg-purple-900 bg-opacity-60 p-6 md:p-12 rounded-lg shadow-lg">
     <h2 class="text-3xl font-bold text-white mb-6 text-center">Contact Us to Discuss</h2>
- <form class="space-y-5" id="contactForm" novalidate>
-
-  <!-- First and Last Name -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label class="block text-purple-200 mb-1">First Name</label>
-      <input type="text" name="firstName" required pattern="^[A-Za-z\s]{2,30}$"
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-      <p class="text-red-400 text-sm mt-1 hidden" id="firstNameError">Enter a valid first name (2–30 letters).</p>
-    </div>
-    <div>
-      <label class="block text-purple-200 mb-1">Last Name</label>
-      <input type="text" name="lastName" required pattern="^[A-Za-z\s]{2,30}$"
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-      <p class="text-red-400 text-sm mt-1 hidden" id="lastNameError">Enter a valid last name (2–30 letters).</p>
-    </div>
-  </div>
-
-  <!-- Email -->
-  <div>
-    <label class="block text-purple-200 mb-1">Your Email</label>
-    <input type="email" name="email" required
-      class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-    <p class="text-red-400 text-sm mt-1 hidden" id="emailError">Enter a valid email address.</p>
-  </div>
-
-  <!-- Phone Number and Company -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label class="block text-purple-200 mb-1">Phone Number</label>
-      <input type="tel" name="phone" required
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-      <p class="text-red-400 text-sm mt-1 hidden" id="phoneError">Phone number is required.</p>
-    </div>
-    <div>
-      <label class="block text-purple-200 mb-1">Company</label>
-      <input type="text" name="company"
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-    </div>
-  </div>
-
-  <!-- Address -->
-  <div>
-    <label class="block text-purple-200 mb-1">Address</label>
-    <input type="text" name="address" minlength="5" maxlength="100"
-      class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-  </div>
-
-  <!-- Zip Code and Country -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label class="block text-purple-200 mb-1">Zip Code</label>
-      <input type="text" name="zip" pattern="^\d{4,10}$"
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-      <p class="text-red-400 text-sm mt-1 hidden" id="zipError">Enter a valid zip code (4–10 digits).</p>
-    </div>
-    <div>
-      <label class="block text-purple-200 mb-1">Country</label>
-      <select id="country" name="country" required
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500">
-        <option value="">Select a country</option>
-      </select>
-      <p class="text-red-400 text-sm mt-1 hidden" id="countryError">Please select a country.</p>
-    </div>
-  </div>
-
-  <!-- Agreement -->
-  <div class="flex items-center">
-    <input id="agree" type="checkbox" required class="h-4 w-4 text-purple-600 border-gray-700 rounded bg-black" />
-    <label for="agree" class="ml-2 text-purple-200 text-sm">
-      I agree to the <a href="#" class="underline text-purple-400">terms and conditions</a>
-    </label>
-  </div>
-
-  <!-- Submit Button -->
-  <button type="submit"
-    class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-3 rounded-md font-semibold transition duration-200">
-    Submit Application
-  </button>
-</form>
-
+    <form class="space-y-5" id="contactForm" novalidate action="thankyou.html">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-purple-200 mb-1">First Name</label>
+          <input type="text" name="firstName" required pattern="^[A-Za-z\s]{2,30}$"
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+          <p class="text-red-400 text-sm mt-1 hidden" id="firstNameError">Enter a valid first name (2–30 letters).</p>
+        </div>
+        <div>
+          <label class="block text-purple-200 mb-1">Last Name</label>
+          <input type="text" name="lastName" required pattern="^[A-Za-z\s]{2,30}$"
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+          <p class="text-red-400 text-sm mt-1 hidden" id="lastNameError">Enter a valid last name (2–30 letters).</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-purple-200 mb-1">Your Email</label>
+        <input type="email" name="email" required
+          class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+        <p class="text-red-400 text-sm mt-1 hidden" id="emailError">Enter a valid email address.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-purple-200 mb-1">Phone Number</label>
+          <input type="tel" name="phone" required
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+          <p class="text-red-400 text-sm mt-1 hidden" id="phoneError">Phone number is required.</p>
+        </div>
+        <div>
+          <label class="block text-purple-200 mb-1">Company</label>
+          <input type="text" name="company"
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-purple-200 mb-1">Address</label>
+        <input type="text" name="address" minlength="5" maxlength="100"
+          class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-purple-200 mb-1">Zip Code</label>
+          <input type="text" name="zip" pattern="^\d{4,10}$"
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+          <p class="text-red-400 text-sm mt-1 hidden" id="zipError">Enter a valid zip code (4–10 digits).</p>
+        </div>
+        <div>
+          <label class="block text-purple-200 mb-1">Country</label>
+          <select id="country" name="country" required
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500">
+            <option value="">Select a country</option>
+          </select>
+          <p class="text-red-400 text-sm mt-1 hidden" id="countryError">Please select a country.</p>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <input id="agree" type="checkbox" required class="h-4 w-4 text-purple-600 border-gray-700 rounded bg-black" />
+        <label for="agree" class="ml-2 text-purple-200 text-sm">
+          I agree to the <a href="#" class="underline text-purple-400">terms and conditions</a>
+        </label>
+      </div>
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-3 rounded-md font-semibold transition duration-200">
+        Submit Application
+      </button>
+    </form>
   </div>
 </div>
 
