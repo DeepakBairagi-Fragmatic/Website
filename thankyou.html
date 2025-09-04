@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You — PurpleWave</title>
+  <meta name="description" content="Thank you for contacting PurpleWave. Your form has been successfully submitted and our team will get back to you soon." />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Page styles -->
+  <style>
+    @layer utilities {
+      @keyframes pulse-slow { 0%,100%{transform:scale(.96);opacity:.35} 50%{transform:scale(1.04);opacity:.55} }
+      .animate-pulse-slow { animation:pulse-slow 9s ease-in-out infinite }
+
+      @keyframes float { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-20px)} }
+      .animate-float { animation:float 6s ease-in-out infinite }
+
+      @keyframes success-bounce { 0%,20%,50%,80%,100% {transform:translateY(0)} 40% {transform:translateY(-30px)} 60% {transform:translateY(-15px)} }
+      .animate-success-bounce { animation:success-bounce 2s ease-in-out }
+
+      .focus-outline:focus { outline:2px solid #A78BFA; outline-offset:2px; }
+      
+      .success-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #4c1d95 50%, #7c3aed 75%, #a855f7 100%); }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-purple-200">
+
+  <!-- Navbar -->
+  <nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2 focus-outline">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
+             alt="PurpleWave logo" class="h-10 w-auto" loading="lazy" />
+        <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
+      </a>
+      <ul class="flex space-x-6 text-purple-200">
+        <li><a href="/" class="hover:text-white transition focus-outline">Home</a></li>
+        <li><a href="aboutus.html" class="hover:text-white transition focus-outline">About</a></li>
+        <li><a href="services.html" class="hover:text-white transition focus-outline">Services</a></li>
+        <li><a href="events.html" class="hover:text-white transition focus-outline">Events</a></li>
+        <li><a href="city-skyline.html" class="hover:text-white transition focus-outline">City Skyline</a></li>
+        <li><a href="ai-infrastructure.html" class="hover:text-white transition focus-outline">AI Infrastructure</a></li>
+        <li><a href="contact.html" class="hover:text-white transition focus-outline">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SUCCESS -->
+  <header class="relative isolate flex flex-col items-center justify-center min-h-[70vh] overflow-hidden success-gradient">
+    <!-- Success pattern -->
+    <div class="absolute inset-0 opacity-20">
+      <svg class="w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
+        <!-- Checkmark pattern -->
+        <path d="M200 300 L300 400 L500 200" stroke="currentColor" fill="none" stroke-width="8" opacity="0.3"/>
+        <path d="M600 350 L700 450 L900 250" stroke="currentColor" fill="none" stroke-width="8" opacity="0.4"/>
+        <path d="M1000 300 L1100 400 L1300 200" stroke="currentColor" fill="none" stroke-width="8" opacity="0.3"/>
+        
+        <!-- Success circles -->
+        <circle cx="300" cy="400" r="20" fill="currentColor" opacity="0.2"/>
+        <circle cx="700" cy="450" r="25" fill="currentColor" opacity="0.3"/>
+        <circle cx="1100" cy="400" r="20" fill="currentColor" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <span class="absolute inset-0 bg-black/50"></span>
+    
+    <div class="relative z-10 text-center px-6">
+      <div class="text-8xl mb-6 animate-success-bounce">✅</div>
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-clip-text text-transparent
+                 bg-gradient-to-r from-green-300 via-emerald-400 to-teal-400 mb-6">
+        Thank You!
+      </h1>
+      <p class="text-xl sm:text-2xl text-purple-200/90 mb-8 max-w-3xl">
+        Your form has been successfully submitted
+      </p>
+      <div class="flex gap-4 justify-center">
+        <span class="px-4 py-2 bg-green-600/30 rounded-full text-sm font-medium">✓ Received</span>
+        <span class="px-4 py-2 bg-emerald-600/30 rounded-full text-sm font-medium">✓ Processing</span>
+        <span class="px-4 py-2 bg-teal-600/30 rounded-full text-sm font-medium">✓ Will Respond</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONFIRMATION DETAILS -->
+  <section class="relative py-20 bg-gradient-to-b from-black via-purple-950 to-black">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold bg-clip-text text-transparent
+                   bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-6">
+          What Happens Next?
+        </h2>
+        <p class="text-xl text-purple-200/80 max-w-3xl mx-auto">
+          We've received your submission and our team is already reviewing it. Here's what you can expect:
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="text-center p-8 bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl border border-purple-500/20">
+          <div class="text-4xl mb-4">📧</div>
+          <h3 class="text-xl font-bold text-white mb-4">Confirmation Email</h3>
+          <p class="text-purple-200/80 mb-4">
+            You'll receive a confirmation email within the next few minutes with your submission details.
+          </p>
+          <div class="text-sm text-emerald-400 font-semibold">Within 5 minutes</div>
+        </div>
+        
+        <div class="text-center p-8 bg-gradient-to-br from-indigo-900/20 to-purple-900/20 rounded-2xl border border-purple-500/20">
+          <div class="text-4xl mb-4">👥</div>
+          <h3 class="text-xl font-bold text-white mb-4">Team Review</h3>
+          <p class="text-purple-200/80 mb-4">
+            Our expert team will carefully review your submission and prepare a personalized response.
+          </p>
+          <div class="text-sm text-blue-400 font-semibold">Within 2 hours</div>
+        </div>
+        
+        <div class="text-center p-8 bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-2xl border border-purple-500/20">
+          <div class="text-4xl mb-4">📞</div>
+          <h3 class="text-xl font-bold text-white mb-4">Personal Response</h3>
+          <p class="text-purple-200/80 mb-4">
+            We'll reach out via your preferred method to discuss your project and next steps.
+          </p>
+          <div class="text-sm text-pink-400 font-semibold">Within 24 hours</div>
+        </div>
+      </div>
+
+      <!-- Submission Details -->
+      <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl p-8 border border-purple-500/20 mb-8">
+        <h3 class="text-2xl font-bold text-white mb-6">Submission Confirmed</h3>
+        <div class="grid md:grid-cols-2 gap-6 text-sm">
+          <div>
+            <span class="text-purple-300 font-semibold">Submission ID:</span>
+            <span class="text-white font-mono ml-2">#PW-<span id="submission-id"></span></span>
+          </div>
+          <div>
+            <span class="text-purple-300 font-semibold">Date & Time:</span>
+            <span class="text-white ml-2" id="submission-time"></span>
+          </div>
+          <div>
+            <span class="text-purple-300 font-semibold">Status:</span>
+            <span class="text-green-400 font-semibold ml-2">✓ Successfully Received</span>
+          </div>
+          <div>
+            <span class="text-purple-300 font-semibold">Response Expected:</span>
+            <span class="text-white ml-2">Within 24 hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY INFORMATION -->
+  <section class="relative py-20 bg-gradient-to-r from-purple-900/10 to-pink-900/10">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-4xl font-extrabold text-center bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
+        About PurpleWave
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">Who We Are</h3>
+          <p class="text-purple-200/90 leading-relaxed mb-6">
+            We're a creative digital studio specializing in bold, high-impact experiences that blend cutting-edge technology with exceptional design. From concept to deployment, we deliver solutions that make your brand shine across every platform.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-emerald-400">✓</span>
+              <span class="text-purple-200">120+ Projects Successfully Delivered</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-emerald-400">✓</span>
+              <span class="text-purple-200">Enterprise-Grade Infrastructure Solutions</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-emerald-400">✓</span>
+              <span class="text-purple-200">24/7 Support & Maintenance</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-emerald-400">✓</span>
+              <span class="text-purple-200">AI/ML & Cloud Native Expertise</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center p-6 bg-purple-950/30 rounded-xl border border-purple-500/20">
+              <div class="text-3xl font-extrabold text-purple-300 mb-2">120+</div>
+              <div class="text-sm text-purple-400">Projects Completed</div>
+            </div>
+            <div class="text-center p-6 bg-purple-950/30 rounded-xl border border-purple-500/20">
+              <div class="text-3xl font-extrabold text-pink-300 mb-2">4.9★</div>
+              <div class="text-sm text-pink-400">Client Rating</div>
+            </div>
+            <div class="text-center p-6 bg-purple-950/30 rounded-xl border border-purple-500/20">
+              <div class="text-3xl font-extrabold text-indigo-300 mb-2">99.9%</div>
+              <div class="text-sm text-indigo-400">Uptime SLA</div>
+            </div>
+            <div class="text-center p-6 bg-purple-950/30 rounded-xl border border-purple-500/20">
+              <div class="text-3xl font-extrabold text-fuchsia-300 mb-2">24/7</div>
+              <div class="text-sm text-fuchsia-400">Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Overview -->
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center p-6 bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-xl border border-purple-500/20">
+          <div class="text-3xl mb-3">🌐</div>
+          <h4 class="text-white font-semibold mb-2">Web Development</h4>
+          <p class="text-purple-300 text-sm">Modern, responsive websites and web applications</p>
+        </div>
+        <div class="text-center p-6 bg-gradient-to-br from-indigo-900/20 to-purple-900/20 rounded-xl border border-purple-500/20">
+          <div class="text-3xl mb-3">☁️</div>
+          <h4 class="text-white font-semibold mb-2">Cloud Solutions</h4>
+          <p class="text-purple-300 text-sm">Scalable infrastructure and deployment</p>
+        </div>
+        <div class="text-center p-6 bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-xl border border-purple-500/20">
+          <div class="text-3xl mb-3">🧠</div>
+          <h4 class="text-white font-semibold mb-2">AI/ML Solutions</h4>
+          <p class="text-purple-300 text-sm">Machine learning and artificial intelligence</p>
+        </div>
+        <div class="text-center p-6 bg-gradient-to-br from-cyan-900/20 to-indigo-900/20 rounded-xl border border-purple-500/20">
+          <div class="text-3xl mb-3">🎨</div>
+          <h4 class="text-white font-semibold mb-2">UI/UX Design</h4>
+          <p class="text-purple-300 text-sm">User-centered design and experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="relative py-20 bg-gradient-to-b from-black via-purple-950 to-black">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h2 class="text-4xl font-extrabold bg-clip-text text-transparent
+                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-8">
+        Explore More
+      </h2>
+      <p class="text-xl text-purple-200/90 leading-relaxed mb-12">
+        While you're waiting for our response, feel free to explore our work and learn more about our capabilities.
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <a href="aboutus.html" 
+           class="p-6 bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-xl border border-purple-500/20 
+                  hover:border-purple-400/40 transition group">
+          <div class="text-3xl mb-4 group-hover:scale-110 transition">👥</div>
+          <h3 class="text-white font-semibold mb-2">About Us</h3>
+          <p class="text-purple-300 text-sm">Learn about our team, mission, and company culture</p>
+        </a>
+        
+        <a href="city-skyline.html" 
+           class="p-6 bg-gradient-to-br from-indigo-900/20 to-purple-900/20 rounded-xl border border-purple-500/20 
+                  hover:border-indigo-400/40 transition group">
+          <div class="text-3xl mb-4 group-hover:scale-110 transition">🏙️</div>
+          <h3 class="text-white font-semibold mb-2">Case Studies</h3>
+          <p class="text-purple-300 text-sm">Explore our technical projects and success stories</p>
+        </a>
+        
+        <a href="ai-infrastructure.html" 
+           class="p-6 bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-xl border border-purple-500/20 
+                  hover:border-pink-400/40 transition group">
+          <div class="text-3xl mb-4 group-hover:scale-110 transition">🧠</div>
+          <h3 class="text-white font-semibold mb-2">AI Infrastructure</h3>
+          <p class="text-purple-300 text-sm">Discover our machine learning and AI capabilities</p>
+        </a>
+      </div>
+      
+      <div class="flex gap-4 justify-center">
+        <a href="/" 
+           class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700
+                  text-white font-semibold rounded-full transition">
+          ← Back to Home
+        </a>
+        <a href="services.html" 
+           class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 
+                  text-white font-semibold rounded-full shadow-lg hover:scale-105 transition">
+          View All Services
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative wave divider -->
+    <svg class="absolute bottom-0 left-0 w-full pointer-events-none" height="80" viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path fill="#0b0115" d="M0,40 C480,120 960,0 1440,80 L1440,80 L0,80 Z"></path>
+    </svg>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0b0115] text-purple-300 py-10">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
+               alt="PurpleWave logo" class="h-8 w-auto" loading="lazy" />
+          <span class="font-semibold">PurpleWave</span>
+        </div>
+        <nav class="flex gap-6">
+          <a href="/" class="hover:text-white transition">Home</a>
+          <a href="aboutus.html" class="hover:text-white transition">About</a>
+          <a href="services.html" class="hover:text-white transition">Services</a>
+          <a href="events.html" class="hover:text-white transition">Events</a>
+          <a href="contact.html" class="hover:text-white transition">Contact</a>
+        </nav>
+      </div>
+      <div class="mt-6 text-center">
+        <p class="text-sm text-purple-400/80">© <span id="year"></span> PurpleWave. All rights reserved.</p>
+        <p class="text-xs text-purple-500/60 mt-2">We typically respond within 24 hours during business days.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Generate submission ID and timestamp
+    document.addEventListener('DOMContentLoaded', function() {
+      // Generate random submission ID
+      const submissionId = Math.random().toString(36).substr(2, 9).toUpperCase();
+      document.getElementById('submission-id').textContent = submissionId;
+      
+      // Set current timestamp
+      const now = new Date();
+      const timeString = now.toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      document.getElementById('submission-time').textContent = timeString;
+    });
+  </script>
+</body>
+</html>
