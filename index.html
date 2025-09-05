@@ -505,79 +505,106 @@
       ❮
     </button>
 
-    <!-- Scrollable gallery track -->
-    <div id="galleryTrack"
-         class="flex gap-8 overflow-x-auto scroll-snap-x scroll-snap-mandatory no-scrollbar rounded-3xl p-4 bg-purple-900/30 shadow-lg">
+    <!-- Case Study Section -->
 
-      <!-- Single image card -->
-        <a href="server_infrastructure.html" class="block">
-      <figure class="group relative w-80 h-48 flex-none snap-start rounded-xl overflow-hidden shadow-xl ring-1 ring-purple-700/50 hover:ring-pink-400 hover:shadow-2xl transition-shadow duration-500">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJl8JJBWZnsoiDEm9Ehs5KuJ_DD2rIcaJnoQ&s"
-             alt="Server Infrastructure" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-        <figcaption class="absolute inset-0 flex items-end p-5 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          <span class="text-base text-purple-100 font-semibold drop-shadow-md">Server Infrastructure</span>
-        </figcaption>
-      </figure>
-        </a>
-
-      <!-- Add more card blocks for more images (examples): -->
-     
-     <a href="ai_infrastucture.html" class="block">
-      <figure class="group relative w-80 h-48 flex-none snap-start rounded-xl overflow-hidden shadow-xl ring-1 ring-purple-700/50 hover:ring-pink-400 hover:shadow-2xl transition-shadow duration-500">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-             alt="AI infrastructure" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-        <figcaption class="absolute inset-0 flex items-end p-5 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          <span class="text-base text-purple-100 font-semibold drop-shadow-md">AI Infrastructure</span>
-        </figcaption>
-      </figure>
-    </a>
-
-      <a href="skyline.html" class="block">
-  <figure class="group relative w-80 h-48 flex-none snap-start rounded-xl overflow-hidden shadow-xl ring-1 ring-purple-700/50 hover:ring-pink-400 hover:shadow-2xl transition-shadow duration-500">
-    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
-         alt="City Skyline"
-         class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-    <figcaption class="absolute inset-0 flex items-end p-5 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-      <span class="text-base text-purple-100 font-semibold drop-shadow-md">City Skyline</span>
-    </figcaption>
-  </figure>
-</a>
-
-
-      <!-- ...add more figures for more images... -->
-
+   <section class="relative w-full overflow-hidden py-12">
+  <div class="container mx-auto">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-3xl font-bold text-white">Case Studies</h2>
+      <div class="flex gap-4">
+        <button aria-label="Scroll left" onclick="scrollCaseStudy(-1)"
+          class="p-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button aria-label="Scroll right" onclick="scrollCaseStudy(1)"
+          class="p-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Right arrow button -->
-    <button aria-label="Scroll right" onclick="scrollGallery(1)"
-            class="absolute right-4 top-1/2 z-20 -translate-y-1/2 p-4 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white rounded-full shadow-2xl transition duration-300 focus:outline-none focus:ring-4 focus:ring-pink-500">
-      ❯
-    </button>
+    <div id="caseStudyTrack"
+      class="flex gap-8 overflow-x-auto scroll-snap-x scroll-snap-mandatory no-scrollbar p-4">
+      
+      <!-- Card 1 -->
+      <a href="server_infrastructure.html" class="flex-none snap-start block w-80">
+        <div class="bg-purple-900/30 rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-400 flex flex-col h-[26rem]">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJl8JJBWZnsoiDEm9Ehs5KuJ_DD2rIcaJnoQ&s"
+            alt="An abstract illustration of interconnected servers and data flow" loading="lazy"
+            class="h-48 w-full object-cover" />
+          <div class="p-6 flex-grow">
+            <h3 class="text-lg font-semibold text-purple-200 mb-2">Server Infrastructure Optimization</h3>
+            <p class="text-sm text-purple-400">
+              We developed a scalable server architecture to improve our client's data processing speed and reliability.
+            </p>
+          </div>
+        </div>
+      </a>
 
+      <!-- Card 2 -->
+      <a href="ai_infrastucture.html" class="flex-none snap-start block w-80">
+        <div class="bg-purple-900/30 rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-400 flex flex-col h-[26rem]">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+            alt="AI infrastructure case study" loading="lazy"
+            class="h-48 w-full object-cover" />
+          <div class="p-6 flex-grow">
+            <h3 class="text-lg font-semibold text-purple-200 mb-2">AI Infrastructure Development</h3>
+            <p class="text-sm text-purple-400">
+              Our team built a robust platform to support complex machine learning models and real-time data analysis.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="skyline.html" class="flex-none snap-start block w-80">
+        <div class="bg-purple-900/30 rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-400 flex flex-col h-[26rem]">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
+            alt="City Skyline case study" loading="lazy"
+            class="h-48 w-full object-cover" />
+          <div class="p-6 flex-grow">
+            <h3 class="text-lg font-semibold text-purple-200 mb-2">Urban Planning and Data Analysis</h3>
+            <p class="text-sm text-purple-400">
+              We leveraged data to help city planners make informed decisions for urban development and infrastructure.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="data_analytics.html" class="flex-none snap-start block w-80">
+        <div class="bg-purple-900/30 rounded-xl overflow-hidden shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-400 flex flex-col h-[26rem]">
+          <img
+            src="https://images.unsplash.com/photo-1506443432420-33230a10d9ce?auto=format&fit=crop&w=800&q=80"
+            alt="Data analytics infrastructure" loading="lazy"
+            class="h-48 w-full object-cover" />
+          <div class="p-6 flex-grow">
+            <h3 class="text-lg font-semibold text-purple-200 mb-2">Advanced Data Analytics</h3>
+            <p class="text-sm text-purple-400">
+              Our solutions helped clients uncover key insights from their data to drive business growth.
+            </p>
+          </div>
+        </div>
+      </a>
+      
+    </div>
   </div>
 
-  <style>
-    /* Hide scrollbar for the gallery track */
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
-
-  <script>
-    function scrollGallery(dir) {
-      const gallery = document.getElementById('galleryTrack');
-      const card = gallery.querySelector('.flex-none');
-      const gap = parseInt(getComputedStyle(gallery).gap) || 0;
+<script>
+    function scrollCaseStudy(dir) {
+      const track = document.getElementById('caseStudyTrack');
+      const card = track.querySelector('.flex-none');
+      const gap = parseInt(getComputedStyle(track).gap) || 0;
       const step = card.offsetWidth + gap;
-      gallery.scrollBy({ left: step * dir, behavior: 'smooth' });
+      track.scrollBy({ left: step * dir, behavior: 'smooth' });
     }
-  </script>
-
-</section>
+</script>
 
 
 
