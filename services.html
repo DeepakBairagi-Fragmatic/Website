@@ -4,11 +4,10 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PurpleWave creates sleek, modern websites with a bold black and purple theme." />
-  <meta name="keywords" content="web design, branding, purplewave, modern websites" />
-  <title>PurpleWave - Modern Web Design</title>
+  <meta name="description" content="PurpleWave delivers professional web, brand, and infrastructure services designed to accelerate modern digital businesses." />
+  <meta name="keywords" content="web design, brand systems, digital strategy, purplewave services" />
+  <title>PurpleWave | Services</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.freepik.com/256/4424/4424616.png?semt=ais_hybrid">
-  <title>Services - PurpleWave</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,11 +28,13 @@
 </script>
 
   <style>
-  
-  .filter-btn:focus {
-  outline: none;
-}
-</style>
+    .filter-btn:focus {
+      outline: none;
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(59, 7, 100, 0.92), rgba(76, 29, 149, 0.85));
+    }
+  </style>
 
   <!-- Custom CSS for Carousel and Service Cards -->
   <style>
@@ -126,20 +127,40 @@
 </nav>
 
   <!-- Hero Section -->
-  <section class="py-20 bg-cover bg-center flex items-center justify-center min-h-[400px]"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://img.goodfon.com/original/1920x1080/d/f4/anime-art-final-fantazi-fioletovyi-fon-demon-ubiitsa-oruzhie.jpg');">
-    <div class="container mx-auto text-center px-6">
-      <div class="pt-16">
-        <h1 class="text-5xl font-bold text-purple-200 mb-4">Our Services</h1>
-        <p class="text-xl text-purple-400 max-w-2xl mx-auto">
-          Discover how PurpleWave can elevate your brand with our expert web design, branding, and hosting solutions.
-        </p>
-      </div>
+  <section class="relative py-24 bg-black">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Abstract technology backdrop" class="w-full h-full object-cover opacity-40" loading="lazy">
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+    <div class="relative container mx-auto text-center px-6">
+      <span class="inline-flex items-center justify-center px-4 py-2 bg-purple-800/60 text-purple-100 uppercase tracking-widest text-xs rounded-full border border-purple-400/40 mb-6">Services</span>
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Full-Service Digital Partner</h1>
+      <p class="text-xl text-purple-100 max-w-3xl mx-auto">
+        We combine strategy, design, and engineering to deliver resilient digital experiences. From idea to long-term optimization, our team acts as an embedded partner for ambitious brands.
+      </p>
     </div>
   </section>
 
-  <section>
-    
+  <!-- Metrics Highlight -->
+  <section class="py-16 bg-black border-b border-purple-900/40">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
+      <div class="bg-purple-900/20 border border-purple-700/40 rounded-2xl p-6">
+        <p class="text-4xl font-black text-white mb-2">120+</p>
+        <p class="text-purple-300 text-sm uppercase tracking-wide">Launches in the last 18 months</p>
+      </div>
+      <div class="bg-purple-900/20 border border-purple-700/40 rounded-2xl p-6">
+        <p class="text-4xl font-black text-white mb-2">98%</p>
+        <p class="text-purple-300 text-sm uppercase tracking-wide">Client satisfaction rating</p>
+      </div>
+      <div class="bg-purple-900/20 border border-purple-700/40 rounded-2xl p-6">
+        <p class="text-4xl font-black text-white mb-2">4.8x</p>
+        <p class="text-purple-300 text-sm uppercase tracking-wide">Average ROI within 6 months</p>
+      </div>
+      <div class="bg-purple-900/20 border border-purple-700/40 rounded-2xl p-6">
+        <p class="text-4xl font-black text-white mb-2">24/7</p>
+        <p class="text-purple-300 text-sm uppercase tracking-wide">Global infrastructure monitoring</p>
+      </div>
+    </div>
   </section>
 
   <!-- Services Section -->
@@ -152,35 +173,148 @@
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Web Design -->
-        <div class="service-card bg-purple-900 p-6 rounded-lg shadow-md">
-          <img loading="lazy" src="https://via.placeholder.com/300x200?text=Web+Design" alt="Web Design Service"
-            class="w-full h-40 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold text-purple-200 mb-3">Web Design</h3>
-          <p class="text-purple-400 mb-4">
-            We create responsive, modern websites tailored to your brand’s needs. Our designs are user-friendly, visually striking, and optimized for all devices.
+        <!-- Web Experience Design -->
+        <div class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="Design strategy workshop"
+            class="w-full h-48 object-cover rounded-xl mb-5" />
+          <div class="flex items-center gap-2 text-purple-300 text-xs uppercase tracking-widest mb-2">
+            <span class="w-2 h-2 rounded-full bg-pink-400"></span> Experience
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3">Product & Web Experience</h3>
+          <p class="text-purple-300 mb-4">
+            Research-driven UX, design systems, and responsive builds that keep customers engaged across every device.
           </p>
-          <a href="contact.html" class="text-purple-200 hover:text-white transition">Learn More</a>
+          <ul class="text-purple-200/80 text-sm space-y-2 mb-5">
+            <li>• Journey mapping & workshops</li>
+            <li>• Modular design systems</li>
+            <li>• Accessibility-first builds</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-white font-semibold hover:underline transition">Book a discovery call →</a>
         </div>
         <!-- Brand Identity -->
-        <div class="service-card bg-purple-900 p-6 rounded-lg shadow-md">
-          <img loading="lazy" src="https://via.placeholder.com/300x200?text=Brand+Identity" alt="Brand Identity Service"
-            class="w-full h-40 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold text-purple-200 mb-3">Brand Identity</h3>
-          <p class="text-purple-400 mb-4">
-            Establish a strong presence with custom logos, color themes, and brand kits. We ensure your brand stands out with a cohesive and memorable identity.
+        <div class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-8da7dc0a5c0d?auto=format&fit=crop&w=900&q=80" alt="Brand identity mood boards"
+            class="w-full h-48 object-cover rounded-xl mb-5" />
+          <div class="flex items-center gap-2 text-purple-300 text-xs uppercase tracking-widest mb-2">
+            <span class="w-2 h-2 rounded-full bg-indigo-400"></span> Identity
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3">Brand Identity Systems</h3>
+          <p class="text-purple-300 mb-4">
+            Cohesive narrative, visual, and motion identity guidelines so teams can launch consistently at scale.
           </p>
-          <a href="contact.html" class="text-purple-200 hover:text-white transition">Learn More</a>
+          <ul class="text-purple-200/80 text-sm space-y-2 mb-5">
+            <li>• Messaging architecture</li>
+            <li>• Logo, typography & palette</li>
+            <li>• Sales enablement assets</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-white font-semibold hover:underline transition">Request a proposal →</a>
         </div>
-        <!-- Hosting & Support -->
-        <div class="service-card bg-purple-900 p-6 rounded-lg shadow-md">
-          <img loading="lazy" src="https://via.placeholder.com/300x200?text=Hosting+Support" alt="Hosting & Support Service"
-            class="w-full h-40 object-cover rounded mb-4" />
-          <h3 class="text-2xl font-semibold text-purple-200 mb-3">Hosting & Support</h3>
-          <p class="text-purple-400 mb-4">
-            Enjoy fast, secure hosting and reliable ongoing support. We keep your site running smoothly with regular updates and 24/7 assistance.
+        <!-- Infrastructure -->
+        <div class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Infrastructure dashboards"
+            class="w-full h-48 object-cover rounded-xl mb-5" />
+          <div class="flex items-center gap-2 text-purple-300 text-xs uppercase tracking-widest mb-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Engineering
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-3">Managed Cloud & Support</h3>
+          <p class="text-purple-300 mb-4">
+            Secure cloud-native infrastructure, proactive monitoring, and DevOps support around the clock.
           </p>
-          <a href="contact.html" class="text-purple-200 hover:text-white transition">Learn More</a>
+          <ul class="text-purple-200/80 text-sm space-y-2 mb-5">
+            <li>• Multi-region deployments</li>
+            <li>• Performance SLAs & SRE pods</li>
+            <li>• Analytics & optimization playbooks</li>
+          </ul>
+          <a href="contact.html" class="inline-flex items-center text-white font-semibold hover:underline transition">Talk to engineering →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Solutions -->
+  <section class="py-20 bg-gradient-to-b from-black via-purple-950/40 to-black">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-12">
+        <div>
+          <p class="uppercase tracking-[0.3em] text-xs text-purple-500 mb-3">Specialized Solutions</p>
+          <h2 class="text-4xl font-bold text-white mb-4">Industry-grade capabilities</h2>
+          <p class="text-lg text-purple-300 max-w-2xl">
+            Modular service bundles tailored for marketing teams, SaaS companies, agencies, and enterprise IT groups. Choose an end-to-end team or plug us into existing workflows.
+          </p>
+        </div>
+        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full transition">Schedule a roadmap review</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
+          <h3 class="text-2xl text-white mb-3">Digital Launch Kit</h3>
+          <p class="text-purple-300 text-sm mb-4">Perfect for early-stage teams that need a brand system, web presence, and automation-ready stack in under 8 weeks.</p>
+          <ul class="text-purple-100 text-sm space-y-2">
+            <li>• Fractional product lead</li>
+            <li>• Content & CRM setup</li>
+            <li>• QA, SEO, and analytics baseline</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
+          <h3 class="text-2xl text-white mb-3">Growth Optimization Pod</h3>
+          <p class="text-purple-300 text-sm mb-4">Integrated designers, engineers, and strategists cycling through two-week test-and-learn sprints.</p>
+          <ul class="text-purple-100 text-sm space-y-2">
+            <li>• Experiment backlog</li>
+            <li>• Personalization frameworks</li>
+            <li>• CRO playbooks</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
+          <h3 class="text-2xl text-white mb-3">Enterprise Replatform</h3>
+          <p class="text-purple-300 text-sm mb-4">Modernize legacy systems with phased migrations, custom integrations, and governance guardrails.</p>
+          <ul class="text-purple-100 text-sm space-y-2">
+            <li>• Architecture advisory</li>
+            <li>• Security & compliance reviews</li>
+            <li>• Training & internal enablement</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
+          <h3 class="text-2xl text-white mb-3">AI Enablement Studio</h3>
+          <p class="text-purple-300 text-sm mb-4">Operationalize AI copilots, intelligent workflows, and data dashboards responsibly.</p>
+          <ul class="text-purple-100 text-sm space-y-2">
+            <li>• Use-case prioritization</li>
+            <li>• Model evaluation & guardrails</li>
+            <li>• Human-in-the-loop design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Process -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="uppercase tracking-[0.3em] text-xs text-purple-500 mb-3">Delivery Process</p>
+        <h2 class="text-4xl font-bold text-white mb-4">Collaborative, measurable, repeatable</h2>
+        <p class="text-lg text-purple-300 max-w-3xl mx-auto">
+          Every engagement follows a transparent operating cadence with strategy checkpoints, prototyping, and measurable impact reports.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
+          <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">01</p>
+          <h3 class="text-2xl text-white mb-3">Insight Sprint</h3>
+          <p class="text-purple-300 text-sm">Stakeholder interviews, analytics review, competitive benchmarks, and hypothesis roadmap.</p>
+        </div>
+        <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
+          <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">02</p>
+          <h3 class="text-2xl text-white mb-3">Experience Blueprint</h3>
+          <p class="text-purple-300 text-sm">Rapid prototyping, UX research, visual concepts, and technical architecture in parallel.</p>
+        </div>
+        <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
+          <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">03</p>
+          <h3 class="text-2xl text-white mb-3">Build & Launch</h3>
+          <p class="text-purple-300 text-sm">Agile delivery supported by QA automation, staging reviews, and enablement sessions.</p>
+        </div>
+        <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
+          <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">04</p>
+          <h3 class="text-2xl text-white mb-3">Growth Command</h3>
+          <p class="text-purple-300 text-sm">KPIs tracked weekly, enhancements prioritized by impact score, and 24/7 support coverage.</p>
         </div>
       </div>
     </div>
@@ -298,28 +432,38 @@
 </div>
 
 
-<!-- Gallery Carousel Section -->
-<section class="py-20 bg-white text-center">
+<!-- Client Carousel Section -->
+<section class="py-20 bg-white text-center text-purple-900">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-purple-700 mb-10">Our Projects</h2>
+    <p class="text-sm tracking-[0.3em] uppercase text-purple-500 mb-3">Recent Work</p>
+    <h2 class="text-3xl font-bold mb-10">Proof in every launch</h2>
 
-    <div id="galleryCarousel" class="relative overflow-hidden" tabindex="0">
-      <!-- Carousel Images -->
-      <div id="galleryCarouselInner" class="flex gap-4 transition-transform duration-500 ease-in-out">
-        <div class="min-w-[250px] flex-shrink-0">
-          <img src="https://www.techosquare.com/images/blog/website-development-project-plan-home.jpg" alt="Website Development" class="rounded-lg w-full h-48 object-cover" loading="lazy" />
+    <div id="galleryCarousel" class="relative overflow-hidden rounded-3xl border border-purple-200" tabindex="0">
+      <!-- Carousel Content -->
+      <div id="galleryCarouselInner" class="flex gap-4 transition-transform duration-500 ease-in-out bg-purple-50 p-6">
+        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Fintech SaaS</p>
+          <h3 class="text-xl font-semibold mb-3">Conversion-focused marketing site</h3>
+          <p class="text-sm text-purple-600 mb-4">+138% qualified demo requests after redesigning the experience and integrating personalization.</p>
+          <cite class="text-purple-800 text-sm">CMO, Series B startup</cite>
         </div>
-        <div class="min-w-[250px] flex-shrink-0">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe_2JC2NJHLTPyNaQ6BEm5Zo4jvYXZWgTYbA&s" alt="Project Ideas" class="rounded-lg w-full h-48 object-cover" loading="lazy" />
+        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Global Non-profit</p>
+          <h3 class="text-xl font-semibold mb-3">Cause storytelling platform</h3>
+          <p class="text-sm text-purple-600 mb-4">Launched new donation flow and CRM integration, reducing ops time by 40%.</p>
+          <cite class="text-purple-800 text-sm">Digital Director</cite>
         </div>
-        <div class="min-w-[250px] flex-shrink-0">
-          <img src="https://cdn-bclkb.nitrocdn.com/fiSPvbjtAHBnrLskqKEeXpMGQlSziTCT/assets/images/optimized/rev-585634e/www.techwyse.com/wp-content/uploads/2007/07/Web-Site-Development-Project-Approach.jpg" alt="App Development" class="rounded-lg w-full h-48 object-cover" loading="lazy" />
+        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Enterprise IT</p>
+          <h3 class="text-xl font-semibold mb-3">Infrastructure modernization</h3>
+          <p class="text-sm text-purple-600 mb-4">Replatformed 12 critical apps onto a secure hybrid cloud with zero downtime.</p>
+          <cite class="text-purple-800 text-sm">VP Technology</cite>
         </div>
-        <div class="min-w-[250px] flex-shrink-0">
-          <img src="https://img.freepik.com/free-vector/setup-concept-illustration_114360-5023.jpg?semt=ais_hybrid&w=740" alt="Website Templates" class="rounded-lg w-full h-48 object-cover" loading="lazy" />
-        </div>
-        <div class="min-w-[250px] flex-shrink-0">
-          <img src="https://www.digitalsilk.com/wp-content/uploads/2023/10/website-structure-hero-760x380.jpg" alt="Content Ideas" class="rounded-lg w-full h-48 object-cover" loading="lazy" />
+        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Retail</p>
+          <h3 class="text-xl font-semibold mb-3">Omnichannel experience</h3>
+          <p class="text-sm text-purple-600 mb-4">Unified loyalty, content, and commerce experiences across 27 markets.</p>
+          <cite class="text-purple-800 text-sm">Head of Digital</cite>
         </div>
       </div>
 
@@ -344,8 +488,58 @@
 
 
   <!-- Footer -->
-  <footer class="bg-purple-950 py-6 text-center text-purple-200">
-    <p>© <script>document.write(new Date().getFullYear())</script> PurpleWave. All rights reserved.</p>
+  <footer class="bg-purple-950 text-purple-200 relative px-6 pt-16 pb-10 mt-16">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <h3 class="text-2xl font-bold mb-3">PurpleWave</h3>
+        <p class="text-purple-300 text-sm">
+          Strategy, design, and engineering teams helping ambitious brands launch faster and smarter.
+        </p>
+      </div>
+      <div>
+        <p class="text-sm uppercase tracking-wide text-purple-400 mb-3">Services</p>
+        <ul class="space-y-2 text-purple-200">
+          <li><a href="services.html" class="hover:text-white transition">Experience Design</a></li>
+          <li><a href="services.html" class="hover:text-white transition">Brand Identity</a></li>
+          <li><a href="services.html" class="hover:text-white transition">Cloud & DevOps</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm uppercase tracking-wide text-purple-400 mb-3">Resources</p>
+        <ul class="space-y-2 text-purple-200">
+          <li><a href="events.html" class="hover:text-white transition">Events & Labs</a></li>
+          <li><a href="aboutus.html" class="hover:text-white transition">About</a></li>
+          <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+      <div class="bg-purple-900 bg-opacity-90 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold mb-2 text-purple-100">Subscribe to Our Newsletter</h3>
+        <p class="text-sm mb-4 text-purple-300">Stay updated with insights, launches, and invites.</p>
+
+        <form id="newsletterForm" class="space-y-3">
+          <!-- Email Input -->
+          <input
+            type="email"
+            name="email"
+            id="newsletterEmail"
+            placeholder="Enter your email"
+            required
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500"
+          />
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-2 rounded-md font-semibold transition duration-200"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-purple-800 mt-10 pt-6 text-center text-sm">
+      <p>© <script>document.write(new Date().getFullYear())</script> PurpleWave. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- JavaScript for Carousel -->
