@@ -1,153 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PurpleWave | Friday: Web Animation 101</title>
   <link rel="preconnect" href="https://cdn.tailwindcss.com" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @layer utilities{ .focus-outline:focus {outline:2px solid #A78BFA;outline-offset:2px;} }
+    @layer utilities {
+      .focus-outline:focus {
+        outline: 2px solid #A78BFA;
+        outline-offset: 2px;
+      }
+    }
   </style>
 
   <!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
+  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+    crossorigin="anonymous">
   <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
-  
+
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-YMPCVDJBLZ');
-</script>
+    gtag('config', 'G-YMPCVDJBLZ');
+  </script>
 
+  </script>
+  <script src="/js/global-navbar.js" defer></script>
 </head>
+
 <body class="bg-[#0b0115] text-purple-100 font-sans scroll-smooth">
-<nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="../events.html" class="flex items-center gap-2 focus-outline">
-      <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-        alt="PurpleWave logo" class="h-10 w-auto" loading="lazy"/>
-      <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
+  <global-navbar></global-navbar>
+  <section
+    class="relative pt-14 pb-8 flex flex-col items-center bg-gradient-to-b from-[#3b0a64]/80 via-purple-900/80 to-[#0b0115]">
+    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80"
+      alt="Web Animation 101"
+      class="rounded-2xl w-full max-w-3xl aspect-video object-cover shadow-2xl mb-7 border-4 border-purple-700/30" />
+    <h1
+      class="text-3xl sm:text-5xl font-extrabold mb-2 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
+      Friday: Web Animation 101
+    </h1>
+    <div class="mb-2 text-purple-300 text-sm">3:00 PM – 4:00 PM</div>
+    <span
+      class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-1 rounded-full text-white font-semibold text-xs mb-5">Live
+      Coding</span>
+    <p class="max-w-3xl text-purple-200 text-lg text-center px-4 sm:px-0">
+      Breathe life into your site! Learn state-of-the-art CSS tricks, micro-interactions, and real project transitions.
+      You’ll leave ready to animate anything in the browser.
+    </p>
+    <a href="../register.html"
+      class="mt-8 inline-block px-10 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
+      Register Now
     </a>
-    <a href="../events.html" class="hover:text-white transition focus-outline">← Back to Events</a>
-  </div>
-</nav>
-<section class="relative pt-14 pb-8 flex flex-col items-center bg-gradient-to-b from-[#3b0a64]/80 via-purple-900/80 to-[#0b0115]">
-  <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80"
-    alt="Web Animation 101" 
-    class="rounded-2xl w-full max-w-3xl aspect-video object-cover shadow-2xl mb-7 border-4 border-purple-700/30" />
-  <h1 class="text-3xl sm:text-5xl font-extrabold mb-2 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-    Friday: Web Animation 101
-  </h1>
-  <div class="mb-2 text-purple-300 text-sm">3:00 PM – 4:00 PM</div>
-  <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-1 rounded-full text-white font-semibold text-xs mb-5">Live Coding</span>
-  <p class="max-w-3xl text-purple-200 text-lg text-center px-4 sm:px-0">
-    Breathe life into your site! Learn state-of-the-art CSS tricks, micro-interactions, and real project transitions. You’ll leave ready to animate anything in the browser.
-  </p>
-  <a href="../register.html"
-    class="mt-8 inline-block px-10 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
-    Register Now
-  </a>
-</section>
-<section class="py-16 bg-black/40 backdrop-blur-lg">
-  <div class="container mx-auto max-w-3xl px-4">
-    <h2 class="text-3xl font-extrabold text-purple-300 mb-10 text-center">
-      Animation Agenda
-    </h2>
-    <ol class="relative border-l-4 border-purple-600 ml-3 space-y-10">
-      <li class="ml-7">
-        <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-400 flex items-center justify-center shadow-lg">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
-          </svg>
-        </div>
-        <div>
-          <span class="font-semibold text-purple-200">3:00 PM</span>
-          <div class="font-bold text-lg">Animated UI Basics</div>
-          <p class="text-sm text-purple-300 mt-1">Transitions, keyframes, and why animation underlines user experience.</p>
-        </div>
-      </li>
-      <li class="ml-7">
-        <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-400 flex items-center justify-center shadow-lg">
-          <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-        </div>
-        <div>
-          <span class="font-semibold text-purple-200">3:20 PM</span>
-          <div class="font-bold text-lg">SVG & Gradient Animation</div>
-          <p class="text-sm text-purple-300 mt-1">Live demo: SVG waves and color-shifting gradients.</p>
-        </div>
-      </li>
-      <li class="ml-7">
-        <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shadow-lg">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3m9-9h-3M6 12H3"/></svg>
-        </div>
-        <div>
-          <span class="font-semibold text-purple-200">3:40 PM</span>
-          <div class="font-bold text-lg">Micro-Interactions & Reveal</div>
-          <p class="text-sm text-purple-300 mt-1">Button hovers, scroll reveals, and accessibility best practices.</p>
-        </div>
-      </li>
-      <li class="ml-7">
-        <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center shadow-lg">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5v9"/></svg>
-        </div>
-        <div>
-          <span class="font-semibold text-purple-200">3:55 PM</span>
-          <div class="font-bold text-lg">Open Q&amp;A</div>
-          <p class="text-sm text-purple-300 mt-1">Showcase your code, get feedback, and get a list of best resources.</p>
-        </div>
-      </li>
-    </ol>
-    <div class="bg-purple-900/30 rounded-xl px-6 py-4 mt-14 text-purple-200 shadow-lg">
-      <h3 class="font-bold text-purple-100 mb-2">What to Bring:</h3>
-      <ul class="ml-5 list-disc list-inside text-purple-300 text-sm space-y-1">
-        <li>Laptop with any code editor</li>
-        <li>Any site you want to spice up</li>
-        <li>Curiosity for interactivity!</li>
-      </ul>
-    </div>
-  </div>
-</section>
-<section class="py-12 bg-gradient-to-b from-[#181134] via-purple-950 to-[#0b0115]">
-  <div class="container mx-auto max-w-3xl px-4">
-    <h2 class="text-3xl font-extrabold text-purple-300 mb-6 text-center">Meet the Team</h2>
-    <div class="flex flex-col sm:flex-row sm:justify-center items-center gap-6">
-      <img src="https://i.pravatar.cc/120?img=68" alt="Alex Vega" class="rounded-full h-28 w-28 object-cover ring-4 ring-purple-600 shadow-lg" />
-      <div class="max-w-xl text-center sm:text-left">
-        <h3 class="text-xl font-semibold text-purple-100">PurpleWave Crew</h3>
-        <p class="text-purple-300 mb-2">Design & Animation Team</p>
-        <p class="text-purple-300 text-sm leading-relaxed">
-          The crew behind PurpleWave, notorious for dazzling gradient sites and clever effects—expect practical motion lessons and performance tips!
-        </p>
+  </section>
+  <section class="py-16 bg-black/40 backdrop-blur-lg">
+    <div class="container mx-auto max-w-3xl px-4">
+      <h2 class="text-3xl font-extrabold text-purple-300 mb-10 text-center">
+        Animation Agenda
+      </h2>
+      <ol class="relative border-l-4 border-purple-600 ml-3 space-y-10">
+        <li class="ml-7">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-400 flex items-center justify-center shadow-lg">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-semibold text-purple-200">3:00 PM</span>
+            <div class="font-bold text-lg">Animated UI Basics</div>
+            <p class="text-sm text-purple-300 mt-1">Transitions, keyframes, and why animation underlines user
+              experience.</p>
+          </div>
+        </li>
+        <li class="ml-7">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-400 flex items-center justify-center shadow-lg">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-semibold text-purple-200">3:20 PM</span>
+            <div class="font-bold text-lg">SVG & Gradient Animation</div>
+            <p class="text-sm text-purple-300 mt-1">Live demo: SVG waves and color-shifting gradients.</p>
+          </div>
+        </li>
+        <li class="ml-7">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shadow-lg">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3m9-9h-3M6 12H3" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-semibold text-purple-200">3:40 PM</span>
+            <div class="font-bold text-lg">Micro-Interactions & Reveal</div>
+            <p class="text-sm text-purple-300 mt-1">Button hovers, scroll reveals, and accessibility best practices.</p>
+          </div>
+        </li>
+        <li class="ml-7">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center shadow-lg">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5v9" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-semibold text-purple-200">3:55 PM</span>
+            <div class="font-bold text-lg">Open Q&amp;A</div>
+            <p class="text-sm text-purple-300 mt-1">Showcase your code, get feedback, and get a list of best resources.
+            </p>
+          </div>
+        </li>
+      </ol>
+      <div class="bg-purple-900/30 rounded-xl px-6 py-4 mt-14 text-purple-200 shadow-lg">
+        <h3 class="font-bold text-purple-100 mb-2">What to Bring:</h3>
+        <ul class="ml-5 list-disc list-inside text-purple-300 text-sm space-y-1">
+          <li>Laptop with any code editor</li>
+          <li>Any site you want to spice up</li>
+          <li>Curiosity for interactivity!</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-<section class="py-20 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
-  <div class="container mx-auto max-w-3xl px-4 ">
-    <h2 class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-      Frequently Asked Questions
-    </h2>
-    <div class="space-y-6">
-      <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer"><summary class="font-semibold text-purple-200">Are code samples provided?</summary>
-        <p class="mt-2 text-purple-300 text-sm">Yes—copies of the code and animation patterns will be downloadable after the event.</p>
-      </details>
-      <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer"><summary class="font-semibold text-purple-200">Is this beginner friendly?</summary>
-        <p class="mt-2 text-purple-300 text-sm">Absolutely! We start from no animation and move up—no JS required.</p>
-      </details>
+  </section>
+  <section class="py-12 bg-gradient-to-b from-[#181134] via-purple-950 to-[#0b0115]">
+    <div class="container mx-auto max-w-3xl px-4">
+      <h2 class="text-3xl font-extrabold text-purple-300 mb-6 text-center">Meet the Team</h2>
+      <div class="flex flex-col sm:flex-row sm:justify-center items-center gap-6">
+        <img src="https://i.pravatar.cc/120?img=68" alt="Alex Vega"
+          class="rounded-full h-28 w-28 object-cover ring-4 ring-purple-600 shadow-lg" />
+        <div class="max-w-xl text-center sm:text-left">
+          <h3 class="text-xl font-semibold text-purple-100">PurpleWave Crew</h3>
+          <p class="text-purple-300 mb-2">Design & Animation Team</p>
+          <p class="text-purple-300 text-sm leading-relaxed">
+            The crew behind PurpleWave, notorious for dazzling gradient sites and clever effects—expect practical motion
+            lessons and performance tips!
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section class="py-12 bg-purple-950 text-center">
-  <h3 class="text-2xl font-bold mb-4">Questions?</h3>
-  <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 hours.</p>
-  <a href="mailto:events@purplewave.com"
-    class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
-    Email the Event Team
-  </a>
-</section>
+  </section>
+  <section class="py-20 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
+    <div class="container mx-auto max-w-3xl px-4 ">
+      <h2
+        class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
+          <summary class="font-semibold text-purple-200">Are code samples provided?</summary>
+          <p class="mt-2 text-purple-300 text-sm">Yes—copies of the code and animation patterns will be downloadable
+            after the event.</p>
+        </details>
+        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
+          <summary class="font-semibold text-purple-200">Is this beginner friendly?</summary>
+          <p class="mt-2 text-purple-300 text-sm">Absolutely! We start from no animation and move up—no JS required.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 bg-purple-950 text-center">
+    <h3 class="text-2xl font-bold mb-4">Questions?</h3>
+    <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 hours.</p>
+    <a href="mailto:events@purplewave.com"
+      class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
+      Email the Event Team
+    </a>
+  </section>
 </body>
+
 </html>

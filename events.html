@@ -1,188 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PurpleWave | Event Registration</title>
 
   <!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
+  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+    crossorigin="anonymous">
   <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
-  
+
   <!-- Tailwind (replace with purged build in prod) -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Shared utilities -->
   <style>
-    @layer utilities{
-      @keyframes pulse-slow{0%,100%{transform:scale(.95);opacity:.35}50%{transform:scale(1.05);opacity:.55}}
-      .animate-pulse-slow{animation:pulse-slow 9s ease-in-out infinite}
-      .card-shadow { box-shadow: 0 4px 32px 0 rgba(115,0,255,0.08), 0 2px 4px 0 rgba(135,80,220,0.10);}
-      .focus-outline:focus { outline:2px solid #A78BFA; outline-offset:2px;}
+    @layer utilities {
+      @keyframes pulse-slow {
+
+        0%,
+        100% {
+          transform: scale(.95);
+          opacity: .35
+        }
+
+        50% {
+          transform: scale(1.05);
+          opacity: .55
+        }
+      }
+
+      .animate-pulse-slow {
+        animation: pulse-slow 9s ease-in-out infinite
+      }
+
+      .card-shadow {
+        box-shadow: 0 4px 32px 0 rgba(115, 0, 255, 0.08), 0 2px 4px 0 rgba(135, 80, 220, 0.10);
+      }
+
+      .focus-outline:focus {
+        outline: 2px solid #A78BFA;
+        outline-offset: 2px;
+      }
     }
   </style>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-YMPCVDJBLZ');
-</script>
+    gtag('config', 'G-YMPCVDJBLZ');
+  </script>
+  <script src="js/global-navbar.js" defer></script>
 </head>
 
 <body class="bg-[#0b0115] text-purple-100 font-sans scroll-smooth">
 
-   <!-- Navbar -->
-  <nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Logo + Brand -->
-      <a href="/" class="flex items-center gap-2 focus-outline">
-        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-             alt="PurpleWave logo" class="h-10 w-auto" loading="lazy"/>
-        <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-      </a>
-      
-      <!-- Navigation links -->
-      <ul class="flex space-x-6 text-purple-200">
-        <li><a href="/" class="hover:text-white transition focus-outline">Home</a></li>
-        <li><a href="aboutus.html"  class="hover:text-white transition focus-outline">About</a></li>
-        <li><a href="services.html" class="hover:text-white transition focus-outline">Services</a></li>
-        <li><a href="events.html"   class="hover:text-white transition focus-outline">Events</a></li>
-        <li><a href="contact.html"  class="hover:text-white transition focus-outline">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <global-navbar></global-navbar>
 
-<!-- HERO section-->
-<header class="relative isolate flex flex-col items-center justify-center min-h-[60vh] overflow-hidden">
+  <!-- HERO section-->
+  <header class="relative isolate flex flex-col items-center justify-center min-h-[60vh] overflow-hidden">
 
-  <!-- VIDEO as Background -->
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    class="absolute inset-0 w-full h-full object-cover z-0"
-    poster="https://img.goodfon.com/original/1920x1080/d/f4/anime-art-final-fantazi-fioletovyi-fon-demon-ubiitsa-oruzhie.jpg"
-  >
-    <source src="https://cdn.pixabay.com/video/2020/11/14/56375-479358459_large.mp4" type="video/mp4" />
-    <!-- fallback image or message -->
-    Your browser does not support the video tag.
-  </video>
+    <!-- VIDEO as Background -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0"
+      poster="https://img.goodfon.com/original/1920x1080/d/f4/anime-art-final-fantazi-fioletovyi-fon-demon-ubiitsa-oruzhie.jpg">
+      <source src="https://cdn.pixabay.com/video/2020/11/14/56375-479358459_large.mp4" type="video/mp4" />
+      <!-- fallback image or message -->
+      Your browser does not support the video tag.
+    </video>
 
-  <!-- Overlay for darkening and readability -->
-  <!-- <span class="absolute inset-0 bg-black/80 backdrop-blur-sm z-10"></span> -->
+    <!-- Overlay for darkening and readability -->
+    <!-- <span class="absolute inset-0 bg-black/80 backdrop-blur-sm z-10"></span> -->
 
-  <!-- Hero Text Content -->
-  <h1 class="relative z-20 text-4xl sm:text-5xl md:text-6xl text-center font-extrabold bg-clip-text text-transparent
+    <!-- Hero Text Content -->
+    <h1 class="relative z-20 text-4xl sm:text-5xl md:text-6xl text-center font-extrabold bg-clip-text text-transparent
     bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400">
-    PurpleWave — Upcoming Events
-  </h1>
-</header>
+      PurpleWave — Upcoming Events
+    </h1>
+  </header>
 
 
-<!-- DYNAMIC WEEKLY EVENTS WITH IMAGES -->
-<section class="py-24 bg-gradient-to-b from-[#13051d] via-purple-900/90 to-[#0b0115]">
-  <div class="container mx-auto px-4 max-w-3xl">
+  <!-- DYNAMIC WEEKLY EVENTS WITH IMAGES -->
+  <section class="py-24 bg-gradient-to-b from-[#13051d] via-purple-900/90 to-[#0b0115]">
+    <div class="container mx-auto px-4 max-w-3xl">
 
-    <!-- Today's Highlighted Event -->
-    <div id="todayEventCard"
-         class="rounded-3xl bg-white/5 backdrop-blur-sm shadow-2xl card-shadow ring-1 ring-purple-700/40 p-7 mb-12 transition-all flex flex-col sm:flex-row items-center gap-8">
-      <!-- Filled by JS below -->
+      <!-- Today's Highlighted Event -->
+      <div id="todayEventCard"
+        class="rounded-3xl bg-white/5 backdrop-blur-sm shadow-2xl card-shadow ring-1 ring-purple-700/40 p-7 mb-12 transition-all flex flex-col sm:flex-row items-center gap-8">
+        <!-- Filled by JS below -->
+      </div>
+
+      <!-- This week's event line-up -->
+      <h3
+        class="text-xl font-bold mb-8 text-center bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
+        This Week's Lineup
+      </h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="weekEvents"></div>
+
     </div>
+  </section>
 
-    <!-- This week's event line-up -->
-    <h3 class="text-xl font-bold mb-8 text-center bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-      This Week's Lineup
-    </h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="weekEvents"></div>
+  <script>
+    const weeklyEvents = [
+      {
+        day: "Monday",
+        path: "events/monday.html",
+        title: "UI Design Bootcamp",
+        time: "10:00 AM – 11:30 AM",
+        desc: "Learn the secrets of purple-gradient UI design with live Figma & Tailwind demos.",
+        speaker: "Alex Vega",
+        highlight: "Workshop",
+        img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        day: "Tuesday",
+        path: "events/tuesday.html",
+        title: "Frontend Fun with AI",
+        time: "12:00 PM – 1:30 PM",
+        desc: "Harness generative AI for code, copy, and color schemes in real-world sites.",
+        speaker: "Mira Patel",
+        highlight: "Talk",
+        img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        day: "Wednesday",
+        path: "events/wednesday.html",
+        title: "Brand Lab Live",
+        time: "2:00 PM – 3:00 PM",
+        desc: "Rebranding a local business: logo, fonts, and purplewave identity in action.",
+        speaker: "Chris Huang",
+        highlight: "Case Study",
+        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        day: "Thursday",
+        path: "events/thursday.html",
+        title: "No-Code Power Hour",
+        time: "11:00 AM – 12:30 PM",
+        desc: "Build a full-featured landing page—no code, all sass—with Framer & Tailwind Play.",
+        speaker: "Dana O’Leary",
+        highlight: "Demo",
+        img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        day: "Friday",
+        path: "events/friday.html",
+        title: "Web Animation 101",
+        time: "3:00 PM – 4:00 PM",
+        desc: "Make your site pop with micro-interactions, gradient motion, and smooth SVG waves.",
+        speaker: "PurpleWave Crew",
+        highlight: "Live Coding",
+        img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        day: "Saturday",
+        path: "events/saturday.html",
+        title: "Ask Me Anything",
+        time: "6:00 PM – 7:30 PM",
+        desc: "A fun, open Q&A with all speakers—bring your code, your ideas, and your memes.",
+        speaker: "All Panelists",
+        highlight: "AMA",
+        img: "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        day: "Sunday",
+        path: "events/sunday.html",
+        title: "Next-Gen Web",
+        time: "4:00 PM – 5:15 PM",
+        desc: "Future-of-web lightning talks & purplewave afterparty music session. Don’t miss it!",
+        speaker: "Special Guests",
+        highlight: "Lightning Talks",
+        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
 
-  </div>
-</section>
+    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday,...
+    const eventIndex = today === 0 ? 6 : today - 1;
+    const event = weeklyEvents[eventIndex];
 
-<script>
-const weeklyEvents = [
-  {
-    day: "Monday",
-    path: "events/monday.html",
-    title: "UI Design Bootcamp",
-    time: "10:00 AM – 11:30 AM",
-    desc: "Learn the secrets of purple-gradient UI design with live Figma & Tailwind demos.",
-    speaker: "Alex Vega",
-    highlight: "Workshop",
-    img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    day: "Tuesday",
-    path: "events/tuesday.html",
-    title: "Frontend Fun with AI",
-    time: "12:00 PM – 1:30 PM",
-    desc: "Harness generative AI for code, copy, and color schemes in real-world sites.",
-    speaker: "Mira Patel",
-    highlight: "Talk",
-    img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    day: "Wednesday",
-    path: "events/wednesday.html",
-    title: "Brand Lab Live",
-    time: "2:00 PM – 3:00 PM",
-    desc: "Rebranding a local business: logo, fonts, and purplewave identity in action.",
-    speaker: "Chris Huang",
-    highlight: "Case Study",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    day: "Thursday",
-    path: "events/thursday.html",
-    title: "No-Code Power Hour",
-    time: "11:00 AM – 12:30 PM",
-    desc: "Build a full-featured landing page—no code, all sass—with Framer & Tailwind Play.",
-    speaker: "Dana O’Leary",
-    highlight: "Demo",
-    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    day: "Friday",
-    path: "events/friday.html",
-    title: "Web Animation 101",
-    time: "3:00 PM – 4:00 PM",
-    desc: "Make your site pop with micro-interactions, gradient motion, and smooth SVG waves.",
-    speaker: "PurpleWave Crew",
-    highlight: "Live Coding",
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    day: "Saturday",
-    path: "events/saturday.html",
-    title: "Ask Me Anything",
-    time: "6:00 PM – 7:30 PM",
-    desc: "A fun, open Q&A with all speakers—bring your code, your ideas, and your memes.",
-    speaker: "All Panelists",
-    highlight: "AMA",
-    img: "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    day: "Sunday",
-    path: "events/sunday.html",
-    title: "Next-Gen Web",
-    time: "4:00 PM – 5:15 PM",
-    desc: "Future-of-web lightning talks & purplewave afterparty music session. Don’t miss it!",
-    speaker: "Special Guests",
-    highlight: "Lightning Talks",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-  }
-];
-
-const today = new Date().getDay(); // 0 = Sunday, 1 = Monday,...
-const eventIndex = today === 0 ? 6 : today - 1;
-const event = weeklyEvents[eventIndex];
-
-// Today's event card with image
-document.getElementById('todayEventCard').innerHTML = `
+    // Today's event card with image
+    document.getElementById('todayEventCard').innerHTML = `
   <img src="${event.img}" alt="${event.title}" class="h-36 w-36 rounded-2xl object-cover ring-2 ring-purple-400 shadow-lg flex-none mb-4 sm:mb-0"/>
   <div class="flex-1">
     <div class="mb-2 flex items-center gap-2">
@@ -200,9 +203,9 @@ document.getElementById('todayEventCard').innerHTML = `
   </div>
 `;
 
-// Week grid: every event, image, clickable
-document.getElementById('weekEvents').innerHTML = weeklyEvents.map((ev, i) => `
-  <a href="${ev.path}" class="block group bg-white/5 card-shadow rounded-xl overflow-hidden transition ring-1 ring-purple-700/30 hover:scale-105 hover:ring-pink-400 shadow-lg p-0 ${i===eventIndex ? 'ring-2 ring-pink-400 scale-105 border-t-4 border-pink-400' : ''} focus-outline">
+    // Week grid: every event, image, clickable
+    document.getElementById('weekEvents').innerHTML = weeklyEvents.map((ev, i) => `
+  <a href="${ev.path}" class="block group bg-white/5 card-shadow rounded-xl overflow-hidden transition ring-1 ring-purple-700/30 hover:scale-105 hover:ring-pink-400 shadow-lg p-0 ${i === eventIndex ? 'ring-2 ring-pink-400 scale-105 border-t-4 border-pink-400' : ''} focus-outline">
     <img src="${ev.img}" alt="${ev.title}" class="h-40 w-full object-cover group-hover:brightness-110 transition"/>
     <div class="p-5">
       <div class="flex items-center gap-2 mb-1">
@@ -215,295 +218,300 @@ document.getElementById('weekEvents').innerHTML = weeklyEvents.map((ev, i) => `
     </div>
   </a>
 `).join('');
-</script>
+  </script>
 
-<!-- EVENT DETAILS (with images)  -->
-<section class="py-24 bg-gradient-to-b from-[#13051d] via-purple-900/90 to-[#0b0115]">
-  <div class="container mx-auto px-4 max-w-5xl grid gap-20 lg:grid-cols-2 lg:items-start">
+  <!-- EVENT DETAILS (with images)  -->
+  <section class="py-24 bg-gradient-to-b from-[#13051d] via-purple-900/90 to-[#0b0115]">
+    <div class="container mx-auto px-4 max-w-5xl grid gap-20 lg:grid-cols-2 lg:items-start">
 
-    <!-- Agenda Snapshot  -->
-    <div>
-      <h2 class="text-3xl font-extrabold mb-6
+      <!-- Agenda Snapshot  -->
+      <div>
+        <h2 class="text-3xl font-extrabold mb-6
                  text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400">
-        Agenda Snapshot
-      </h2>
-      <ol class="space-y-7">
-        <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/55 ring-1 ring-purple-700/20 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80"
-               alt="Keynote"
-               class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-purple-500/60">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-purple-300 font-semibold text-sm">10:00 AM</span>
-              <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Keynote</span>
+          Agenda Snapshot
+        </h2>
+        <ol class="space-y-7">
+          <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/55 ring-1 ring-purple-700/20 shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80"
+              alt="Keynote" class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-purple-500/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold text-sm">10:00 AM</span>
+                <span
+                  class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Keynote</span>
+              </div>
+              <div class="font-semibold text-purple-100">Pixels With Purpose</div>
+              <div class="text-xs text-purple-400">Kick-off vision and Q&A about digital experiences</div>
             </div>
-            <div class="font-semibold text-purple-100">Pixels With Purpose</div>
-            <div class="text-xs text-purple-400">Kick-off vision and Q&A about digital experiences</div>
-          </div>
-        </li>
-        <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/40 ring-1 ring-purple-700/20 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=96&h=96&q=80"
-               alt="Workshop"
-               class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-fuchsia-500/60">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-purple-300 font-semibold text-sm">11:30 AM</span>
-              <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Workshop</span>
+          </li>
+          <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/40 ring-1 ring-purple-700/20 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=96&h=96&q=80"
+              alt="Workshop" class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-fuchsia-500/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold text-sm">11:30 AM</span>
+                <span
+                  class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Workshop</span>
+              </div>
+              <div class="font-semibold text-purple-100">Building a Neon-Gradient UI</div>
+              <div class="text-xs text-purple-400">Live coding & modern CSS/JS with Tailwind</div>
             </div>
-            <div class="font-semibold text-purple-100">Building a Neon-Gradient UI</div>
-            <div class="text-xs text-purple-400">Live coding & modern CSS/JS with Tailwind</div>
-          </div>
-        </li>
-        <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/55 ring-1 ring-purple-700/20 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=96&h=96&q=80"
-               alt="Lunch & Networking"
-               class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-pink-500/60">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-purple-300 font-semibold text-sm">1:00 PM</span>
-              <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Networking</span>
+          </li>
+          <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/55 ring-1 ring-purple-700/20 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=96&h=96&q=80"
+              alt="Lunch & Networking" class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-pink-500/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold text-sm">1:00 PM</span>
+                <span
+                  class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Networking</span>
+              </div>
+              <div class="font-semibold text-purple-100">Lunch & Connections</div>
+              <div class="text-xs text-purple-400">Purple cuisine + meet fellow attendees</div>
             </div>
-            <div class="font-semibold text-purple-100">Lunch & Connections</div>
-            <div class="text-xs text-purple-400">Purple cuisine + meet fellow attendees</div>
-          </div>
-        </li>
-        <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/40 ring-1 ring-purple-700/20 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=96&h=96&q=80"
-               alt="Panel"
-               class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-purple-400/60">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-purple-300 font-semibold text-sm">2:00 PM</span>
-              <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Panel</span>
+          </li>
+          <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/40 ring-1 ring-purple-700/20 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=96&h=96&q=80"
+              alt="Panel" class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-purple-400/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold text-sm">2:00 PM</span>
+                <span
+                  class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Panel</span>
+              </div>
+              <div class="font-semibold text-purple-100">AI in Front-End Design</div>
+              <div class="text-xs text-purple-400">Expert debate on the future of creative code</div>
             </div>
-            <div class="font-semibold text-purple-100">AI in Front-End Design</div>
-            <div class="text-xs text-purple-400">Expert debate on the future of creative code</div>
-          </div>
-        </li>
-        <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/55 ring-1 ring-purple-700/20 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=96&h=96&q=80"
-               alt="Code-along"
-               class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-purple-600/60">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-purple-300 font-semibold text-sm">4:00 PM</span>
-              <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Code-along</span>
+          </li>
+          <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/55 ring-1 ring-purple-700/20 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=96&h=96&q=80"
+              alt="Code-along" class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-purple-600/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold text-sm">4:00 PM</span>
+                <span
+                  class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">Code-along</span>
+              </div>
+              <div class="font-semibold text-purple-100">Tailwind Tricks</div>
+              <div class="text-xs text-purple-400">Hands-on demo on utility-first workflows</div>
             </div>
-            <div class="font-semibold text-purple-100">Tailwind Tricks</div>
-            <div class="text-xs text-purple-400">Hands-on demo on utility-first workflows</div>
-          </div>
-        </li>
-        <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/40 ring-1 ring-purple-700/20 shadow-sm">
-          <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=96&h=96&q=80"
-               alt="After-party"
-               class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-fuchsia-500/60">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-purple-300 font-semibold text-sm">6:00 PM</span>
-              <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">After-party</span>
+          </li>
+          <li class="flex gap-4 items-center p-4 rounded-2xl bg-black/40 ring-1 ring-purple-700/20 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=96&h=96&q=80"
+              alt="After-party" class="h-16 w-16 rounded-xl object-cover shadow-lg border-2 border-fuchsia-500/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-300 font-semibold text-sm">6:00 PM</span>
+                <span
+                  class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-2 py-0.5 rounded-full text-xs text-white">After-party</span>
+              </div>
+              <div class="font-semibold text-purple-100">DJ Set & Chill</div>
+              <div class="text-xs text-purple-400">Unwind with music, purple mocktails, and vibes</div>
             </div>
-            <div class="font-semibold text-purple-100">DJ Set & Chill</div>
-            <div class="text-xs text-purple-400">Unwind with music, purple mocktails, and vibes</div>
-          </div>
-        </li>
-      </ol>
-    </div>
+          </li>
+        </ol>
+      </div>
 
-    <!--  Meet the Speakers  -->
-    <div class="mt-14 lg:mt-0">
-      <h2 class="text-3xl font-extrabold mb-6 text-center
+      <!--  Meet the Speakers  -->
+      <div class="mt-14 lg:mt-0">
+        <h2 class="text-3xl font-extrabold mb-6 text-center
                 text-transparent bg-clip-text
                 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400">
-        Meet the Speakers
-      </h2>
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
-          <img src="https://i.pravatar.cc/120?img=68" alt="Alex Vega"
-               class="h-20 w-20 rounded-full border-4 border-purple-500/60 mb-3 shadow-md">
-          <h4 class="font-semibold text-purple-50 mb-1">Alex Vega</h4>
-          <span class="text-[13px] text-purple-300 mb-1">Lead Designer, PurpleWave</span>
-          <span class="inline-block text-xs bg-fuchsia-600/30 px-3 py-1 mt-1 rounded-full text-white font-semibold">Keynote, Workshop</span>
-        </div>
-        <div class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
-          <img src="https://i.pravatar.cc/120?img=33" alt="Mira Patel"
-               class="h-20 w-20 rounded-full border-4 border-fuchsia-400/70 mb-3 shadow-md">
-          <h4 class="font-semibold text-purple-50 mb-1">Mira Patel</h4>
-          <span class="text-[13px] text-purple-300 mb-1">Head of Front-End, Visma</span>
-          <span class="inline-block text-xs bg-purple-400/20 px-3 py-1 mt-1 rounded-full text-white font-semibold">Panel, AI Talk</span>
-        </div>
-        <div class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
-          <img src="https://i.pravatar.cc/120?img=12" alt="Chris Huang"
-               class="h-20 w-20 rounded-full border-4 border-pink-400/60 mb-3 shadow-md">
-          <h4 class="font-semibold text-purple-50 mb-1">Chris Huang</h4>
-          <span class="text-[13px] text-purple-300 mb-1">Creator, NeonUI.io</span>
-          <span class="inline-block text-xs bg-pink-500/30 px-3 py-1 mt-1 rounded-full text-white font-semibold">Case Study</span>
-        </div>
-        <div class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
-          <img src="https://i.pravatar.cc/120?img=49" alt="Dana O’Leary"
-               class="h-20 w-20 rounded-full border-4 border-fuchsia-400/70 mb-3 shadow-md">
-          <h4 class="font-semibold text-purple-50 mb-1">Dana O’Leary</h4>
-          <span class="text-[13px] text-purple-300 mb-1">UX Researcher, Polyform</span>
-          <span class="inline-block text-xs bg-gradient-to-r from-fuchsia-500/30 to-purple-500/30 px-3 py-1 mt-1 rounded-full text-white font-semibold">Demo, Q&amp;A</span>
+          Meet the Speakers
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div
+            class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
+            <img src="https://i.pravatar.cc/120?img=68" alt="Alex Vega"
+              class="h-20 w-20 rounded-full border-4 border-purple-500/60 mb-3 shadow-md">
+            <h4 class="font-semibold text-purple-50 mb-1">Alex Vega</h4>
+            <span class="text-[13px] text-purple-300 mb-1">Lead Designer, PurpleWave</span>
+            <span
+              class="inline-block text-xs bg-fuchsia-600/30 px-3 py-1 mt-1 rounded-full text-white font-semibold">Keynote,
+              Workshop</span>
+          </div>
+          <div
+            class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
+            <img src="https://i.pravatar.cc/120?img=33" alt="Mira Patel"
+              class="h-20 w-20 rounded-full border-4 border-fuchsia-400/70 mb-3 shadow-md">
+            <h4 class="font-semibold text-purple-50 mb-1">Mira Patel</h4>
+            <span class="text-[13px] text-purple-300 mb-1">Head of Front-End, Visma</span>
+            <span
+              class="inline-block text-xs bg-purple-400/20 px-3 py-1 mt-1 rounded-full text-white font-semibold">Panel,
+              AI Talk</span>
+          </div>
+          <div
+            class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
+            <img src="https://i.pravatar.cc/120?img=12" alt="Chris Huang"
+              class="h-20 w-20 rounded-full border-4 border-pink-400/60 mb-3 shadow-md">
+            <h4 class="font-semibold text-purple-50 mb-1">Chris Huang</h4>
+            <span class="text-[13px] text-purple-300 mb-1">Creator, NeonUI.io</span>
+            <span class="inline-block text-xs bg-pink-500/30 px-3 py-1 mt-1 rounded-full text-white font-semibold">Case
+              Study</span>
+          </div>
+          <div
+            class="rounded-2xl bg-black/60 backdrop-blur p-6 flex flex-col items-center ring-1 ring-purple-700/40 shadow-lg hover:scale-105 transition">
+            <img src="https://i.pravatar.cc/120?img=49" alt="Dana O’Leary"
+              class="h-20 w-20 rounded-full border-4 border-fuchsia-400/70 mb-3 shadow-md">
+            <h4 class="font-semibold text-purple-50 mb-1">Dana O’Leary</h4>
+            <span class="text-[13px] text-purple-300 mb-1">UX Researcher, Polyform</span>
+            <span
+              class="inline-block text-xs bg-gradient-to-r from-fuchsia-500/30 to-purple-500/30 px-3 py-1 mt-1 rounded-full text-white font-semibold">Demo,
+              Q&amp;A</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-   
 
-<!--REGISTRATION FORM -->
-<section class="relative py-20 bg-gradient-to-b from-purple-900/90 to-[#0b0115] overflow-hidden">
-  <div class="pointer-events-none absolute -top-40 right-1/3 h-[40rem] w-[40rem] rounded-full
+
+  <!--REGISTRATION FORM -->
+  <section class="relative py-20 bg-gradient-to-b from-purple-900/90 to-[#0b0115] overflow-hidden">
+    <div class="pointer-events-none absolute -top-40 right-1/3 h-[40rem] w-[40rem] rounded-full
               bg-fuchsia-600/20 blur-3xl animate-pulse-slow"></div>
 
-  <div class="container mx-auto px-4 max-w-4xl">
-    <div class="bg-white/5 backdrop-blur-sm rounded-3xl shadow-2xl ring-1 ring-purple-700/40 p-10">
-      <h2 class="text-3xl font-extrabold text-center mb-10
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-white/5 backdrop-blur-sm rounded-3xl shadow-2xl ring-1 ring-purple-700/40 p-10">
+        <h2 class="text-3xl font-extrabold text-center mb-10
                  text-transparent bg-clip-text
                  bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400">
-        Secure your spot
-      </h2>
+          Secure your spot
+        </h2>
 
-      <!-- ORIGINAL FORM CONTENT  -->
-      <!-- (pasted exactly as you supplied) -->
-      <form id="signupForm" class="grid gap-6 sm:grid-cols-2" novalidate>
-        <!-- Full Name -->
-        <div class="sm:col-span-2">
-          <label for="fullName" class="block mb-1 text-purple-200/90">Full Name *</label>
-          <input id="fullName" name="fullName" type="text" required
-                 class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
+        <!-- ORIGINAL FORM CONTENT  -->
+        <!-- (pasted exactly as you supplied) -->
+        <form id="signupForm" class="grid gap-6 sm:grid-cols-2" novalidate>
+          <!-- Full Name -->
+          <div class="sm:col-span-2">
+            <label for="fullName" class="block mb-1 text-purple-200/90">Full Name *</label>
+            <input id="fullName" name="fullName" type="text" required class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
                         focus:ring-2 focus:ring-purple-600 outline-none" />
-        </div>
-        <!-- Email -->
-        <div>
-          <label for="email" class="block mb-1 text-purple-200/90">Email *</label>
-          <input id="email" name="email" type="email" required
-                 class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
+          </div>
+          <!-- Email -->
+          <div>
+            <label for="email" class="block mb-1 text-purple-200/90">Email *</label>
+            <input id="email" name="email" type="email" required class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
                         focus:ring-2 focus:ring-purple-600 outline-none" />
-        </div>
-        <!-- Phone -->
-        <div>
-          <label for="phone" class="block mb-1 text-purple-200/90">Phone *</label>
-          <input id="phone" name="phone" type="tel" required
-                 class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
+          </div>
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="block mb-1 text-purple-200/90">Phone *</label>
+            <input id="phone" name="phone" type="tel" required class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
                         focus:ring-2 focus:ring-purple-600 outline-none" />
-        </div>
-        <!-- Age -->
-        <div>
-          <label for="age" class="block mb-1 text-purple-200/90">Age *</label>
-          <input id="age" name="age" type="number" min="10" max="99" required
-                 class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
+          </div>
+          <!-- Age -->
+          <div>
+            <label for="age" class="block mb-1 text-purple-200/90">Age *</label>
+            <input id="age" name="age" type="number" min="10" max="99" required class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
                         focus:ring-2 focus:ring-purple-600 outline-none" />
-        </div>
-        <!-- Preferred Date -->
-        <div>
-          <label for="session" class="block mb-1 text-purple-200/90">Preferred Session Date *</label>
-          <input id="session" name="session" type="date" required
-                 class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
+          </div>
+          <!-- Preferred Date -->
+          <div>
+            <label for="session" class="block mb-1 text-purple-200/90">Preferred Session Date *</label>
+            <input id="session" name="session" type="date" required class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
                         focus:ring-2 focus:ring-purple-600 outline-none" />
-        </div>
-        <!-- Program Type -->
-        <div class="sm:col-span-2">
-          <label for="program" class="block mb-1 text-purple-200/90">Program Type *</label>
-          <select id="program" name="program" required
-                  class="w-full rounded-md bg-black/30 px-4 py-2
+          </div>
+          <!-- Program Type -->
+          <div class="sm:col-span-2">
+            <label for="program" class="block mb-1 text-purple-200/90">Program Type *</label>
+            <select id="program" name="program" required class="w-full rounded-md bg-black/30 px-4 py-2
                          focus:ring-2 focus:ring-purple-600 outline-none">
-            <option value="" disabled selected>Select an option</option>
-            <option>Web Design Bootcamp</option>
-            <option>Brand Identity Workshop</option>
-            <option>Full-Stack Internship</option>
-            <option>Online Masterclass</option>
-          </select>
-        </div>
-        <!-- Motivation -->
-        <div class="sm:col-span-2">
-          <label for="message" class="block mb-1 text-purple-200/90">Why do you want to join?</label>
-          <textarea id="message" name="message" rows="4"
-                    class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
+              <option value="" disabled selected>Select an option</option>
+              <option>Web Design Bootcamp</option>
+              <option>Brand Identity Workshop</option>
+              <option>Full-Stack Internship</option>
+              <option>Online Masterclass</option>
+            </select>
+          </div>
+          <!-- Motivation -->
+          <div class="sm:col-span-2">
+            <label for="message" class="block mb-1 text-purple-200/90">Why do you want to join?</label>
+            <textarea id="message" name="message" rows="4" class="w-full rounded-md bg-black/30 px-4 py-2 placeholder-purple-400
                            focus:ring-2 focus:ring-purple-600 outline-none"></textarea>
-        </div>
-        <!-- GDPR consent -->
-        <div class="sm:col-span-2 flex items-start gap-3">
-          <input id="consent" name="consent" type="checkbox" required
-                 class="mt-1 h-5 w-5 rounded text-purple-600 focus:ring-purple-600" />
-          <label for="consent" class="text-sm text-purple-300 leading-tight">
-            I agree to receive emails from PurpleWave about this event and future updates.
-          </label>
-        </div>
-        <!-- submit -->
-        <div class="sm:col-span-2 text-center mt-4">
-          <button type="submit"
-                  class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r
+          </div>
+          <!-- GDPR consent -->
+          <div class="sm:col-span-2 flex items-start gap-3">
+            <input id="consent" name="consent" type="checkbox" required
+              class="mt-1 h-5 w-5 rounded text-purple-600 focus:ring-purple-600" />
+            <label for="consent" class="text-sm text-purple-300 leading-tight">
+              I agree to receive emails from PurpleWave about this event and future updates.
+            </label>
+          </div>
+          <!-- submit -->
+          <div class="sm:col-span-2 text-center mt-4">
+            <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r
                          from-purple-600 to-pink-500 px-10 py-3 text-white font-semibold
                          shadow-lg hover:brightness-110 transition">
-            Submit Application
-          </button>
-        </div>
-      </form>
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ  -->
-<section class="py-24 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
-  <div class="container mx-auto px-4 max-w-3xl">
-    <h2 class="text-3xl font-extrabold text-center mb-10
+  <!-- FAQ  -->
+  <section class="py-24 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-extrabold text-center mb-10
                text-transparent bg-clip-text
                bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400">
-      Frequently Asked
-    </h2>
+        Frequently Asked
+      </h2>
 
-    <div class="space-y-6">
-      <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40">
-        <summary class="cursor-pointer font-semibold text-purple-200">Is the event free?</summary>
-        <p class="mt-2 text-purple-300 text-sm">Yes! Registration is free but seats are limited.</p>
-      </details>
+      <div class="space-y-6">
+        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40">
+          <summary class="cursor-pointer font-semibold text-purple-200">Is the event free?</summary>
+          <p class="mt-2 text-purple-300 text-sm">Yes! Registration is free but seats are limited.</p>
+        </details>
 
-      <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40">
-        <summary class="cursor-pointer font-semibold text-purple-200">Will sessions be recorded?</summary>
-        <p class="mt-2 text-purple-300 text-sm">All talks except the workshop will be available on-demand.</p>
-      </details>
+        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40">
+          <summary class="cursor-pointer font-semibold text-purple-200">Will sessions be recorded?</summary>
+          <p class="mt-2 text-purple-300 text-sm">All talks except the workshop will be available on-demand.</p>
+        </details>
 
-      <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40">
-        <summary class="cursor-pointer font-semibold text-purple-200">What should I prepare?</summary>
-        <p class="mt-2 text-purple-300 text-sm">Bring a laptop for the live code-along and headphones for the DJ set.</p>
-      </details>
+        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40">
+          <summary class="cursor-pointer font-semibold text-purple-200">What should I prepare?</summary>
+          <p class="mt-2 text-purple-300 text-sm">Bring a laptop for the live code-along and headphones for the DJ set.
+          </p>
+        </details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT STRIP  -->
-<section class="py-12 bg-purple-950 text-center">
-  <h3 class="text-2xl font-bold mb-4">Questions?</h3>
-  <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 h.</p>
-  <a href="mailto:events@purplewave.com"
-     class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r
+  <!-- CONTACT STRIP  -->
+  <section class="py-12 bg-purple-950 text-center">
+    <h3 class="text-2xl font-bold mb-4">Questions?</h3>
+    <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 h.</p>
+    <a href="mailto:events@purplewave.com" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r
             from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold
             shadow-lg hover:brightness-110 transition">
-    Email the Event Team
-  </a>
-</section>
+      Email the Event Team
+    </a>
+  </section>
 
-<!-- FORM VALIDATION JS -->
-<script>
-  const form = document.getElementById('signupForm');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.classList.add('was-validated');
-      return alert('Please fill in all required fields.');
-    }
-    alert('Thank you! Your application has been received.');
-    form.reset();
-  });
-
-  document.querySelectorAll('#signupForm [required]').forEach(input => {
-    input.addEventListener('input', () => {
-      input.classList.toggle('ring-red-500', !input.checkValidity());
-      input.classList.toggle('ring-green-500',  input.checkValidity());
+  <!-- FORM VALIDATION JS -->
+  <script>
+    const form = document.getElementById('signupForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return alert('Please fill in all required fields.');
+      }
+      alert('Thank you! Your application has been received.');
+      form.reset();
     });
-  });
-</script>
+
+    document.querySelectorAll('#signupForm [required]').forEach(input => {
+      input.addEventListener('input', () => {
+        input.classList.toggle('ring-red-500', !input.checkValidity());
+        input.classList.toggle('ring-green-500', input.checkValidity());
+      });
+    });
+  </script>
 </body>
+
 </html>

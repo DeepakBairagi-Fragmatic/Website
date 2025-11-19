@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,36 +23,17 @@
     }
   </style>
 
-<!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
+  <!-- Tracking Script -->
+  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+    crossorigin="anonymous">
   <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
-    
+
+  <script src="js/global-navbar.js" defer></script>
 </head>
+
 <body class="bg-black text-purple-300 font-sans">
   <!-- Navbar -->
-<nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-
-    <!-- Logo + Brand -->
-    <a href="/" class="flex items-center gap-2">
-      <img
-        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-        alt="PurpleWave logo"
-        class="h-10 w-auto"    
-        loading="lazy"/>
-      <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-    </a>
-
-    <!-- Navigation links -->
-    <ul class="flex space-x-6 text-purple-200">
-      <li><a href="/"     class="hover:text-white transition">Home</a></li>
-      <li><a href="aboutus.html"  class="hover:text-white transition">About</a></li>
-      <li><a href="services.html" class="hover:text-white transition">Services</a></li>
-      <li><a href="events.html" class="hover:text-white transition">Events</a></li>
-      <li><a href="contact.html"  class="hover:text-white transition">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <global-navbar></global-navbar>
 
   <!-- Privacy Policy Section -->
   <section class="py-20 bg-black">
@@ -59,22 +41,30 @@
       <h1 class="text-4xl font-bold text-purple-200 text-center mb-8">Privacy Policy</h1>
       <div class="max-w-3xl mx-auto text-purple-400">
         <p class="mb-6">
-          At PurpleWave, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information, including our use of cookies, when you visit our website.
+          At PurpleWave, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use,
+          and safeguard your information, including our use of cookies, when you visit our website.
         </p>
 
         <h2 class="text-2xl font-semibold text-purple-200 mb-4">1. Cookies and Tracking Technologies</h2>
         <p class="mb-4">
-          We use cookies to enhance your experience on our website. Cookies are small text files stored on your device that help us understand how you interact with our site. We use the following types of cookies:
+          We use cookies to enhance your experience on our website. Cookies are small text files stored on your device
+          that help us understand how you interact with our site. We use the following types of cookies:
         </p>
         <ul class="list-disc list-inside mb-6">
-          <li><strong>Functional Cookies:</strong> These are essential for the website to function properly, such as remembering your consent preferences. They cannot be disabled.</li>
-          <li><strong>Advertising Cookies:</strong> These cookies allow us to deliver personalized advertisements based on your interests. You can enable or disable these cookies via our consent banner.</li>
-          <li><strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting anonymous data, such as page views and time spent on the site. You can enable or disable these cookies via our consent banner.</li>
+          <li><strong>Functional Cookies:</strong> These are essential for the website to function properly, such as
+            remembering your consent preferences. They cannot be disabled.</li>
+          <li><strong>Advertising Cookies:</strong> These cookies allow us to deliver personalized advertisements based
+            on your interests. You can enable or disable these cookies via our consent banner.</li>
+          <li><strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our
+            website by collecting anonymous data, such as page views and time spent on the site. You can enable or
+            disable these cookies via our consent banner.</li>
         </ul>
 
         <h2 class="text-2xl font-semibold text-purple-200 mb-4">2. Your Choices</h2>
         <p class="mb-4">
-          When you first visit our website, you will be presented with a consent banner allowing you to accept, decline, or customize your cookie preferences. You can manage your preferences at any time by clicking the "Manage Cookies" link in the footer of our website.
+          When you first visit our website, you will be presented with a consent banner allowing you to accept, decline,
+          or customize your cookie preferences. You can manage your preferences at any time by clicking the "Manage
+          Cookies" link in the footer of our website.
         </p>
 
         <h2 class="text-2xl font-semibold text-purple-200 mb-4">3. User Rights</h2>
@@ -85,25 +75,30 @@
           <li><strong>Access:</strong> You can request access to the personal data we hold about you.</li>
           <li><strong>Correction:</strong> You can request that we correct any inaccurate data.</li>
           <li><strong>Deletion:</strong> You can request that we delete your personal data.</li>
-          <li><strong>Opt-Out:</strong> You can opt out of non-essential cookies or request that your data not be sold (for CCPA).</li>
+          <li><strong>Opt-Out:</strong> You can opt out of non-essential cookies or request that your data not be sold
+            (for CCPA).</li>
         </ul>
         <p class="mb-4">
-          To exercise these rights, please contact us at <a href="mailto:privacy@purplewave.com" class="text-purple-200 underline hover:text-white">privacy@purplewave.com</a>.
+          To exercise these rights, please contact us at <a href="mailto:privacy@purplewave.com"
+            class="text-purple-200 underline hover:text-white">privacy@purplewave.com</a>.
         </p>
 
         <h2 class="text-2xl font-semibold text-purple-200 mb-4">4. Data Security</h2>
         <p class="mb-4">
-          We implement appropriate technical and organizational measures to protect your data against unauthorized access, loss, or misuse. However, no system is completely secure, and we cannot guarantee absolute security.
+          We implement appropriate technical and organizational measures to protect your data against unauthorized
+          access, loss, or misuse. However, no system is completely secure, and we cannot guarantee absolute security.
         </p>
 
         <h2 class="text-2xl font-semibold text-purple-200 mb-4">5. Third-Party Services</h2>
         <p class="mb-4">
-          Our website may use third-party services, such as the Elfsight chatbot, which may collect data based on your consent to advertising or analytics cookies. Please review their privacy policies for more information.
+          Our website may use third-party services, such as the Elfsight chatbot, which may collect data based on your
+          consent to advertising or analytics cookies. Please review their privacy policies for more information.
         </p>
 
         <h2 class="text-2xl font-semibold text-purple-200 mb-4">6. Updates to This Policy</h2>
         <p class="mb-4">
-          We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the updated date will be reflected below.
+          We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the updated
+          date will be reflected below.
         </p>
         <p class="mb-4">
           <strong>Last Updated:</strong> May 8, 2025
@@ -114,7 +109,8 @@
           If you have any questions about this Privacy Policy or our data practices, please contact us at:
         </p>
         <p class="mb-4">
-          Email: <a href="mailto:privacy@purplewave.com" class="text-purple-200 underline hover:text-white">privacy@purplewave.com</a>
+          Email: <a href="mailto:privacy@purplewave.com"
+            class="text-purple-200 underline hover:text-white">privacy@purplewave.com</a>
         </p>
       </div>
     </div>
@@ -123,10 +119,12 @@
   <!-- Footer -->
   <footer class="bg-purple-950 py-6 text-center text-purple-200">
     <p class="mb-2">
-      © <script>document.write(new Date().getFullYear())</script> PurpleWave. All rights reserved.
+      ©
+      <script>document.write(new Date().getFullYear())</script> PurpleWave. All rights reserved.
     </p>
     <p>
-      <a href="javascript:void(0)" onclick="revokeConsent()" class="text-purple-200 underline hover:text-white">Manage Cookies</a>
+      <a href="javascript:void(0)" onclick="revokeConsent()" class="text-purple-200 underline hover:text-white">Manage
+        Cookies</a>
     </p>
   </footer>
 
@@ -135,7 +133,7 @@
 
   <!-- Iframe Height Adjustment Script -->
   <script>
-    window.addEventListener('message', function(event) {
+    window.addEventListener('message', function (event) {
       if (event.data.height !== undefined) {
         document.getElementById('consentIframe').style.height = event.data.height + 'px';
       }
@@ -146,4 +144,5 @@
     }
   </script>
 </body>
+
 </html>

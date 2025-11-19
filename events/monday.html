@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,58 +12,77 @@
   <style>
     @layer utilities {
       @keyframes pulse-slow {
-        0%, 100% {transform: scale(0.95); opacity: 0.35;}
-        50% { transform: scale(1.05); opacity: 0.55;}
+
+        0%,
+        100% {
+          transform: scale(0.95);
+          opacity: 0.35;
+        }
+
+        50% {
+          transform: scale(1.05);
+          opacity: 0.55;
+        }
       }
-      .animate-pulse-slow { animation: pulse-slow 9s ease-in-out infinite; }
-      .card-shadow { box-shadow: 0 4px 32px 0 rgba(115,0,255,.07), 0 2px 4px 0 rgba(135,80,220,.12);}
-      .focus-outline:focus { outline: 2px solid #A78BFA; outline-offset: 2px; }
+
+      .animate-pulse-slow {
+        animation: pulse-slow 9s ease-in-out infinite;
+      }
+
+      .card-shadow {
+        box-shadow: 0 4px 32px 0 rgba(115, 0, 255, .07), 0 2px 4px 0 rgba(135, 80, 220, .12);
+      }
+
+      .focus-outline:focus {
+        outline: 2px solid #A78BFA;
+        outline-offset: 2px;
+      }
     }
   </style>
-  
-  <!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
-  <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YMPCVDJBLZ');
-</script>
+  <!-- Tracking Script -->
+  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+    crossorigin="anonymous">
+  <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YMPCVDJBLZ');
+  </script>
+  </script>
+  <script src="/js/global-navbar.js" defer></script>
 </head>
+
 <body class="bg-[#0b0115] text-purple-100 font-sans scroll-smooth">
 
   <!-- Navbar -->
-  <nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="../events.html" class="flex items-center gap-2 focus-outline">
-        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-             alt="PurpleWave logo" class="h-10 w-auto" loading="lazy" />
-        <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-      </a>
-      <a href="../events.html" class="hover:text-white transition focus-outline">← Back to Events</a>
-    </div>
-  </nav>
+  <!-- Navbar -->
+  <global-navbar></global-navbar>
 
   <!-- Hero -->
-  <section class="relative pt-14 pb-8 flex flex-col items-center bg-gradient-to-b from-[#2e085a]/80 via-purple-900/80 to-[#0b0115]">
+  <section
+    class="relative pt-14 pb-8 flex flex-col items-center bg-gradient-to-b from-[#2e085a]/80 via-purple-900/80 to-[#0b0115]">
     <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"
-         alt="UI Design Bootcamp" 
-         class="rounded-2xl w-full max-w-3xl aspect-video object-cover shadow-2xl mb-7 border-4 border-purple-700/30" />
-    <h1 class="text-3xl sm:text-5xl font-extrabold mb-2 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
+      alt="UI Design Bootcamp"
+      class="rounded-2xl w-full max-w-3xl aspect-video object-cover shadow-2xl mb-7 border-4 border-purple-700/30" />
+    <h1
+      class="text-3xl sm:text-5xl font-extrabold mb-2 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
       Monday: UI Design Bootcamp
     </h1>
     <div class="mb-2 text-purple-300 text-sm">10:00 AM – 11:30 AM</div>
-    <span class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-1 rounded-full text-white font-semibold text-xs mb-5">Workshop</span>
+    <span
+      class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-1 rounded-full text-white font-semibold text-xs mb-5">Workshop</span>
     <p class="max-w-3xl text-purple-200 text-lg text-center px-4 sm:px-0">
-      Start your week with a deep dive into modern UI/UX. Use Figma, Tailwind, and interactive exercises to build a full-featured purple-themed landing page from scratch.
+      Start your week with a deep dive into modern UI/UX. Use Figma, Tailwind, and interactive exercises to build a
+      full-featured purple-themed landing page from scratch.
     </p>
     <a href="../register.html"
-       class="mt-8 inline-block px-10 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
+      class="mt-8 inline-block px-10 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
       Register Now
     </a>
   </section>
@@ -76,70 +96,86 @@
       <ol class="relative border-l-4 border-purple-600 ml-3 space-y-10">
         <!-- 10:00 – Introduction -->
         <li class="ml-7">
-          <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-400 flex items-center justify-center shadow-lg">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-400 flex items-center justify-center shadow-lg">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12m2 0h2m-4 0v2a2 2 0 01-2 2H5a2 2 0 01-2-2V7"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 5h12m2 0h2m-4 0v2a2 2 0 01-2 2H5a2 2 0 01-2-2V7" />
             </svg>
           </div>
           <div>
             <span class="font-semibold text-purple-200">10:00 AM</span>
             <div class="font-bold text-lg">Introduction & Welcome</div>
-            <p class="text-sm text-purple-300 mt-1">Meet the facilitators and get an overview of today’s project and tools.</p>
+            <p class="text-sm text-purple-300 mt-1">Meet the facilitators and get an overview of today’s project and
+              tools.</p>
           </div>
         </li>
         <!-- 10:10 – Foundations -->
         <li class="ml-7">
-          <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-400 flex items-center justify-center shadow-lg">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-400 flex items-center justify-center shadow-lg">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 7h.01M12 7h.01M9 7h.01M6 7h.01M3 7h.01M21 11a9.003 9.003 0 00-18 0v2a9.003 9.003 0 0018 0v-2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15 7h.01M12 7h.01M9 7h.01M6 7h.01M3 7h.01M21 11a9.003 9.003 0 00-18 0v2a9.003 9.003 0 0018 0v-2z" />
             </svg>
           </div>
           <div>
             <span class="font-semibold text-purple-200">10:10 AM</span>
             <div class="font-bold text-lg">Color, Typography & Spacing Fundamentals</div>
-            <p class="text-sm text-purple-300 mt-1">Core design principles and establishing a purplewave color palette in Figma.</p>
-            <div class="inline-block mt-2 bg-gradient-to-r from-purple-700 to-pink-500 px-3 py-1 rounded-full text-white text-xs font-bold">
+            <p class="text-sm text-purple-300 mt-1">Core design principles and establishing a purplewave color palette
+              in Figma.</p>
+            <div
+              class="inline-block mt-2 bg-gradient-to-r from-purple-700 to-pink-500 px-3 py-1 rounded-full text-white text-xs font-bold">
               Download Style Guide
             </div>
           </div>
         </li>
         <!-- 10:40 – Figma to Tailwind -->
         <li class="ml-7">
-          <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center shadow-lg">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center shadow-lg">
             <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5v9M4 4v16c0 1.104.894 2 2 2h12a2 2 0 002-2v-8" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 17l4 4 4-4m0-5v9M4 4v16c0 1.104.894 2 2 2h12a2 2 0 002-2v-8" />
             </svg>
           </div>
           <div>
             <span class="font-semibold text-purple-200">10:40 AM</span>
             <div class="font-bold text-lg">From Figma to Tailwind</div>
             <p class="text-sm text-purple-300 mt-1">
-              Step-by-step: Export UI elements and implement them with Tailwind CSS. Quick demo of using the purple gradient utility classes.
+              Step-by-step: Export UI elements and implement them with Tailwind CSS. Quick demo of using the purple
+              gradient utility classes.
             </p>
           </div>
         </li>
         <!-- 11:00 – Interactive Build -->
         <li class="ml-7">
-          <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-fuchsia-500 flex items-center justify-center shadow-lg">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-fuchsia-500 flex items-center justify-center shadow-lg">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="3"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3m9-9h-3M6 12H3M16.24 7.76l-2.12 2.12M7.76 16.24l-2.12 2.12M16.24 16.24l-2.12-2.12M7.76 7.76l-2.12-2.12"/>
+              <circle cx="12" cy="12" r="3" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 3v3m0 12v3m9-9h-3M6 12H3M16.24 7.76l-2.12 2.12M7.76 16.24l-2.12 2.12M16.24 16.24l-2.12-2.12M7.76 7.76l-2.12-2.12" />
             </svg>
           </div>
           <div>
             <span class="font-semibold text-purple-200">11:00 AM</span>
             <div class="font-bold text-lg">Interactive Website Build</div>
             <p class="text-sm text-purple-300 mt-1">
-              Work in pairs: translate a Figma design into a working, responsive page using Tailwind. Mentors walk the room for on-the-spot feedback.
+              Work in pairs: translate a Figma design into a working, responsive page using Tailwind. Mentors walk the
+              room for on-the-spot feedback.
             </p>
-            <span class="inline-block mt-2 px-3 py-1 rounded-full bg-green-600/60 text-xs text-white font-medium">Live Collab</span>
+            <span class="inline-block mt-2 px-3 py-1 rounded-full bg-green-600/60 text-xs text-white font-medium">Live
+              Collab</span>
           </div>
         </li>
         <!-- 11:20 – Q&A/Wrap Up -->
         <li class="ml-7">
-          <div class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
+          <div
+            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5v9M3 5l12-4 12 4v6a9 9 0 01-18 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 17l4 4 4-4m0-5v9M3 5l12-4 12 4v6a9 9 0 01-18 0z" />
             </svg>
           </div>
           <div>
@@ -164,7 +200,8 @@
       </div>
       <div class="bg-gradient-to-r from-pink-500/10 to-purple-800/10 rounded-xl px-6 py-4 mt-6 shadow">
         <span class="text-purple-100 font-bold">Accessible to all:</span>
-        <span class="text-purple-300 text-sm">The space is wheelchair-friendly, and we’ll have a sign language interpreter available. Let us know if you need any special assistance when registering.</span>
+        <span class="text-purple-300 text-sm">The space is wheelchair-friendly, and we’ll have a sign language
+          interpreter available. Let us know if you need any special assistance when registering.</span>
       </div>
     </div>
   </section>
@@ -174,12 +211,14 @@
     <div class="container mx-auto max-w-3xl px-4">
       <h2 class="text-3xl font-extrabold text-purple-300 mb-6 text-center">Meet the Host</h2>
       <div class="flex flex-col sm:flex-row sm:justify-center items-center gap-6">
-        <img src="https://i.pravatar.cc/120?img=68" alt="Alex Vega" class="rounded-full h-28 w-28 object-cover ring-4 ring-purple-600 shadow-lg" />
+        <img src="https://i.pravatar.cc/120?img=68" alt="Alex Vega"
+          class="rounded-full h-28 w-28 object-cover ring-4 ring-purple-600 shadow-lg" />
         <div class="max-w-xl text-center sm:text-left">
           <h3 class="text-xl font-semibold text-purple-100">Alex Vega</h3>
           <p class="text-purple-300 mb-2">Lead Designer, PurpleWave</p>
           <p class="text-purple-300 text-sm leading-relaxed">
-            Alex leads the design team at PurpleWave and specializes in modern UI/UX patterns, brand strategy, and interactive prototypes using Figma and Tailwind CSS.
+            Alex leads the design team at PurpleWave and specializes in modern UI/UX patterns, brand strategy, and
+            interactive prototypes using Figma and Tailwind CSS.
           </p>
         </div>
       </div>
@@ -189,7 +228,8 @@
   <!-- FAQ -->
   <section class="py-20 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
     <div class="container mx-auto max-w-3xl px-4 ">
-      <h2 class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
+      <h2
+        class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
         Frequently Asked Questions
       </h2>
       <div class="space-y-6">
@@ -199,11 +239,13 @@
         </details>
         <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
           <summary class="font-semibold text-purple-200">Will sessions be recorded?</summary>
-          <p class="mt-2 text-purple-300 text-sm">All talks except the workshop will be available on-demand after the event.</p>
+          <p class="mt-2 text-purple-300 text-sm">All talks except the workshop will be available on-demand after the
+            event.</p>
         </details>
         <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
           <summary class="font-semibold text-purple-200">What should I prepare?</summary>
-          <p class="mt-2 text-purple-300 text-sm">Bring a laptop for the live code-along and headphones for the DJ set.</p>
+          <p class="mt-2 text-purple-300 text-sm">Bring a laptop for the live code-along and headphones for the DJ set.
+          </p>
         </details>
       </div>
     </div>
@@ -214,9 +256,10 @@
     <h3 class="text-2xl font-bold mb-4">Questions?</h3>
     <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 hours.</p>
     <a href="mailto:events@purplewave.com"
-       class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
+      class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
       Email the Event Team
     </a>
   </section>
 </body>
+
 </html>

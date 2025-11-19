@@ -1,57 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI Infrastructure Platform — PurpleWave</title>
-  <meta name="description" content="Enterprise AI/ML infrastructure platform with automated model training, deployment pipelines, and scalable GPU cluster management." />
+  <meta name="description"
+    content="Enterprise AI/ML infrastructure platform with automated model training, deployment pipelines, and scalable GPU cluster management." />
 
-   <!-- Tracking Script -->
-  <link id="frgm-css"  rel="stylesheet" href="https://preprod-1e2f308t.fragmatic.io/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
+  <!-- Tracking Script -->
+  <link id="frgm-css" rel="stylesheet"
+    href="https://preprod-1e2f308t.fragmatic.io/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
   <script id="FRGM-tracker" src="https://preprod-1e2f308t.fragmatic.io/js-app/js/77e28c28-tracker.js" defer></script>
-  
-  
+
+
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Page styles -->
   <style>
     @layer utilities {
-      @keyframes pulse-slow { 0%,100%{transform:scale(.96);opacity:.35} 50%{transform:scale(1.04);opacity:.55} }
-      .animate-pulse-slow { animation:pulse-slow 9s ease-in-out infinite }
+      @keyframes pulse-slow {
 
-      @keyframes float { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-20px)} }
-      .animate-float { animation:float 6s ease-in-out infinite }
+        0%,
+        100% {
+          transform: scale(.96);
+          opacity: .35
+        }
 
-      @keyframes brain-pulse { 0%,100%{transform:scale(1);opacity:.7} 50%{transform:scale(1.1);opacity:1} }
-      .animate-brain-pulse { animation:brain-pulse 3s ease-in-out infinite }
+        50% {
+          transform: scale(1.04);
+          opacity: .55
+        }
+      }
 
-      .focus-outline:focus { outline:2px solid #A78BFA; outline-offset:2px; }
-      
-      .ai-gradient { background: linear-gradient(135deg, #0c0a1f 0%, #1a1347 25%, #2d1b69 50%, #7c3aed 75%, #a855f7 100%); }
+      .animate-pulse-slow {
+        animation: pulse-slow 9s ease-in-out infinite
+      }
+
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translateY(0px)
+        }
+
+        50% {
+          transform: translateY(-20px)
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite
+      }
+
+      @keyframes brain-pulse {
+
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: .7
+        }
+
+        50% {
+          transform: scale(1.1);
+          opacity: 1
+        }
+      }
+
+      .animate-brain-pulse {
+        animation: brain-pulse 3s ease-in-out infinite
+      }
+
+      .focus-outline:focus {
+        outline: 2px solid #A78BFA;
+        outline-offset: 2px;
+      }
+
+      .ai-gradient {
+        background: linear-gradient(135deg, #0c0a1f 0%, #1a1347 25%, #2d1b69 50%, #7c3aed 75%, #a855f7 100%);
+      }
     }
   </style>
+  </style>
+  <script src="js/global-navbar.js" defer></script>
 </head>
 
 <body class="bg-black text-purple-200">
 
   <!-- Navbar -->
-  <nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="/" class="flex items-center gap-2 focus-outline">
-        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-             alt="PurpleWave logo" class="h-10 w-auto" loading="lazy" />
-        <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-      </a>
-      <ul class="flex space-x-6 text-purple-200">
-        <li><a href="/" class="hover:text-white transition focus-outline">Home</a></li>
-        <li><a href="aboutus.html" class="hover:text-white transition focus-outline">About</a></li>
-        <li><a href="services.html" class="hover:text-white transition focus-outline">Services</a></li>
-        <li><a href="events.html" class="hover:text-white transition focus-outline">Events</a></li>
-        <li><a href="contact.html" class="hover:text-white transition focus-outline">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navbar -->
+  <global-navbar></global-navbar>
 
   <!-- HERO -->
   <header class="relative isolate flex flex-col items-center justify-center min-h-[70vh] overflow-hidden ai-gradient">
@@ -59,33 +98,33 @@
     <div class="absolute inset-0 opacity-20">
       <svg class="w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
         <!-- Neural nodes -->
-        <circle cx="150" cy="200" r="6" fill="currentColor" opacity="0.6"/>
-        <circle cx="300" cy="150" r="8" fill="currentColor" opacity="0.8"/>
-        <circle cx="450" cy="250" r="5" fill="currentColor" opacity="0.5"/>
-        <circle cx="600" cy="180" r="10" fill="currentColor" opacity="0.9"/>
-        <circle cx="750" cy="220" r="7" fill="currentColor" opacity="0.7"/>
-        <circle cx="900" cy="160" r="6" fill="currentColor" opacity="0.6"/>
-        <circle cx="1050" cy="200" r="9" fill="currentColor" opacity="0.8"/>
-        <circle cx="1200" cy="170" r="8" fill="currentColor" opacity="0.7"/>
-        
+        <circle cx="150" cy="200" r="6" fill="currentColor" opacity="0.6" />
+        <circle cx="300" cy="150" r="8" fill="currentColor" opacity="0.8" />
+        <circle cx="450" cy="250" r="5" fill="currentColor" opacity="0.5" />
+        <circle cx="600" cy="180" r="10" fill="currentColor" opacity="0.9" />
+        <circle cx="750" cy="220" r="7" fill="currentColor" opacity="0.7" />
+        <circle cx="900" cy="160" r="6" fill="currentColor" opacity="0.6" />
+        <circle cx="1050" cy="200" r="9" fill="currentColor" opacity="0.8" />
+        <circle cx="1200" cy="170" r="8" fill="currentColor" opacity="0.7" />
+
         <!-- Layer connections -->
-        <line x1="150" y1="200" x2="300" y2="150" stroke="currentColor" opacity="0.4" stroke-width="1"/>
-        <line x1="150" y1="200" x2="450" y2="250" stroke="currentColor" opacity="0.3" stroke-width="1"/>
-        <line x1="300" y1="150" x2="600" y2="180" stroke="currentColor" opacity="0.4" stroke-width="1"/>
-        <line x1="450" y1="250" x2="600" y2="180" stroke="currentColor" opacity="0.3" stroke-width="1"/>
-        <line x1="600" y1="180" x2="750" y2="220" stroke="currentColor" opacity="0.5" stroke-width="2"/>
-        <line x1="750" y1="220" x2="900" y2="160" stroke="currentColor" opacity="0.4" stroke-width="1"/>
-        <line x1="900" y1="160" x2="1050" y2="200" stroke="currentColor" opacity="0.3" stroke-width="1"/>
-        <line x1="1050" y1="200" x2="1200" y2="170" stroke="currentColor" opacity="0.4" stroke-width="1"/>
-        
+        <line x1="150" y1="200" x2="300" y2="150" stroke="currentColor" opacity="0.4" stroke-width="1" />
+        <line x1="150" y1="200" x2="450" y2="250" stroke="currentColor" opacity="0.3" stroke-width="1" />
+        <line x1="300" y1="150" x2="600" y2="180" stroke="currentColor" opacity="0.4" stroke-width="1" />
+        <line x1="450" y1="250" x2="600" y2="180" stroke="currentColor" opacity="0.3" stroke-width="1" />
+        <line x1="600" y1="180" x2="750" y2="220" stroke="currentColor" opacity="0.5" stroke-width="2" />
+        <line x1="750" y1="220" x2="900" y2="160" stroke="currentColor" opacity="0.4" stroke-width="1" />
+        <line x1="900" y1="160" x2="1050" y2="200" stroke="currentColor" opacity="0.3" stroke-width="1" />
+        <line x1="1050" y1="200" x2="1200" y2="170" stroke="currentColor" opacity="0.4" stroke-width="1" />
+
         <!-- Cross connections -->
-        <line x1="300" y1="150" x2="750" y2="220" stroke="currentColor" opacity="0.2" stroke-width="1"/>
-        <line x1="450" y1="250" x2="900" y2="160" stroke="currentColor" opacity="0.2" stroke-width="1"/>
+        <line x1="300" y1="150" x2="750" y2="220" stroke="currentColor" opacity="0.2" stroke-width="1" />
+        <line x1="450" y1="250" x2="900" y2="160" stroke="currentColor" opacity="0.2" stroke-width="1" />
       </svg>
     </div>
 
     <span class="absolute inset-0 bg-black/50"></span>
-    
+
     <div class="relative z-10 text-center px-6">
       <div class="text-6xl mb-6 animate-brain-pulse">🧠</div>
       <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold bg-clip-text text-transparent
@@ -113,7 +152,8 @@
           ML Platform Architecture
         </h2>
         <p class="text-xl text-purple-200/80 max-w-3xl mx-auto">
-          End-to-end machine learning infrastructure supporting distributed training, automated model deployment, and production-scale inference serving across GPU clusters.
+          End-to-end machine learning infrastructure supporting distributed training, automated model deployment, and
+          production-scale inference serving across GPU clusters.
         </p>
       </div>
 
@@ -121,7 +161,8 @@
         <div>
           <h3 class="text-2xl font-bold text-white mb-6">AI/ML Challenges</h3>
           <p class="text-purple-200/90 leading-relaxed mb-6">
-            Architecting a scalable ML platform capable of training large language models, serving 1M+ daily inferences, and managing distributed GPU workloads with efficient resource utilization.
+            Architecting a scalable ML platform capable of training large language models, serving 1M+ daily inferences,
+            and managing distributed GPU workloads with efficient resource utilization.
           </p>
           <div class="space-y-4 text-purple-200/80">
             <div class="flex items-start gap-3">
@@ -154,7 +195,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="relative">
           <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl 
                       border border-purple-500/20 p-8 font-mono text-sm animate-float">
@@ -182,26 +223,26 @@
                  bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
         AI Performance Metrics
       </h2>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
           <div class="text-5xl font-extrabold text-purple-300 mb-2 font-mono">15ms</div>
           <div class="text-purple-400 font-medium mb-2">Inference Latency</div>
           <div class="text-sm text-purple-200/60">P95 model response time</div>
         </div>
-        
+
         <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
           <div class="text-5xl font-extrabold text-pink-300 mb-2 font-mono">94.7%</div>
           <div class="text-pink-400 font-medium mb-2">GPU Utilization</div>
           <div class="text-sm text-purple-200/60">Average cluster efficiency</div>
         </div>
-        
+
         <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
           <div class="text-5xl font-extrabold text-indigo-300 mb-2 font-mono">2.4M</div>
           <div class="text-indigo-400 font-medium mb-2">Daily Inferences</div>
           <div class="text-sm text-purple-200/60">Peak model serving capacity</div>
         </div>
-        
+
         <div class="text-center p-8 bg-purple-950/30 rounded-2xl border border-purple-500/20">
           <div class="text-5xl font-extrabold text-fuchsia-300 mb-2 font-mono">78%</div>
           <div class="text-fuchsia-400 font-medium mb-2">Training Speed-up</div>
@@ -218,13 +259,14 @@
                  bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
         ML Technology Stack
       </h2>
-      
+
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl p-8 border border-purple-500/20">
           <div class="text-4xl mb-4">🚀</div>
           <h3 class="text-xl font-bold text-white mb-4 font-mono">Model Training</h3>
           <p class="text-purple-200/80 mb-4">
-            Distributed training infrastructure with automatic hyperparameter tuning and experiment tracking across GPU clusters.
+            Distributed training infrastructure with automatic hyperparameter tuning and experiment tracking across GPU
+            clusters.
           </p>
           <div class="space-y-2 text-sm text-purple-300 font-mono">
             <div>• <span class="text-orange-400">PyTorch DDP</span> - Distributed training</div>
@@ -233,7 +275,7 @@
             <div>• <span class="text-purple-400">MLflow</span> - Experiment tracking</div>
           </div>
         </div>
-        
+
         <div class="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 rounded-2xl p-8 border border-purple-500/20">
           <div class="text-4xl mb-4">⚡</div>
           <h3 class="text-xl font-bold text-white mb-4 font-mono">Model Serving</h3>
@@ -247,7 +289,7 @@
             <div>• <span class="text-green-400">Seldon Core</span> - A/B testing</div>
           </div>
         </div>
-        
+
         <div class="bg-gradient-to-br from-pink-900/20 to-purple-900/20 rounded-2xl p-8 border border-purple-500/20">
           <div class="text-4xl mb-4">🔧</div>
           <h3 class="text-xl font-bold text-white mb-4 font-mono">MLOps & Monitoring</h3>
@@ -272,15 +314,17 @@
                  bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 mb-16">
         Development Phases
       </h2>
-      
+
       <div class="space-y-8">
         <div class="flex gap-6 items-start">
-          <div class="flex-shrink-0 w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+          <div
+            class="flex-shrink-0 w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
             P1
           </div>
           <div>
             <h3 class="text-xl font-bold text-white mb-2">Infrastructure & GPU Cluster Setup</h3>
-            <p class="text-purple-200/80 mb-3">Provisioned multi-node GPU clusters, configured CUDA environments, and established high-speed networking for distributed training.</p>
+            <p class="text-purple-200/80 mb-3">Provisioned multi-node GPU clusters, configured CUDA environments, and
+              established high-speed networking for distributed training.</p>
             <div class="flex gap-2 flex-wrap">
               <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">NVIDIA A100</span>
               <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">InfiniBand</span>
@@ -288,14 +332,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="flex gap-6 items-start">
-          <div class="flex-shrink-0 w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+          <div
+            class="flex-shrink-0 w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
             P2
           </div>
           <div>
             <h3 class="text-xl font-bold text-white mb-2">Data Pipeline & Training Framework</h3>
-            <p class="text-purple-200/80 mb-3">Built scalable data ingestion pipelines, implemented distributed training workflows, and established experiment tracking systems.</p>
+            <p class="text-purple-200/80 mb-3">Built scalable data ingestion pipelines, implemented distributed training
+              workflows, and established experiment tracking systems.</p>
             <div class="flex gap-2 flex-wrap">
               <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">Apache Spark</span>
               <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">PyTorch DDP</span>
@@ -303,14 +349,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="flex gap-6 items-start">
-          <div class="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+          <div
+            class="flex-shrink-0 w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
             P3
           </div>
           <div>
             <h3 class="text-xl font-bold text-white mb-2">Model Serving & Deployment</h3>
-            <p class="text-purple-200/80 mb-3">Deployed production inference servers with auto-scaling, model versioning, and real-time monitoring capabilities.</p>
+            <p class="text-purple-200/80 mb-3">Deployed production inference servers with auto-scaling, model
+              versioning, and real-time monitoring capabilities.</p>
             <div class="flex gap-2 flex-wrap">
               <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">Triton Server</span>
               <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">KServe</span>
@@ -318,14 +366,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="flex gap-6 items-start">
-          <div class="flex-shrink-0 w-16 h-16 bg-fuchsia-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
+          <div
+            class="flex-shrink-0 w-16 h-16 bg-fuchsia-600 rounded-full flex items-center justify-center font-bold text-white font-mono">
             P4
           </div>
           <div>
             <h3 class="text-xl font-bold text-white mb-2">MLOps & Production Optimization</h3>
-            <p class="text-purple-200/80 mb-3">Implemented comprehensive MLOps workflows, model drift detection, and automated retraining pipelines for production-scale deployment.</p>
+            <p class="text-purple-200/80 mb-3">Implemented comprehensive MLOps workflows, model drift detection, and
+              automated retraining pipelines for production-scale deployment.</p>
             <div class="flex gap-2 flex-wrap">
               <span class="px-2 py-1 bg-purple-600/20 rounded text-xs font-mono">Kubeflow</span>
               <span class="px-2 py-1 bg-pink-600/20 rounded text-xs font-mono">Evidently AI</span>
@@ -345,4 +395,5 @@
         AI Platform Achievements
       </h2>
       <p class="text-xl text-purple-200/90 leading-relaxed mb-12 max-w-3xl mx-auto">
-        Successfully deployed an enterprise-scale ML platform that supports training of large language models with billions of parameters while serving millions of daily inferences with sub
+        Successfully deployed an enterprise-scale ML platform that supports training of large language models with
+        billions of parameters while serving millions of daily inferences with sub

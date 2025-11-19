@@ -9,7 +9,8 @@
   <title>Contact Us - PurpleWave</title>
 
   <!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
+  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+    crossorigin="anonymous">
   <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
 
   <script>
@@ -24,14 +25,14 @@
   </script>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-YMPCVDJBLZ');
-</script>
+    gtag('config', 'G-YMPCVDJBLZ');
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -40,107 +41,9 @@
   <style>
     .form-input {
       transition: all 0.3s ease;
-    }
-
-    .form-input:focus {
-      border-color: #d8b4fe;
-      box-shadow: 0 0 0 3px rgba(216, 180, 254, 0.2);
-    }
-  </style>
-</head>
-
-<body class="bg-black text-purple-300 font-sans">
-   <!-- Navbar -->
-<nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-
-    <!-- Logo + Brand -->
-    <a href="/" class="flex items-center gap-2">
-      <img
-        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-        alt="PurpleWave logo"
-        class="h-10 w-auto"    
-        loading="lazy"/>
-      <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-    </a>
-
-    <!-- Navigation links -->
-    <ul class="flex space-x-6 text-purple-200">
-      <li><a href="index.html"     class="hover:text-white transition">Home</a></li>
-      <li><a href="aboutus.html"  class="hover:text-white transition">About</a></li>
-      <li><a href="services.html" class="hover:text-white transition">Services</a></li>
-      <li><a href="events.html" class="hover:text-white transition">Events</a></li>
-      <li><a href="contact.html"  class="hover:text-white transition">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-  <!-- Contact Section -->
-  <section class="py-20 bg-black">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-5xl font-bold text-purple-200 mb-4">Get in Touch</h1>
-        <p class="text-xl text-purple-400 max-w-2xl mx-auto">
-          We’d love to hear from you! Fill out the form below or reach out directly using our contact details.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Contact Form -->
-        <div>
-          <h2 class="text-3xl font-semibold text-purple-200 mb-6">Send Us a Message</h2>
-          <form id="contactForm" class="space-y-6" onsubmit="return handleSubmit(event)">
-            <div>
-              <label for="name" class="block text-purple-200 mb-2">Name</label>
-              <input type="text" id="name" name="name" required
-                class="form-input w-full px-4 py-2 bg-gray-900 text-purple-300 border border-purple-700 rounded-lg focus:outline-none focus:border-purple-500"
-                placeholder="Your Name" />
-            </div>
-            <div>
-              <label for="email" class="block text-purple-200 mb-2">Email</label>
-              <input type="email" id="email" name="email" required
-                class="form-input w-full px-4 py-2 bg-gray-900 text-purple-300 border border-purple-700 rounded-lg focus:outline-none focus:border-purple-500"
-                placeholder="Your Email" />
-            </div>
-            <div>
-              <label for="message" class="block text-purple-200 mb-2">Message</label>
-              <textarea id="message" name="message" required rows="5"
-                class="form-input w-full px-4 py-2 bg-gray-900 text-purple-300 border border-purple-700 rounded-lg focus:outline-none focus:border-purple-500"
-                placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit"
-              class="w-full px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold">
-              Send Message
-            </button>
-          </form>
-        </div>
-
-        <!-- Contact Information -->
-        <div>
-          <h2 class="text-3xl font-semibold text-purple-200 mb-6">Contact Information</h2>
-          <ul class="space-y-4 text-purple-400">
-            <li>
-              <span class="font-semibold text-purple-200">Email:</span>
-              <a href="mailto:contact@purplewave.com" class="hover:text-white transition">contact@purplewave.com</a>
-            </li>
-            <li>
-              <span class="font-semibold text-purple-200">Phone:</span>
-              <a href="tel:+1234567890" class="hover:text-white transition">+1 (234) 567-890</a>
-            </li>
-            <li>
-              <span class="font-semibold text-purple-200">Address:</span>
-              <p>123 Purple Street, Creative City, 90210</p>
-            </li>
-          </ul>
-          <div class="mt-8">
-            <h3 class="text-xl font-semibold text-purple-200 mb-4">Follow Us</h3>
-            <div class="flex space-x-4">
-              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                <svg class="w-6 h-6 hover:text-blue-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.75 0 5-2.24 5-5v-14c0-2.76-2.25-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.32-.03-3-1.83-3s-2.12 1.43-2.12 2.91v5.59h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.03 0 3.59 1.99 3.59 4.58v5.62z" />
-                </svg>
-              </a>
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <svg class="w-6 h-6 hover:text-pink-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25
+      <p class="text-xl text-purple-400 max-w-2xl mx-auto">We’d love to hear from you ! Fill out the form below or reach out directly using our contact details. </p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-12">< !-- Contact Form --><div><h2 class="text-3xl font-semibold text-purple-200 mb-6">Send Us a Message</h2><form id="contactForm" class="space-y-6" onsubmit="return handleSubmit(event)"><div><label for="name" class="block text-purple-200 mb-2">Name</label><input type="text" id="name" name="name" required class="form-input w-full px-4 py-2 bg-gray-900 text-purple-300 border border-purple-700 rounded-lg focus:outline-none focus:border-purple-500"
+      placeholder="Your Name" /></div><div><label for="email" class="block text-purple-200 mb-2">Email</label><input type="email" id="email" name="email" required class="form-input w-full px-4 py-2 bg-gray-900 text-purple-300 border border-purple-700 rounded-lg focus:outline-none focus:border-purple-500"
+      placeholder="Your Email" /></div><div><label for="message" class="block text-purple-200 mb-2">Message</label><textarea id="message" name="message" required rows="5"
+      class="form-input w-full px-4 py-2 bg-gray-900 text-purple-300 border border-purple-700 rounded-lg focus:outline-none focus:border-purple-500"
+      placeholder="Your Message"></textarea></div><button type="submit"
+      class="w-full px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold">Send Message </button></form></div>< !-- Contact Information --><div><h2 class="text-3xl font-semibold text-purple-200 mb-6">Contact Information</h2><ul class="space-y-4 text-purple-400"><li><span class="font-semibold text-purple-200">Email: </span> <a href="mailto:contact@purplewave.com" class="hover:text-white transition" >contact@purplewave.com</a> </li> <li> <span class="font-semibold text-purple-200" >Phone:</span> <a href="tel:+1234567890" class="hover:text-white transition" >+1 (234) 567-890</a> </li> <li> <span class="font-semibold text-purple-200" >Address:</span> <p>123 Purple Street, Creative City, 90210</p> </li> </ul> <div class="mt-8" > <h3 class="text-xl font-semibold text-purple-200 mb-4" >Follow Us</h3> <div class="flex space-x-4" > <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" > <svg class="w-6 h-6 hover:text-blue-500 transition-colors" fill="currentColor" viewBox="0 0 24 24" > <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.75 0 5-2.24 5-5v-14c0-2.76-2.25-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.32-.03-3-1.83-3s-2.12 1.43-2.12 2.91v5.59h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.03 0 3.59 1.99 3.59 4.58v5.62z" /> </svg> </a> <a href="https://instagram.com" target="_blank" aria-label="Instagram" > <svg class="w-6 h-6 hover:text-pink-500 transition-colors" fill="currentColor" viewBox="0 0 24 24" > <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25

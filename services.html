@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PurpleWave delivers professional web, brand, and infrastructure services designed to accelerate modern digital businesses." />
+  <meta name="description"
+    content="PurpleWave delivers professional web, brand, and infrastructure services designed to accelerate modern digital businesses." />
   <meta name="keywords" content="web design, brand systems, digital strategy, purplewave services" />
   <title>PurpleWave | Services</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.freepik.com/256/4424/4424616.png?semt=ais_hybrid">
@@ -12,25 +14,27 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
- <!-- Tracking Script -->
-  <link id="frgm-css"  rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css" crossorigin="anonymous">
+  <!-- Tracking Script -->
+  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+    crossorigin="anonymous">
   <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
 
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-YMPCVDJBLZ');
-</script>
+    gtag('config', 'G-YMPCVDJBLZ');
+  </script>
 
   <style>
     .filter-btn:focus {
       outline: none;
     }
+
     .hero-overlay {
       background: linear-gradient(135deg, rgba(59, 7, 100, 0.92), rgba(76, 29, 149, 0.85));
     }
@@ -43,20 +47,24 @@
       width: 100%;
       overflow: hidden;
     }
+
     .carousel-inner {
       display: flex;
       transition: transform 0.5s ease;
     }
+
     .carousel-tile {
       flex: 0 0 300px;
       margin-right: 16px;
     }
+
     .carousel-tile img {
       width: 100%;
       height: 170px;
       object-fit: cover;
       border-radius: 8px;
     }
+
     .carousel-controls {
       position: absolute;
       top: 50%;
@@ -66,6 +74,7 @@
       transform: translateY(-50%);
       padding: 0 8px;
     }
+
     .carousel-btn {
       background: rgba(0, 0, 0, 0.7);
       color: #d8b4fe;
@@ -76,67 +85,58 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .carousel-btn:hover {
       background: rgba(0, 0, 0, 0.9);
     }
+
     .carousel-btn:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
+
     .service-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
     }
+
     @media (max-width: 640px) {
       .carousel-tile {
         flex: 0 0 200px;
       }
+
       .carousel-tile img {
         height: 120px;
       }
     }
   </style>
+  </style>
+  <script src="js/global-navbar.js" defer></script>
 </head>
+
 <body class="bg-black text-purple-300 font-sans">
-   <!-- Navbar -->
-<nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-
-    <!-- Logo + Brand -->
-    <a href="/" class="flex items-center gap-2">
-      <img
-        src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-        alt="PurpleWave logo"
-        class="h-10 w-auto"    
-        loading="lazy"/>
-      <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-    </a>
-
-    <!-- Navigation links -->
-    <ul class="flex space-x-6 text-purple-200">
-      <li><a href="/"     class="hover:text-white transition">Home</a></li>
-      <li><a href="aboutus.html"  class="hover:text-white transition">About</a></li>
-      <li><a href="services.html" class="hover:text-white transition">Services</a></li>
-      <li><a href="events.html" class="hover:text-white transition">Events</a></li>
-      <li><a href="contact.html"  class="hover:text-white transition">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <global-navbar></global-navbar>
 
   <!-- Hero Section -->
   <section class="relative py-24 bg-black">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Abstract technology backdrop" class="w-full h-full object-cover opacity-40" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+        alt="Abstract technology backdrop" class="w-full h-full object-cover opacity-40" loading="lazy">
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
     <div class="relative container mx-auto text-center px-6">
-      <span class="inline-flex items-center justify-center px-4 py-2 bg-purple-800/60 text-purple-100 uppercase tracking-widest text-xs rounded-full border border-purple-400/40 mb-6">Services</span>
+      <span
+        class="inline-flex items-center justify-center px-4 py-2 bg-purple-800/60 text-purple-100 uppercase tracking-widest text-xs rounded-full border border-purple-400/40 mb-6">Services</span>
       <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Full-Service Digital Partner</h1>
       <p class="text-xl text-purple-100 max-w-3xl mx-auto">
-        We combine strategy, design, and engineering to deliver resilient digital experiences. From idea to long-term optimization, our team acts as an embedded partner for ambitious brands.
+        We combine strategy, design, and engineering to deliver resilient digital experiences. From idea to long-term
+        optimization, our team acts as an embedded partner for ambitious brands.
       </p>
     </div>
   </section>
@@ -169,14 +169,17 @@
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold text-purple-200 mb-4">What We Offer</h2>
         <p class="text-lg text-purple-400 max-w-3xl mx-auto">
-          At PurpleWave, we provide a range of services to help your brand thrive in the digital world. From stunning websites to comprehensive hosting, we’ve got you covered.
+          At PurpleWave, we provide a range of services to help your brand thrive in the digital world. From stunning
+          websites to comprehensive hosting, we’ve got you covered.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Web Experience Design -->
-        <div class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="Design strategy workshop"
-            class="w-full h-48 object-cover rounded-xl mb-5" />
+        <div
+          class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80"
+            alt="Design strategy workshop" class="w-full h-48 object-cover rounded-xl mb-5" />
           <div class="flex items-center gap-2 text-purple-300 text-xs uppercase tracking-widest mb-2">
             <span class="w-2 h-2 rounded-full bg-pink-400"></span> Experience
           </div>
@@ -189,12 +192,16 @@
             <li>• Modular design systems</li>
             <li>• Accessibility-first builds</li>
           </ul>
-          <a href="contact.html" class="inline-flex items-center text-white font-semibold hover:underline transition">Book a discovery call →</a>
+          <a href="contact.html"
+            class="inline-flex items-center text-white font-semibold hover:underline transition">Book a discovery call
+            →</a>
         </div>
         <!-- Brand Identity -->
-        <div class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-8da7dc0a5c0d?auto=format&fit=crop&w=900&q=80" alt="Brand identity mood boards"
-            class="w-full h-48 object-cover rounded-xl mb-5" />
+        <div
+          class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1529333166437-8da7dc0a5c0d?auto=format&fit=crop&w=900&q=80"
+            alt="Brand identity mood boards" class="w-full h-48 object-cover rounded-xl mb-5" />
           <div class="flex items-center gap-2 text-purple-300 text-xs uppercase tracking-widest mb-2">
             <span class="w-2 h-2 rounded-full bg-indigo-400"></span> Identity
           </div>
@@ -207,12 +214,16 @@
             <li>• Logo, typography & palette</li>
             <li>• Sales enablement assets</li>
           </ul>
-          <a href="contact.html" class="inline-flex items-center text-white font-semibold hover:underline transition">Request a proposal →</a>
+          <a href="contact.html"
+            class="inline-flex items-center text-white font-semibold hover:underline transition">Request a proposal
+            →</a>
         </div>
         <!-- Infrastructure -->
-        <div class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Infrastructure dashboards"
-            class="w-full h-48 object-cover rounded-xl mb-5" />
+        <div
+          class="service-card bg-gradient-to-b from-purple-900 to-purple-950 p-6 rounded-2xl border border-purple-700/40">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+            alt="Infrastructure dashboards" class="w-full h-48 object-cover rounded-xl mb-5" />
           <div class="flex items-center gap-2 text-purple-300 text-xs uppercase tracking-widest mb-2">
             <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Engineering
           </div>
@@ -225,7 +236,9 @@
             <li>• Performance SLAs & SRE pods</li>
             <li>• Analytics & optimization playbooks</li>
           </ul>
-          <a href="contact.html" class="inline-flex items-center text-white font-semibold hover:underline transition">Talk to engineering →</a>
+          <a href="contact.html"
+            class="inline-flex items-center text-white font-semibold hover:underline transition">Talk to engineering
+            →</a>
         </div>
       </div>
     </div>
@@ -239,15 +252,19 @@
           <p class="uppercase tracking-[0.3em] text-xs text-purple-500 mb-3">Specialized Solutions</p>
           <h2 class="text-4xl font-bold text-white mb-4">Industry-grade capabilities</h2>
           <p class="text-lg text-purple-300 max-w-2xl">
-            Modular service bundles tailored for marketing teams, SaaS companies, agencies, and enterprise IT groups. Choose an end-to-end team or plug us into existing workflows.
+            Modular service bundles tailored for marketing teams, SaaS companies, agencies, and enterprise IT groups.
+            Choose an end-to-end team or plug us into existing workflows.
           </p>
         </div>
-        <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full transition">Schedule a roadmap review</a>
+        <a href="contact.html"
+          class="inline-flex items-center justify-center px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full transition">Schedule
+          a roadmap review</a>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
           <h3 class="text-2xl text-white mb-3">Digital Launch Kit</h3>
-          <p class="text-purple-300 text-sm mb-4">Perfect for early-stage teams that need a brand system, web presence, and automation-ready stack in under 8 weeks.</p>
+          <p class="text-purple-300 text-sm mb-4">Perfect for early-stage teams that need a brand system, web presence,
+            and automation-ready stack in under 8 weeks.</p>
           <ul class="text-purple-100 text-sm space-y-2">
             <li>• Fractional product lead</li>
             <li>• Content & CRM setup</li>
@@ -256,7 +273,8 @@
         </div>
         <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
           <h3 class="text-2xl text-white mb-3">Growth Optimization Pod</h3>
-          <p class="text-purple-300 text-sm mb-4">Integrated designers, engineers, and strategists cycling through two-week test-and-learn sprints.</p>
+          <p class="text-purple-300 text-sm mb-4">Integrated designers, engineers, and strategists cycling through
+            two-week test-and-learn sprints.</p>
           <ul class="text-purple-100 text-sm space-y-2">
             <li>• Experiment backlog</li>
             <li>• Personalization frameworks</li>
@@ -265,7 +283,8 @@
         </div>
         <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
           <h3 class="text-2xl text-white mb-3">Enterprise Replatform</h3>
-          <p class="text-purple-300 text-sm mb-4">Modernize legacy systems with phased migrations, custom integrations, and governance guardrails.</p>
+          <p class="text-purple-300 text-sm mb-4">Modernize legacy systems with phased migrations, custom integrations,
+            and governance guardrails.</p>
           <ul class="text-purple-100 text-sm space-y-2">
             <li>• Architecture advisory</li>
             <li>• Security & compliance reviews</li>
@@ -274,7 +293,8 @@
         </div>
         <div class="p-6 bg-purple-900/30 rounded-2xl border border-purple-700/30">
           <h3 class="text-2xl text-white mb-3">AI Enablement Studio</h3>
-          <p class="text-purple-300 text-sm mb-4">Operationalize AI copilots, intelligent workflows, and data dashboards responsibly.</p>
+          <p class="text-purple-300 text-sm mb-4">Operationalize AI copilots, intelligent workflows, and data dashboards
+            responsibly.</p>
           <ul class="text-purple-100 text-sm space-y-2">
             <li>• Use-case prioritization</li>
             <li>• Model evaluation & guardrails</li>
@@ -292,29 +312,34 @@
         <p class="uppercase tracking-[0.3em] text-xs text-purple-500 mb-3">Delivery Process</p>
         <h2 class="text-4xl font-bold text-white mb-4">Collaborative, measurable, repeatable</h2>
         <p class="text-lg text-purple-300 max-w-3xl mx-auto">
-          Every engagement follows a transparent operating cadence with strategy checkpoints, prototyping, and measurable impact reports.
+          Every engagement follows a transparent operating cadence with strategy checkpoints, prototyping, and
+          measurable impact reports.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
           <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">01</p>
           <h3 class="text-2xl text-white mb-3">Insight Sprint</h3>
-          <p class="text-purple-300 text-sm">Stakeholder interviews, analytics review, competitive benchmarks, and hypothesis roadmap.</p>
+          <p class="text-purple-300 text-sm">Stakeholder interviews, analytics review, competitive benchmarks, and
+            hypothesis roadmap.</p>
         </div>
         <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
           <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">02</p>
           <h3 class="text-2xl text-white mb-3">Experience Blueprint</h3>
-          <p class="text-purple-300 text-sm">Rapid prototyping, UX research, visual concepts, and technical architecture in parallel.</p>
+          <p class="text-purple-300 text-sm">Rapid prototyping, UX research, visual concepts, and technical architecture
+            in parallel.</p>
         </div>
         <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
           <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">03</p>
           <h3 class="text-2xl text-white mb-3">Build & Launch</h3>
-          <p class="text-purple-300 text-sm">Agile delivery supported by QA automation, staging reviews, and enablement sessions.</p>
+          <p class="text-purple-300 text-sm">Agile delivery supported by QA automation, staging reviews, and enablement
+            sessions.</p>
         </div>
         <div class="p-6 bg-purple-900/20 border border-purple-700/40 rounded-2xl">
           <p class="text-sm uppercase tracking-wide text-purple-400 mb-2">04</p>
           <h3 class="text-2xl text-white mb-3">Growth Command</h3>
-          <p class="text-purple-300 text-sm">KPIs tracked weekly, enhancements prioritized by impact score, and 24/7 support coverage.</p>
+          <p class="text-purple-300 text-sm">KPIs tracked weekly, enhancements prioritized by impact score, and 24/7
+            support coverage.</p>
         </div>
       </div>
     </div>
@@ -322,169 +347,181 @@
 
 
 
- 
+
 
   <section class="py-20 bg-black">
-  <div class="container mx-auto text-center px-4">
-    <h2 class="text-3xl font-bold text-purple-200 mb-4">Let’s Build Something Amazing</h2>
-    <p class="text-lg text-purple-400 mb-6 max-w-2xl mx-auto">
-      Ready to take your brand to the next level? Contact us to discuss your project and see how our services can help.
-    </p>
-  </div>
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl font-bold text-purple-200 mb-4">Let’s Build Something Amazing</h2>
+      <p class="text-lg text-purple-400 mb-6 max-w-2xl mx-auto">
+        Ready to take your brand to the next level? Contact us to discuss your project and see how our services can
+        help.
+      </p>
+    </div>
 
-  <!-- insight chart -->
-  <div class="container mx-auto px-4">
- <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-  <h2 class="text-3xl font-bold text-purple-200">Visitor Insights</h2>
-  <div class="flex space-x-3">
-    <button onclick="updateChart('7')" id="btn-7" class="filter-btn bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition">Last 7 Days</button>
-    <button onclick="updateChart('30')" id="btn-30" class="filter-btn bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition">30 Days</button>
-    <button onclick="updateChart('90')" id="btn-90" class="filter-btn bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition">90 Days</button>
-  </div>
-</div>
-    <p class="text-lg text-purple-400 mb-6 max-w-2xl mx-auto">
-      An interactive look at our desktop and mobile traffic over the past few months.
-    </p>
-    <div class="bg-black p-6 rounded-lg shadow-lg">
-      <canvas id="areaChart" class="w-full max-w-5xl mx-auto" height="250"></canvas>
+    <!-- insight chart -->
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+        <h2 class="text-3xl font-bold text-purple-200">Visitor Insights</h2>
+        <div class="flex space-x-3">
+          <button onclick="updateChart('7')" id="btn-7"
+            class="filter-btn bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition">Last 7
+            Days</button>
+          <button onclick="updateChart('30')" id="btn-30"
+            class="filter-btn bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition">30
+            Days</button>
+          <button onclick="updateChart('90')" id="btn-90"
+            class="filter-btn bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 rounded-lg transition">90
+            Days</button>
+        </div>
+      </div>
+      <p class="text-lg text-purple-400 mb-6 max-w-2xl mx-auto">
+        An interactive look at our desktop and mobile traffic over the past few months.
+      </p>
+      <div class="bg-black p-6 rounded-lg shadow-lg">
+        <canvas id="areaChart" class="w-full max-w-5xl mx-auto" height="250"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 px-4">
+    <div class="w-full md:w-1/2 relative h-80 md:h-auto rounded-lg overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=870&q=80"
+        alt="Work together" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-500 to-red-400 opacity-70"></div>
+    </div>
+    <div class="w-full md:w-1/2 bg-purple-900 bg-opacity-60 p-6 md:p-12 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold text-white mb-6 text-center">Contact Us to Discuss</h2>
+      <form class="space-y-5" id="contactForm" novalidate action="thankyou.html">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-purple-200 mb-1">First Name</label>
+            <input type="text" name="firstName" required pattern="^[A-Za-z\s]{2,30}$"
+              class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+            <p class="text-red-400 text-sm mt-1 hidden" id="firstNameError">Enter a valid first name (2–30 letters).</p>
+          </div>
+          <div>
+            <label class="block text-purple-200 mb-1">Last Name</label>
+            <input type="text" name="lastName" required pattern="^[A-Za-z\s]{2,30}$"
+              class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+            <p class="text-red-400 text-sm mt-1 hidden" id="lastNameError">Enter a valid last name (2–30 letters).</p>
+          </div>
+        </div>
+        <div>
+          <label class="block text-purple-200 mb-1">Your Email</label>
+          <input type="email" name="email" required
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+          <p class="text-red-400 text-sm mt-1 hidden" id="emailError">Enter a valid email address.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-purple-200 mb-1">Phone Number</label>
+            <input type="tel" name="phone" required
+              class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+            <p class="text-red-400 text-sm mt-1 hidden" id="phoneError">Phone number is required.</p>
+          </div>
+          <div>
+            <label class="block text-purple-200 mb-1">Company</label>
+            <input type="text" name="company"
+              class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-purple-200 mb-1">Address</label>
+          <input type="text" name="address" minlength="5" maxlength="100"
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-purple-200 mb-1">Zip Code</label>
+            <input type="text" name="zip" pattern="^\d{4,10}$"
+              class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
+            <p class="text-red-400 text-sm mt-1 hidden" id="zipError">Enter a valid zip code (4–10 digits).</p>
+          </div>
+          <div>
+            <label class="block text-purple-200 mb-1">Country</label>
+            <select id="country" name="country" required
+              class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500">
+              <option value="">Select a country</option>
+            </select>
+            <p class="text-red-400 text-sm mt-1 hidden" id="countryError">Please select a country.</p>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <input id="agree" type="checkbox" required class="h-4 w-4 text-purple-600 border-gray-700 rounded bg-black" />
+          <label for="agree" class="ml-2 text-purple-200 text-sm">
+            I agree to the <a href="#" class="underline text-purple-400">terms and conditions</a>
+          </label>
+        </div>
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-3 rounded-md font-semibold transition duration-200">
+          Submit Application
+        </button>
+      </form>
     </div>
   </div>
-</section>
-
-<div class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 px-4">
-  <div class="w-full md:w-1/2 relative h-80 md:h-auto rounded-lg overflow-hidden">
-    <img
-      src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=870&q=80"
-      alt="Work together"
-      class="w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-500 to-red-400 opacity-70"></div>
-  </div>
-  <div class="w-full md:w-1/2 bg-purple-900 bg-opacity-60 p-6 md:p-12 rounded-lg shadow-lg">
-    <h2 class="text-3xl font-bold text-white mb-6 text-center">Contact Us to Discuss</h2>
-    <form class="space-y-5" id="contactForm" novalidate action="thankyou.html">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-purple-200 mb-1">First Name</label>
-          <input type="text" name="firstName" required pattern="^[A-Za-z\s]{2,30}$"
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-          <p class="text-red-400 text-sm mt-1 hidden" id="firstNameError">Enter a valid first name (2–30 letters).</p>
-        </div>
-        <div>
-          <label class="block text-purple-200 mb-1">Last Name</label>
-          <input type="text" name="lastName" required pattern="^[A-Za-z\s]{2,30}$"
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-          <p class="text-red-400 text-sm mt-1 hidden" id="lastNameError">Enter a valid last name (2–30 letters).</p>
-        </div>
-      </div>
-      <div>
-        <label class="block text-purple-200 mb-1">Your Email</label>
-        <input type="email" name="email" required
-          class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-        <p class="text-red-400 text-sm mt-1 hidden" id="emailError">Enter a valid email address.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-purple-200 mb-1">Phone Number</label>
-          <input type="tel" name="phone" required
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-          <p class="text-red-400 text-sm mt-1 hidden" id="phoneError">Phone number is required.</p>
-        </div>
-        <div>
-          <label class="block text-purple-200 mb-1">Company</label>
-          <input type="text" name="company"
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-        </div>
-      </div>
-      <div>
-        <label class="block text-purple-200 mb-1">Address</label>
-        <input type="text" name="address" minlength="5" maxlength="100"
-          class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-purple-200 mb-1">Zip Code</label>
-          <input type="text" name="zip" pattern="^\d{4,10}$"
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
-          <p class="text-red-400 text-sm mt-1 hidden" id="zipError">Enter a valid zip code (4–10 digits).</p>
-        </div>
-        <div>
-          <label class="block text-purple-200 mb-1">Country</label>
-          <select id="country" name="country" required
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500">
-            <option value="">Select a country</option>
-          </select>
-          <p class="text-red-400 text-sm mt-1 hidden" id="countryError">Please select a country.</p>
-        </div>
-      </div>
-      <div class="flex items-center">
-        <input id="agree" type="checkbox" required class="h-4 w-4 text-purple-600 border-gray-700 rounded bg-black" />
-        <label for="agree" class="ml-2 text-purple-200 text-sm">
-          I agree to the <a href="#" class="underline text-purple-400">terms and conditions</a>
-        </label>
-      </div>
-      <button type="submit"
-        class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-3 rounded-md font-semibold transition duration-200">
-        Submit Application
-      </button>
-    </form>
-  </div>
-</div>
 
 
-<!-- Client Carousel Section -->
-<section class="py-20 bg-white text-center text-purple-900">
-  <div class="container mx-auto px-4">
-    <p class="text-sm tracking-[0.3em] uppercase text-purple-500 mb-3">Recent Work</p>
-    <h2 class="text-3xl font-bold mb-10">Proof in every launch</h2>
+  <!-- Client Carousel Section -->
+  <section class="py-20 bg-white text-center text-purple-900">
+    <div class="container mx-auto px-4">
+      <p class="text-sm tracking-[0.3em] uppercase text-purple-500 mb-3">Recent Work</p>
+      <h2 class="text-3xl font-bold mb-10">Proof in every launch</h2>
 
-    <div id="galleryCarousel" class="relative overflow-hidden rounded-3xl border border-purple-200" tabindex="0">
-      <!-- Carousel Content -->
-      <div id="galleryCarouselInner" class="flex gap-4 transition-transform duration-500 ease-in-out bg-purple-50 p-6">
-        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
-          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Fintech SaaS</p>
-          <h3 class="text-xl font-semibold mb-3">Conversion-focused marketing site</h3>
-          <p class="text-sm text-purple-600 mb-4">+138% qualified demo requests after redesigning the experience and integrating personalization.</p>
-          <cite class="text-purple-800 text-sm">CMO, Series B startup</cite>
+      <div id="galleryCarousel" class="relative overflow-hidden rounded-3xl border border-purple-200" tabindex="0">
+        <!-- Carousel Content -->
+        <div id="galleryCarouselInner"
+          class="flex gap-4 transition-transform duration-500 ease-in-out bg-purple-50 p-6">
+          <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+            <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Fintech SaaS</p>
+            <h3 class="text-xl font-semibold mb-3">Conversion-focused marketing site</h3>
+            <p class="text-sm text-purple-600 mb-4">+138% qualified demo requests after redesigning the experience and
+              integrating personalization.</p>
+            <cite class="text-purple-800 text-sm">CMO, Series B startup</cite>
+          </div>
+          <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+            <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Global Non-profit</p>
+            <h3 class="text-xl font-semibold mb-3">Cause storytelling platform</h3>
+            <p class="text-sm text-purple-600 mb-4">Launched new donation flow and CRM integration, reducing ops time by
+              40%.</p>
+            <cite class="text-purple-800 text-sm">Digital Director</cite>
+          </div>
+          <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+            <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Enterprise IT</p>
+            <h3 class="text-xl font-semibold mb-3">Infrastructure modernization</h3>
+            <p class="text-sm text-purple-600 mb-4">Replatformed 12 critical apps onto a secure hybrid cloud with zero
+              downtime.</p>
+            <cite class="text-purple-800 text-sm">VP Technology</cite>
+          </div>
+          <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
+            <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Retail</p>
+            <h3 class="text-xl font-semibold mb-3">Omnichannel experience</h3>
+            <p class="text-sm text-purple-600 mb-4">Unified loyalty, content, and commerce experiences across 27
+              markets.</p>
+            <cite class="text-purple-800 text-sm">Head of Digital</cite>
+          </div>
         </div>
-        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
-          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Global Non-profit</p>
-          <h3 class="text-xl font-semibold mb-3">Cause storytelling platform</h3>
-          <p class="text-sm text-purple-600 mb-4">Launched new donation flow and CRM integration, reducing ops time by 40%.</p>
-          <cite class="text-purple-800 text-sm">Digital Director</cite>
-        </div>
-        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
-          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Enterprise IT</p>
-          <h3 class="text-xl font-semibold mb-3">Infrastructure modernization</h3>
-          <p class="text-sm text-purple-600 mb-4">Replatformed 12 critical apps onto a secure hybrid cloud with zero downtime.</p>
-          <cite class="text-purple-800 text-sm">VP Technology</cite>
-        </div>
-        <div class="min-w-[300px] flex-shrink-0 bg-white rounded-2xl p-6 text-left shadow-lg">
-          <p class="text-xs uppercase tracking-wide text-purple-400 mb-2">Retail</p>
-          <h3 class="text-xl font-semibold mb-3">Omnichannel experience</h3>
-          <p class="text-sm text-purple-600 mb-4">Unified loyalty, content, and commerce experiences across 27 markets.</p>
-          <cite class="text-purple-800 text-sm">Head of Digital</cite>
-        </div>
-      </div>
 
-      <!-- Controls -->
-      <div class="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
-        <button onclick="slideGallery(-1)" aria-label="Previous" class="text-purple-600 hover:text-purple-800 text-3xl px-2">❮</button>
-      </div>
-      <div class="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
-        <button onclick="slideGallery(1)" aria-label="Next" class="text-purple-600 hover:text-purple-800 text-3xl px-2">❯</button>
-      </div>
-
-      <!-- Fallback -->
-      <noscript>
-        <p class="text-purple-500 mt-4">JavaScript is required to view the carousel.</p>
-        <div class="flex flex-wrap justify-center gap-4 mt-4">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJl8JJBWZnsoiDEm9Ehs5KuJ_DD2rIcaJnoQ&s" alt="Project 1" class="w-48 h-28 object-cover rounded" />
+        <!-- Controls -->
+        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 z-10">
+          <button onclick="slideGallery(-1)" aria-label="Previous"
+            class="text-purple-600 hover:text-purple-800 text-3xl px-2">❮</button>
         </div>
-      </noscript>
+        <div class="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
+          <button onclick="slideGallery(1)" aria-label="Next"
+            class="text-purple-600 hover:text-purple-800 text-3xl px-2">❯</button>
+        </div>
+
+        <!-- Fallback -->
+        <noscript>
+          <p class="text-purple-500 mt-4">JavaScript is required to view the carousel.</p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJl8JJBWZnsoiDEm9Ehs5KuJ_DD2rIcaJnoQ&s"
+              alt="Project 1" class="w-48 h-28 object-cover rounded" />
+          </div>
+        </noscript>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Footer -->
@@ -518,105 +555,99 @@
 
         <form id="newsletterForm" class="space-y-3">
           <!-- Email Input -->
-          <input
-            type="email"
-            name="email"
-            id="newsletterEmail"
-            placeholder="Enter your email"
-            required
-            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500"
-          />
+          <input type="email" name="email" id="newsletterEmail" placeholder="Enter your email" required
+            class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
 
           <!-- Submit Button -->
-          <button
-            type="submit"
-            class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-2 rounded-md font-semibold transition duration-200"
-          >
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-2 rounded-md font-semibold transition duration-200">
             Subscribe
           </button>
         </form>
       </div>
     </div>
     <div class="border-t border-purple-800 mt-10 pt-6 text-center text-sm">
-      <p>© <script>document.write(new Date().getFullYear())</script> PurpleWave. All rights reserved.</p>
+      <p>©
+        <script>document.write(new Date().getFullYear())</script> PurpleWave. All rights reserved.
+      </p>
     </div>
   </footer>
 
   <!-- JavaScript for Carousel -->
 
   <script>
-  const carouselInner = document.getElementById("galleryCarouselInner");
-  const scrollAmount = 300; // Pixels to scroll on each button click
+    const carouselInner = document.getElementById("galleryCarouselInner");
+    const scrollAmount = 300; // Pixels to scroll on each button click
 
-  function slideGallery(direction) {
-    carouselInner.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
-  }
-</script>
+    function slideGallery(direction) {
+      carouselInner.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
 
-<script>
-  const countries = [
-    "India", "United States", "United Kingdom", "Australia", "Canada", "Germany", "France", "Italy",
-    "Spain", "Brazil", "Japan", "China", "Russia", "South Africa", "Mexico", "Indonesia", "Netherlands",
-    "Sweden", "Norway", "Finland", "Denmark", "Switzerland", "New Zealand", "Singapore", "UAE",
-    "Saudi Arabia", "Pakistan", "Bangladesh", "Nepal", "Sri Lanka", "Thailand", "Malaysia"
-  ];
-
-  const countrySelect = document.getElementById('country');
-  countries.forEach(c => {
-    const opt = document.createElement("option");
-    opt.value = c;
-    opt.textContent = c;
-    countrySelect.appendChild(opt);
-  });
-
-  const form = document.getElementById('contactForm');
-
-  form.addEventListener('submit', function (e) {
-    let isValid = true;
-
-    const fields = [
-      { name: 'firstName', errorId: 'firstNameError', pattern: /^[A-Za-z\s]{2,30}$/ },
-      { name: 'lastName', errorId: 'lastNameError', pattern: /^[A-Za-z\s]{2,30}$/ },
-      { name: 'email', errorId: 'emailError', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
-      { name: 'phone', errorId: 'phoneError' }, // no pattern needed
-      { name: 'zip', errorId: 'zipError', pattern: /^\d{4,10}$/ },
+  <script>
+    const countries = [
+      "India", "United States", "United Kingdom", "Australia", "Canada", "Germany", "France", "Italy",
+      "Spain", "Brazil", "Japan", "China", "Russia", "South Africa", "Mexico", "Indonesia", "Netherlands",
+      "Sweden", "Norway", "Finland", "Denmark", "Switzerland", "New Zealand", "Singapore", "UAE",
+      "Saudi Arabia", "Pakistan", "Bangladesh", "Nepal", "Sri Lanka", "Thailand", "Malaysia"
     ];
 
-    fields.forEach(({ name, errorId, pattern }) => {
-      const input = form.elements[name];
-      const error = document.getElementById(errorId);
-
-      if (!input.value || (pattern && !pattern.test(input.value.trim()))) {
-        error.classList.remove('hidden');
-        isValid = false;
-      } else {
-        error.classList.add('hidden');
-      }
+    const countrySelect = document.getElementById('country');
+    countries.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      countrySelect.appendChild(opt);
     });
 
-    const country = form.elements['country'];
-    const countryError = document.getElementById('countryError');
-    if (!country.value || !countries.includes(country.value)) {
-      countryError.classList.remove('hidden');
-      isValid = false;
-    } else {
-      countryError.classList.add('hidden');
-    }
+    const form = document.getElementById('contactForm');
 
-    if (!form.checkValidity()) {
-      isValid = false;
-    }
+    form.addEventListener('submit', function (e) {
+      let isValid = true;
 
-    if (!isValid) {
-      e.preventDefault();
-    } else {
-      alert('Form submitted successfully!');
-    }
-  });
-</script>
+      const fields = [
+        { name: 'firstName', errorId: 'firstNameError', pattern: /^[A-Za-z\s]{2,30}$/ },
+        { name: 'lastName', errorId: 'lastNameError', pattern: /^[A-Za-z\s]{2,30}$/ },
+        { name: 'email', errorId: 'emailError', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+        { name: 'phone', errorId: 'phoneError' }, // no pattern needed
+        { name: 'zip', errorId: 'zipError', pattern: /^\d{4,10}$/ },
+      ];
+
+      fields.forEach(({ name, errorId, pattern }) => {
+        const input = form.elements[name];
+        const error = document.getElementById(errorId);
+
+        if (!input.value || (pattern && !pattern.test(input.value.trim()))) {
+          error.classList.remove('hidden');
+          isValid = false;
+        } else {
+          error.classList.add('hidden');
+        }
+      });
+
+      const country = form.elements['country'];
+      const countryError = document.getElementById('countryError');
+      if (!country.value || !countries.includes(country.value)) {
+        countryError.classList.remove('hidden');
+        isValid = false;
+      } else {
+        countryError.classList.add('hidden');
+      }
+
+      if (!form.checkValidity()) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        e.preventDefault();
+      } else {
+        alert('Form submitted successfully!');
+      }
+    });
+  </script>
 
 
   <!-- <script>
@@ -642,127 +673,121 @@
     });
   </script> -->
 
- <script>
-  const ctx = document.getElementById('areaChart').getContext('2d');
+  <script>
+    const ctx = document.getElementById('areaChart').getContext('2d');
 
-  const fullLabels = [
-    "Apr 1", "Apr 5", "Apr 10", "Apr 15", "Apr 20", "Apr 25", "Apr 30",
-    "May 5", "May 10", "May 15", "May 20", "May 25", "May 30",
-    "Jun 5", "Jun 10", "Jun 15", "Jun 20", "Jun 25", "Jun 30"
-  ];
+    const fullLabels = [
+      "Apr 1", "Apr 5", "Apr 10", "Apr 15", "Apr 20", "Apr 25", "Apr 30",
+      "May 5", "May 10", "May 15", "May 20", "May 25", "May 30",
+      "Jun 5", "Jun 10", "Jun 15", "Jun 20", "Jun 25", "Jun 30"
+    ];
 
-  const fullDesktopData = [222, 373, 261, 120, 243, 215, 454, 481, 293, 473, 177, 294, 178, 88, 155, 307, 408, 434, 446];
-  const fullMobileData = [150, 290, 190, 170, 180, 250, 380, 390, 310, 380, 230, 220, 200, 140, 200, 350, 450, 380, 490];
+    const fullDesktopData = [222, 373, 261, 120, 243, 215, 454, 481, 293, 473, 177, 294, 178, 88, 155, 307, 408, 434, 446];
+    const fullMobileData = [150, 290, 190, 170, 180, 250, 380, 390, 310, 380, 230, 220, 200, 140, 200, 350, 450, 380, 490];
 
-  let chartInstance;
+    let chartInstance;
 
-  function createChart(labels, desktopData, mobileData) {
-    if (chartInstance) chartInstance.destroy();
+    function createChart(labels, desktopData, mobileData) {
+      if (chartInstance) chartInstance.destroy();
 
-    chartInstance = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: "Desktop",
-            data: desktopData,
-            fill: true,
-            backgroundColor: 'rgba(168, 85, 247, 0.2)',
-            borderColor: 'rgba(168, 85, 247, 1)',
-            tension: 0.4,
-          },
-          {
-            label: "Mobile",
-            data: mobileData,
-            fill: true,
-            backgroundColor: 'rgba(236, 72, 153, 0.2)',
-            borderColor: 'rgba(236, 72, 153, 1)',
-            tension: 0.4,
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            labels: {
-              color: '#d8b4fe',
-              font: { weight: 'bold' }
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Desktop",
+              data: desktopData,
+              fill: true,
+              backgroundColor: 'rgba(168, 85, 247, 0.2)',
+              borderColor: 'rgba(168, 85, 247, 1)',
+              tension: 0.4,
+            },
+            {
+              label: "Mobile",
+              data: mobileData,
+              fill: true,
+              backgroundColor: 'rgba(236, 72, 153, 0.2)',
+              borderColor: 'rgba(236, 72, 153, 1)',
+              tension: 0.4,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#d8b4fe',
+                font: { weight: 'bold' }
+              }
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
             }
           },
-          tooltip: {
-            mode: 'index',
-            intersect: false,
-          }
-        },
-        scales: {
-          x: {
-            ticks: { color: '#d8b4fe' },
-            grid: { color: 'rgba(255, 255, 255, 0.1)' },
-          },
-          y: {
-            ticks: { color: '#d8b4fe' },
-            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+          scales: {
+            x: {
+              ticks: { color: '#d8b4fe' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' },
+            },
+            y: {
+              ticks: { color: '#d8b4fe' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' },
+            }
           }
         }
-      }
-    });
-  }
+      });
+    }
 
-  function updateChart(days) {
-    // Remove 'active' class from all buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.classList.remove('bg-purple-900', 'ring-2', 'ring-purple-500');
-    });
+    function updateChart(days) {
+      // Remove 'active' class from all buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-purple-900', 'ring-2', 'ring-purple-500');
+      });
 
-    // Add highlight to selected button
-    document.getElementById(`btn-${days}`).classList.add('bg-purple-900', 'ring-2', 'ring-purple-500');
+      // Add highlight to selected button
+      document.getElementById(`btn-${days}`).classList.add('bg-purple-900', 'ring-2', 'ring-purple-500');
 
-    let start = 0;
-    if (days === '7') start = fullLabels.length - 7;
-    if (days === '30') start = fullLabels.length - 13;
-    if (days === '90') start = 0;
+      let start = 0;
+      if (days === '7') start = fullLabels.length - 7;
+      if (days === '30') start = fullLabels.length - 13;
+      if (days === '90') start = 0;
 
-    const labels = fullLabels.slice(start);
-    const desktop = fullDesktopData.slice(start);
-    const mobile = fullMobileData.slice(start);
+      const labels = fullLabels.slice(start);
+      const desktop = fullDesktopData.slice(start);
+      const mobile = fullMobileData.slice(start);
 
-    createChart(labels, desktop, mobile);
-  }
+      createChart(labels, desktop, mobile);
+    }
 
-  // Initialize default view as 30 Days
-  updateChart('30');
-</script>
+    // Initialize default view as 30 Days
+    updateChart('30');
+  </script>
 
 
   <!-- Footer with Bottom-Left Newsletter Form -->
-<footer class="bg-purple-950 text-purple-200 relative px-6 py-12">
+  <footer class="bg-purple-950 text-purple-200 relative px-6 py-12">
 
-  <!-- Newsletter Form -->
-  <div class="absolute bottom-6 left-6 w-full max-w-sm bg-purple-900 bg-opacity-90 p-6 rounded-lg shadow-lg hidden md:block">
-    <h3 class="text-xl font-bold mb-2 text-purple-100">Subscribe to Our Newsletter</h3>
-    <p class="text-sm mb-4 text-purple-300">Stay updated with the latest from PurpleWave.</p>
+    <!-- Newsletter Form -->
+    <div
+      class="absolute bottom-6 left-6 w-full max-w-sm bg-purple-900 bg-opacity-90 p-6 rounded-lg shadow-lg hidden md:block">
+      <h3 class="text-xl font-bold mb-2 text-purple-100">Subscribe to Our Newsletter</h3>
+      <p class="text-sm mb-4 text-purple-300">Stay updated with the latest from PurpleWave.</p>
 
-    <form id="newsletterForm" class="space-y-3">
-      <!-- Email Input -->
-      <input
-        type="email"
-        name="email"
-        id="newsletterEmail"
-        placeholder="Enter your email"
-        required
-        class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500"
-      />
+      <form id="newsletterForm" class="space-y-3">
+        <!-- Email Input -->
+        <input type="email" name="email" id="newsletterEmail" placeholder="Enter your email" required
+          class="w-full px-4 py-2 rounded-md border border-gray-700 bg-black text-white focus:ring-purple-500 focus:border-purple-500" />
 
-      <!-- Submit Button -->
-      <button
-        type="submit"
-        class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-2 rounded-md font-semibold transition duration-200"
-      >
-        Subscribe
-      </button>
-    </form>
-  </div>
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-2 rounded-md font-semibold transition duration-200">
+          Subscribe
+        </button>
+      </form>
+    </div>
 </body>
+
 </html>
