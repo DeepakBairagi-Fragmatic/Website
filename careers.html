@@ -58,6 +58,12 @@
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+    <!-- Job Application Modal -->
+    <job-application-modal id="jobModal"></job-application-modal>
+
+    <!-- Resume Upload Modal -->
+    <resume-upload-modal id="resumeModal"></resume-upload-modal>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -65,6 +71,8 @@
         gtag('config', 'G-YMPCVDJBLZ');
     </script>
     <script src="js/global-navbar.js" defer></script>
+    <script src="js/job-application-modal.js" defer></script>
+    <script src="js/resume-upload-modal.js" defer></script>
 </head>
 
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
@@ -178,10 +186,10 @@
                                 <span class="px-3 py-1 bg-purple-900/40 rounded text-purple-200">Design</span>
                             </div>
                         </div>
-                        <a href="contact.html"
-                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center">
+                        <button onclick="document.getElementById('jobModal').open('Senior UX Designer')"
+                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center cursor-pointer">
                             Apply Now
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -199,10 +207,10 @@
                                 <span class="px-3 py-1 bg-purple-900/40 rounded text-purple-200">Engineering</span>
                             </div>
                         </div>
-                        <a href="contact.html"
-                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center">
+                        <button onclick="document.getElementById('jobModal').open('Full-Stack Engineer')"
+                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center cursor-pointer">
                             Apply Now
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -220,10 +228,10 @@
                                 <span class="px-3 py-1 bg-purple-900/40 rounded text-purple-200">Strategy</span>
                             </div>
                         </div>
-                        <a href="contact.html"
-                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center">
+                        <button onclick="document.getElementById('jobModal').open('Brand Strategist')"
+                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center cursor-pointer">
                             Apply Now
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -241,10 +249,10 @@
                                 <span class="px-3 py-1 bg-purple-900/40 rounded text-purple-200">Infrastructure</span>
                             </div>
                         </div>
-                        <a href="contact.html"
-                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center">
+                        <button onclick="document.getElementById('jobModal').open('DevOps Engineer')"
+                            class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition self-start md:self-center cursor-pointer">
                             Apply Now
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -252,9 +260,9 @@
             <div class="text-center mt-12">
                 <p class="text-purple-400 mb-4">Don't see a role that fits? We're always looking for talented people.
                 </p>
-                <a href="contact.html" class="text-pink-400 font-semibold hover:text-pink-300 transition">
+                <button onclick="document.getElementById('resumeModal').open()" class="text-pink-400 font-semibold hover:text-pink-300 transition cursor-pointer bg-transparent border-none">
                     Send us your resume →
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -288,6 +296,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Job Application Modal -->
+    <job-application-modal id="jobModal"></job-application-modal>
+
+    <!-- Resume Upload Modal -->
+    <resume-upload-modal id="resumeModal"></resume-upload-modal>
 
     <script>
         // Update year

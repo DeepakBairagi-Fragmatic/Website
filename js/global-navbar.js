@@ -1,48 +1,208 @@
+/**
+ * GlobalNavbar - Professional responsive navbar component
+ * Features: Mobile menu, active page highlighting, smooth animations
+ */
 class GlobalNavbar extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+    this.mobileMenuOpen = false;
+  }
 
-    connectedCallback() {
-        // Determine if we are in a subdirectory (like /events/)
-        // This allows the navbar to work with both absolute and relative path setups (e.g. local file system)
-        const path = window.location.pathname;
-        // Check for 'events/' in path, but be careful not to match 'events.html' at root
-        // A simple heuristic: if path contains '/events/' followed by something, or ends in '/events/' (unlikely for file)
-        // Actually, checking if we are NOT in root is safer. 
-        // But for this specific project structure, we know 'events/' is the main subdirectory.
-        // Let's check if the document is in the events folder.
-        const isEventsDir = path.includes('/events/') || path.includes('\\events\\');
+  connectedCallback() {
+    // Determine base path for navigation
+    const path = window.location.pathname;
+    const isEventsDir = path.includes('/events/') || path.includes('\\events\\');
+    const base = isEventsDir ? '../' : '';
+    const home = isEventsDir ? '../index.html' : 'index.html';
 
-        const base = isEventsDir ? '../' : '';
-        // For home, if we are in root, 'index.html' or './' or '/' works. 
-        // If we are in events, '../index.html' works.
-        // Using 'index.html' for root to be file-system friendly.
-        const home = isEventsDir ? '../index.html' : 'index.html';
+    // Get current page for active state
+    const currentPage = path.split('/').pop().split('\\').pop() || 'index.html';
 
-        this.innerHTML = `
+    this.innerHTML = `
     <!-- Navbar -->
-    <nav class="bg-purple-950 shadow-lg sticky top-0 z-50">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Logo + Brand -->
-        <a href="${home}" class="flex items-center gap-2 focus-outline">
-          <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/262379dc-7d7f-4f73-bbf9-fb5c7b3e8b18.png"
-               alt="PurpleWave logo" class="h-10 w-auto" loading="lazy"/>
-          <span class="text-2xl font-bold text-purple-200">PurpleWave</span>
-        </a>
-        
-        <!-- Navigation links -->
-        <ul class="flex space-x-6 text-purple-200">
-          <li><a href="${home}" class="hover:text-white transition focus-outline">Home</a></li>
-          <li><a href="${base}aboutus.html"  class="hover:text-white transition focus-outline">About</a></li>
-          <li><a href="${base}services.html" class="hover:text-white transition focus-outline">Services</a></li>
-          <li><a href="${base}events.html"   class="hover:text-white transition focus-outline">Events</a></li>
-          <li><a href="${base}contact.html"  class="hover:text-white transition focus-outline">Contact</a></li>
-        </ul>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0b0115]/80 backdrop-blur-xl border-b border-purple-900/30 shadow-lg shadow-purple-900/10">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+          
+          <!-- Logo + Brand -->
+          <a href="${home}" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <span class="text-2xl font-bold bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent">PurpleWave</span>
+          </a>
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-8">
+            <ul class="flex items-center gap-1">
+              <li><a href="${home}" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Home</a></li>
+              <li><a href="${base}aboutus.html" class="nav-link ${currentPage === 'aboutus.html' ? 'active' : ''}">About</a></li>
+              <li><a href="${base}services.html" class="nav-link ${currentPage === 'services.html' ? 'active' : ''}">Services</a></li>
+              <li><a href="${base}events.html" class="nav-link ${currentPage === 'events.html' ? 'active' : ''}">Events</a></li>
+              <li><a href="${base}careers.html" class="nav-link ${currentPage === 'careers.html' ? 'active' : ''}">Careers</a></li>
+              <li><a href="${base}contact.html" class="nav-link ${currentPage === 'contact.html' ? 'active' : ''}">Contact</a></li>
+            </ul>
+            
+            <!-- CTA Button -->
+            <a href="${base}contact.html" class="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-900/30">
+              Get Started
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="lg:hidden text-purple-200 hover:text-white transition p-2" aria-label="Toggle menu">
+            <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="lg:hidden hidden border-t border-purple-900/30 bg-[#0b0115]/95 backdrop-blur-xl">
+        <div class="container mx-auto px-4 py-6">
+          <ul class="space-y-2">
+            <li><a href="${home}" class="mobile-nav-link ${currentPage === 'index.html' ? 'active' : ''}">Home</a></li>
+            <li><a href="${base}aboutus.html" class="mobile-nav-link ${currentPage === 'aboutus.html' ? 'active' : ''}">About</a></li>
+            <li><a href="${base}services.html" class="mobile-nav-link ${currentPage === 'services.html' ? 'active' : ''}">Services</a></li>
+            <li><a href="${base}events.html" class="mobile-nav-link ${currentPage === 'events.html' ? 'active' : ''}">Events</a></li>
+            <li><a href="${base}careers.html" class="mobile-nav-link ${currentPage === 'careers.html' ? 'active' : ''}">Careers</a></li>
+            <li><a href="${base}contact.html" class="mobile-nav-link ${currentPage === 'contact.html' ? 'active' : ''}">Contact</a></li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-purple-900/30">
+            <a href="${base}contact.html" class="block text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-full transition-all duration-300">
+              Get Started
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
+
+    <!-- Spacer to prevent content from going under fixed navbar -->
+    <div class="h-20"></div>
+
+    <style>
+      /* Desktop Navigation Links */
+      .nav-link {
+        position: relative;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: rgb(216 180 254); /* purple-200 */
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 0.5rem;
+      }
+
+      .nav-link:hover {
+        color: white;
+        background: rgba(139, 92, 246, 0.1);
+      }
+
+      .nav-link.active {
+        color: white;
+        background: rgba(139, 92, 246, 0.2);
+      }
+
+      .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        right: 1rem;
+        height: 2px;
+        background: linear-gradient(to right, rgb(168 85 247), rgb(236 72 153));
+        border-radius: 2px;
+      }
+
+      /* Mobile Navigation Links */
+      .mobile-nav-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: rgb(216 180 254);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 0.5rem;
+      }
+
+      .mobile-nav-link:hover {
+        color: white;
+        background: rgba(139, 92, 246, 0.1);
+        transform: translateX(4px);
+      }
+
+      .mobile-nav-link.active {
+        color: white;
+        background: rgba(139, 92, 246, 0.2);
+        border-left: 3px solid rgb(236 72 153);
+      }
+
+      /* Smooth mobile menu animation */
+      #mobileMenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      #mobileMenu:not(.hidden) {
+        max-height: 500px;
+      }
+    </style>
     `;
+
+    // Attach event listeners
+    this.attachEventListeners();
+  }
+
+  attachEventListeners() {
+    const mobileMenuBtn = this.querySelector('#mobileMenuBtn');
+    const mobileMenu = this.querySelector('#mobileMenu');
+    const menuIcon = this.querySelector('#menuIcon');
+    const closeIcon = this.querySelector('#closeIcon');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        this.mobileMenuOpen = !this.mobileMenuOpen;
+
+        if (this.mobileMenuOpen) {
+          mobileMenu.classList.remove('hidden');
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+        } else {
+          // Add a small delay to allow animation
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      });
     }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (this.mobileMenuOpen && !this.contains(e.target)) {
+        this.mobileMenuOpen = false;
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+
+    // Close mobile menu on window resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && this.mobileMenuOpen) {
+        this.mobileMenuOpen = false;
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  }
 }
 
 customElements.define('global-navbar', GlobalNavbar);
