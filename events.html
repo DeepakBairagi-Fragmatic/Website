@@ -40,6 +40,7 @@
       .text-gradient {
         background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
@@ -279,81 +280,77 @@
 
     const weeklyEvents = [
       { day: "Monday", path: "events/monday.html", title: "UI Design Bootcamp", time: "10:00 AM", desc: "Master Figma & Tailwind.", speaker: "Alex Vega", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" },
-      { day: "Tuesday", path: "events/tuesday.html", title: "Frontend Fun with AI", time: "12:00 PM", desc: "Generative AI for code.", speaker: "Mira Patel", img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" },
-      { day: "Wednesday", path: "events/wednesday.html", title: "Brand Lab Live", time: "2:00 PM", desc: "Rebranding in real-time.", speaker: "Chris Huang", img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" },
-      { day: "Thursday", path: "events/thursday.html", title: "No-Code Power Hour", time: "11:00 AM", desc: "Build without code.", speaker: "Dana O’Leary", img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" },
-      { day: "Friday", path: "events/friday.html", title: "Web Animation 101", time: "3:00 PM", desc: "Micro-interactions & motion.", speaker: "PurpleWave Crew", img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" },
-      { day: "Saturday", path: "events/saturday.html", title: "Ask Me Anything", time: "6:00 PM", desc: "Open Q&A with speakers.", speaker: "All Panelists", img: "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80" },
-      { day: "Sunday", path: "events/sunday.html", title: "Next-Gen Web", time: "4:00 PM", desc: "Future tech talks.", speaker: "Special Guests", img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" }
+      { day: "Tuesday", path: "events/tuesday.html", title: "Frontend Fun with AI", time: "11:00 AM", desc: "Build smarter apps.", speaker: "Mira Patel", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" },
+      { day: "Wednesday", path: "events/wednesday.html", title: "Brand Lab Live", time: "1:00 PM", desc: "Crafting identities.", speaker: "Chris Huang", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" },
+      { day: "Thursday", path: "events/thursday.html", title: "No-Code Power Hour", time: "2:00 PM", desc: "Build without code.", speaker: "Dana O'Leary", img: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80" },
+      { day: "Friday", path: "events/friday.html", title: "Web Animation 101", time: "3:00 PM", desc: "Motion for the web.", speaker: "Alex Vega", img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" },
+      { day: "Saturday", path: "events/saturday.html", title: "Community AMA", time: "4:00 PM", desc: "Ask us anything!", speaker: "Team", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" },
+      { day: "Sunday", path: "events/sunday.html", title: "Next-Gen Web", time: "12:00 PM", desc: "Future trends.", speaker: "Mira Patel", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" }
     ];
 
-    const today = new Date().getDay(); // 0 = Sunday
-    const eventIndex = today === 0 ? 6 : today - 1;
-    const event = weeklyEvents[eventIndex];
+    const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+    const todayEvent = weeklyEvents.find(e => e.day === today) || weeklyEvents[0];
 
-    // Render Featured Event
+    // Render Today's Event
     document.getElementById('todayEventCard').innerHTML = `
       <div class="flex flex-col md:flex-row gap-8 items-center">
-        <img src="${event.img}" alt="${event.title}" class="w-full md:w-1/3 h-64 object-cover rounded-2xl shadow-lg ring-1 ring-purple-500/30">
-        <div class="flex-1 text-center md:text-left">
-          <div class="inline-block px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold mb-4 uppercase tracking-wider">
-            Happening Today • ${event.day}
+        <div class="w-full md:w-1/2 relative group overflow-hidden rounded-2xl">
+          <div class="absolute inset-0 bg-purple-600/20 group-hover:bg-transparent transition duration-500 z-10"></div>
+          <img src="${todayEvent.img}" alt="${todayEvent.title}" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700">
+          <div class="absolute top-4 left-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20 animate-pulse">
+            LIVE NOW
           </div>
-          <h3 class="text-3xl font-bold text-white mb-2">${event.title}</h3>
-          <p class="text-purple-200 mb-6 text-lg">${event.desc}</p>
-          
-          <div class="flex flex-wrap justify-center md:justify-start gap-6 mb-8 text-sm text-purple-300">
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              ${event.time}
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-              ${event.speaker}
-            </div>
+        </div>
+        <div class="w-full md:w-1/2 text-left">
+          <h3 class="text-3xl font-bold text-white mb-2">${todayEvent.title}</h3>
+          <div class="flex items-center gap-4 text-purple-300 mb-4 text-sm">
+            <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> ${todayEvent.time}</span>
+            <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> ${todayEvent.speaker}</span>
           </div>
-
-          <a href="${event.path}" class="inline-block px-8 py-3 rounded-full bg-white text-purple-900 font-bold hover:bg-purple-50 transition shadow-lg">
-            View Event Details
+          <p class="text-purple-200/80 mb-6">${todayEvent.desc}</p>
+          <a href="${todayEvent.path}" class="inline-block px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-semibold transition shadow-lg shadow-purple-900/30">
+            Join Session
           </a>
         </div>
       </div>
     `;
 
     // Render Weekly Grid
-    document.getElementById('weekEvents').innerHTML = weeklyEvents.map((ev, i) => `
-      <a href="${ev.path}" class="glass-panel rounded-2xl overflow-hidden group hover:-translate-y-2 transition duration-300 flex flex-col h-full">
-        <div class="relative h-48 overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0b0115] to-transparent opacity-60 z-10"></div>
-          <img src="${ev.img}" alt="${ev.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-          <div class="absolute bottom-4 left-4 z-20">
-            <span class="px-2 py-1 bg-purple-600/80 backdrop-blur rounded text-xs text-white font-semibold">${ev.day}</span>
-          </div>
+    const gridHTML = weeklyEvents.map(event => `
+      <a href="${event.path}" class="group relative bg-[#1a0b2e] rounded-2xl overflow-hidden border border-purple-900/50 hover:border-pink-500/50 transition duration-300 hover:-translate-y-1">
+        <div class="h-40 overflow-hidden">
+          <img src="${event.img}" alt="${event.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
         </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <div class="text-xs text-purple-400 mb-2 font-mono">${ev.time}</div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition">${ev.title}</h3>
-          <p class="text-purple-300/80 text-sm mb-4 flex-1">${ev.desc}</p>
-          <div class="flex items-center gap-2 text-xs text-purple-400 pt-4 border-t border-purple-800/30">
-            <div class="w-6 h-6 rounded-full bg-purple-800 flex items-center justify-center text-[10px]">
-              ${ev.speaker.charAt(0)}
-            </div>
-            ${ev.speaker}
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <span class="text-xs font-bold text-pink-400 uppercase tracking-wider">${event.day}</span>
+            <span class="text-xs text-purple-400 bg-purple-900/30 px-2 py-1 rounded">${event.time}</span>
           </div>
+          <h4 class="text-lg font-bold text-white mb-1 group-hover:text-pink-300 transition">${event.title}</h4>
+          <p class="text-sm text-purple-400 line-clamp-2">${event.desc}</p>
         </div>
       </a>
     `).join('');
+    document.getElementById('weekEvents').innerHTML = gridHTML;
 
     // Form Validation
     const form = document.getElementById('signupForm');
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        alert('Please fill in all required fields.');
-        return;
+      if (form.checkValidity()) {
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Registered!';
+        btn.classList.add('bg-green-600');
+        setTimeout(() => {
+          form.reset();
+          btn.textContent = originalText;
+          btn.classList.remove('bg-green-600');
+          alert("You're all set! Check your email for details.");
+        }, 2000);
+      } else {
+        form.reportValidity();
       }
-      alert('Registration successful! Welcome to PurpleWave.');
-      form.reset();
     });
   </script>
 </body>

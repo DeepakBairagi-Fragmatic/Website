@@ -82,6 +82,7 @@
     }
   </style>
   <script src="js/global-navbar.js" defer></script>
+  <script src="js/global-modal.js" defer></script>
 </head>
 
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
@@ -659,6 +660,80 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <span class="text-purple-400 text-sm font-bold tracking-widest uppercase mb-4 block">Common Questions</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Everything You Need to Know</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- FAQ Item 1 -->
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-white font-bold text-lg mb-2">Is it hard to integrate?</h3>
+          <p class="text-purple-200/70">Not at all. Our SDKs are designed for drop-in simplicity. Most teams are up and
+            running in less than an hour.</p>
+        </div>
+        <!-- FAQ Item 2 -->
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-white font-bold text-lg mb-2">Is it scalable?</h3>
+          <p class="text-purple-200/70">Absolutely. We handle millions of requests daily for enterprise clients. Our
+            infrastructure scales automatically with your growth.</p>
+        </div>
+        <!-- FAQ Item 3 -->
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-white font-bold text-lg mb-2">What about security?</h3>
+          <p class="text-purple-200/70">Security is our top priority. We are SOC 2 Type II compliant and use bank-grade
+            encryption for all data in transit and at rest.</p>
+        </div>
+        <!-- FAQ Item 4 -->
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-white font-bold text-lg mb-2">Do you offer support?</h3>
+          <p class="text-purple-200/70">Yes, we offer 24/7 dedicated support for all enterprise plans, and responsive
+            community support for all other tiers.</p>
+        </div>
+        <!-- FAQ Item 5 -->
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-white font-bold text-lg mb-2">Can I customize the UI?</h3>
+          <p class="text-purple-200/70">Completely. Our components are headless by default, giving you full control over
+            styling to match your brand perfectly.</p>
+        </div>
+        <!-- FAQ Item 6 -->
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-white font-bold text-lg mb-2">How does pricing work?</h3>
+          <p class="text-purple-200/70">We offer flexible pay-as-you-go pricing. You only pay for active users. Contact
+            us for volume discounts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-[#05010a]"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h2 class="text-4xl md:text-6xl font-bold mb-8 text-white">Ready to Build the Future?</h2>
+      <p class="text-purple-200/70 text-xl mb-12 max-w-2xl mx-auto">Join thousands of developers building the next
+        generation of digital experiences.</p>
+
+      <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+        <a href="#"
+          class="px-8 py-4 bg-white text-purple-900 font-bold rounded-full hover:bg-purple-50 transition transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+          Get Started
+        </a>
+        <a href="#" id="bookDemoBtn" onclick="document.getElementById('globalDemoModal').open(); return false;"
+          class="px-8 py-4 bg-purple-600 text-white font-bold rounded-full hover:bg-purple-500 transition transform hover:scale-105 shadow-[0_0_20px_rgba(147,51,234,0.5)]">
+          Book a Demo
+        </a>
+        <a href="#"
+          class="px-8 py-4 border border-purple-500/50 text-white font-bold rounded-full hover:bg-purple-500/10 transition backdrop-blur-sm">
+          Try Free for 14 Days
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-[#05010a] py-16 border-t border-purple-900/30 relative overflow-hidden">
     <div
@@ -701,7 +776,7 @@
           <ul class="space-y-4 text-sm text-purple-400">
             <li><a href="aboutus.html" class="hover:text-pink-400 transition">About Us</a></li>
             <li><a href="#capabilities" class="hover:text-pink-400 transition">Services</a></li>
-            <li><a href="#" class="hover:text-pink-400 transition">Careers</a></li>
+            <li><a href="careers.html" class="hover:text-pink-400 transition">Careers</a></li>
             <li><a href="contact.html" class="hover:text-pink-400 transition">Contact</a></li>
           </ul>
         </div>
@@ -757,6 +832,9 @@
       }
     });
   </script>
+  <!-- Demo Modal -->
+  <global-modal id="globalDemoModal"></global-modal>
+
 </body>
 
 </html>
