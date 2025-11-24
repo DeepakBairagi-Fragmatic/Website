@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PurpleWave Blog - Insights on design, development, and digital innovation" />
+    <title>PurpleWave | Blog</title>
+    <link rel="icon" type="image/png"
+        href="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/ae9cf178-8df9-4332-a028-bec658ac4510.png" />
+
+    <!-- Tracking Script -->
+    <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+        crossorigin="anonymous">
+    <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Shared Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0115;
+            color: #f3e8ff;
+        }
+
+        @layer utilities {
+            .glass-panel {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(139, 92, 246, 0.15);
+            }
+
+            .glass-panel:hover {
+                background: rgba(255, 255, 255, 0.07);
+                border-color: rgba(139, 92, 246, 0.3);
+            }
+
+            .text-gradient {
+                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .blog-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .blog-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
+            }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YMPCVDJBLZ');
+    </script>
+    <script src="js/global-navbar.js" defer></script>
+</head>
+
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white">
+
+    <!-- Navbar -->
+    <global-navbar></global-navbar>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <span
+                class="inline-block py-2 px-4 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wider mb-6 uppercase">
+                Insights & Innovation
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                <span class="text-gradient">Our Blog</span>
+            </h1>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">
+                Explore the latest trends, insights, and best practices in design, development, and digital
+                transformation.
+            </p>
+        </div>
+    </header>
+
+    <!-- Category Filter -->
+    <section class="py-8 border-b border-purple-900/30">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-purple-600 text-white font-medium transition hover:bg-purple-500"
+                    data-category="all">
+                    All Posts
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-purple-900/30 text-purple-300 font-medium transition hover:bg-purple-800/50"
+                    data-category="design">
+                    Design
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-purple-900/30 text-purple-300 font-medium transition hover:bg-purple-800/50"
+                    data-category="development">
+                    Development
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-purple-900/30 text-purple-300 font-medium transition hover:bg-purple-800/50"
+                    data-category="business">
+                    Business
+                </button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full bg-purple-900/30 text-purple-300 font-medium transition hover:bg-purple-800/50"
+                    data-category="tech">
+                    Technology
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="py-20 bg-[#0f021a]">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl font-bold text-purple-100 mb-8">Featured Article</h2>
+            <div class="glass-panel rounded-3xl overflow-hidden group hover:-translate-y-2 transition duration-300">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="relative h-64 md:h-auto overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80"
+                            alt="Featured post"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-pink-500 text-white text-xs font-semibold rounded-full">Featured</span>
+                        </div>
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-xs text-purple-400 uppercase tracking-wider">Design</span>
+                            <span class="text-purple-600">•</span>
+                            <span class="text-sm text-purple-300">5 min read</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-gradient transition">
+                            The Future of Web Design: AI-Powered Interfaces
+                        </h3>
+                        <p class="text-purple-300/80 mb-6 leading-relaxed">
+                            Discover how artificial intelligence is revolutionizing the way we approach web design, from
+                            automated layouts to intelligent color schemes that adapt to user preferences.
+                        </p>
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="https://i.pravatar.cc/40?img=1" alt="Author"
+                                class="w-10 h-10 rounded-full border-2 border-purple-500/30" />
+                            <div>
+                                <p class="text-white font-semibold text-sm">Sarah Chen</p>
+                                <p class="text-purple-400 text-xs">Lead Designer</p>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 text-pink-400 font-semibold hover:text-pink-300 transition group/link">
+                            Read Full Article
+                            <svg class="w-5 h-5 group-hover/link:translate-x-1 transition" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-3xl font-bold text-purple-100 mb-12">Latest Articles</h2>
+
+            <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="development">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=600&q=80"
+                            alt="React Development" class="w-full h-full object-cover" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">Development</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>Dec 15, 2024</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            Building Scalable React Applications with TypeScript
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            Learn best practices for structuring large-scale React applications using TypeScript for
+                            better type safety and developer experience.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/32?img=2" alt="Author" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">Mike Torres</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="design">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80"
+                            alt="UI Design" class="w-full h-full object-cover" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full">Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>Dec 12, 2024</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            Mastering Color Theory in Modern UI Design
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            Explore how to create harmonious color palettes that enhance user experience and strengthen
+                            brand identity.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/32?img=3" alt="Author" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">Emma Wilson</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="business">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80"
+                            alt="Business Strategy" class="w-full h-full object-cover" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-pink-600 text-white text-xs font-semibold rounded-full">Business</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>Dec 10, 2024</span>
+                            <span>•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            Digital Transformation: A Strategic Roadmap
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            A comprehensive guide to leading your organization through successful digital transformation
+                            initiatives.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/32?img=4" alt="Author" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">James Park</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="tech">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80"
+                            alt="AI Technology" class="w-full h-full object-cover" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-cyan-600 text-white text-xs font-semibold rounded-full">Technology</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>Dec 8, 2024</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            The Rise of AI in Web Development
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            How machine learning and AI tools are transforming the landscape of web development and
+                            design workflows.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/32?img=5" alt="Author" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">Alex Kumar</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="development">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+                            alt="Code Editor" class="w-full h-full object-cover" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">Development</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>Dec 5, 2024</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            10 VS Code Extensions Every Developer Needs
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            Boost your productivity with these essential Visual Studio Code extensions that every
+                            developer should have installed.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/32?img=6" alt="Author" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">Lisa Chen</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="design">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80"
+                            alt="UX Design" class="w-full h-full object-cover" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full">Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>Dec 3, 2024</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            Designing for Accessibility: A Complete Guide
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            Learn how to create inclusive digital experiences that work for everyone, regardless of
+                            their abilities.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/32?img=7" alt="Author" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">David Lee</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button
+                    class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-20 bg-gradient-to-b from-purple-900/20 to-[#0b0115]">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="glass-panel rounded-3xl p-12 text-center">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-purple-900/50 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-4">Stay in the Loop</h2>
+                <p class="text-purple-300 mb-8 max-w-2xl mx-auto">
+                    Get the latest articles, insights, and updates delivered straight to your inbox. No spam, just
+                    quality content.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Enter your email" required
+                        class="flex-1 px-6 py-3 rounded-full bg-black/50 border border-purple-500/30 text-white placeholder-purple-400/50 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" />
+                    <button type="submit"
+                        class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold rounded-full transition hover:scale-105">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
+                <span class="text-xl font-bold text-white">PurpleWave</span>
+            </div>
+            <p class="text-purple-400 text-sm mb-8">© <span id="year"></span> PurpleWave. All rights reserved.</p>
+            <div class="flex justify-center gap-6 text-sm text-purple-300">
+                <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="contact.html" class="hover:text-white transition">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Category Filter Script -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                // Update active button
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-purple-600', 'text-white');
+                    b.classList.add('bg-purple-900/30', 'text-purple-300');
+                });
+                btn.classList.remove('bg-purple-900/30', 'text-purple-300');
+                btn.classList.add('bg-purple-600', 'text-white');
+
+                // Filter posts
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

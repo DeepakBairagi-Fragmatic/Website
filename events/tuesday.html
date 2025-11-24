@@ -3,259 +3,299 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PurpleWave | Tuesday: Frontend Fun with AI</title>
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Fun with AI - Tuesday Event | PurpleWave</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    @layer utilities {
-      @keyframes pulse-slow {
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0115;
+      color: #f3e8ff;
+    }
 
-        0%,
-        100% {
-          transform: scale(0.95);
-          opacity: 0.35;
-        }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+    }
 
-        50% {
-          transform: scale(1.05);
-          opacity: 0.55;
-        }
-      }
-
-      .animate-pulse-slow {
-        animation: pulse-slow 9s ease-in-out infinite;
-      }
-
-      .card-shadow {
-        box-shadow: 0 4px 32px 0 rgba(115, 0, 255, .07), 0 2px 4px 0 rgba(135, 80, 220, .12);
-      }
-
-      .focus-outline:focus {
-        outline: 2px solid #A78BFA;
-        outline-offset: 2px;
-      }
+    .text-gradient {
+      background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
-
-  <!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
-    crossorigin="anonymous">
-  <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-YMPCVDJBLZ');
-  </script>
-
   <script src="../js/global-navbar.js" defer></script>
 </head>
 
-<body class="bg-[#0b0115] text-purple-100 font-sans scroll-smooth">
+<body class="antialiased">
 
-  <!-- Navbar -->
   <!-- Navbar -->
   <global-navbar></global-navbar>
 
-  <!-- Hero -->
-  <section
-    class="relative pt-14 pb-8 flex flex-col items-center bg-gradient-to-b from-[#27104b]/80 via-purple-900/80 to-[#0b0115]">
-    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80"
-      alt="Frontend Fun with AI"
-      class="rounded-2xl w-full max-w-3xl aspect-video object-cover shadow-2xl mb-7 border-4 border-purple-700/30" />
-    <h1
-      class="text-3xl sm:text-5xl font-extrabold mb-2 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-      Tuesday: Frontend Fun with AI
-    </h1>
-    <div class="mb-2 text-purple-300 text-sm">12:00 PM – 1:30 PM</div>
-    <span
-      class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-1 rounded-full text-white font-semibold text-xs mb-5">Talk</span>
-    <p class="max-w-3xl text-purple-200 text-lg text-center px-4 sm:px-0">
-      Dive into the future of development! See how generative AI powers layout, color, copy, and code. Design smarter,
-      ship faster, and discover practical ways to blend AI magic into your workflow.
-    </p>
-    <a href="../register.html"
-      class="mt-8 inline-block px-10 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
-      Register Now
-    </a>
-  </section>
-
-  <!-- Workshop Breakdown Timeline -->
-  <section class="py-16 bg-black/40 backdrop-blur-lg">
-    <div class="container mx-auto max-w-3xl px-4">
-      <h2 class="text-3xl font-extrabold text-purple-300 mb-10 text-center">
-        Talk Agenda: <span class="text-pink-300">Frontend Fun with AI</span>
-      </h2>
-      <ol class="relative border-l-4 border-purple-600 ml-3 space-y-10">
-
-        <!-- 12:00 – Welcome & Overview -->
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-700 to-fuchsia-400 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M9 3v2m6-2v2" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">12:00 PM</span>
-            <div class="font-bold text-lg">Welcome & Quick AI Demo</div>
-            <p class="text-sm text-purple-300 mt-1">See a live generative design session. The future is now!</p>
-          </div>
-        </li>
-
-        <!-- 12:15 – Copy & Design -->
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-400 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h8m-4-4v8" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">12:15 PM</span>
-            <div class="font-bold text-lg">AI Writing & Content Customization</div>
-            <p class="text-sm text-purple-300 mt-1">How to use ChatGPT, Copilot, and AI images for punchy content and
-              faster design cycles.</p>
-          </div>
-        </li>
-
-        <!-- 12:35 – AI ↔️ Code -->
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center shadow-lg">
-            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">12:35 PM</span>
-            <div class="font-bold text-lg">Frontend Coding with AI</div>
-            <p class="text-sm text-purple-300 mt-1">See VS Code Copilot, GitHub Copilot, and AI-driven code completion
-              in action.</p>
-            <div
-              class="inline-block mt-2 bg-gradient-to-r from-purple-700 to-pink-500 px-3 py-1 rounded-full text-white text-xs font-bold">
-              Live Coding Demo
-            </div>
-          </div>
-        </li>
-
-        <!-- 1:00 – Hands-on -->
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-fuchsia-500 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="3" />
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 3v3m0 12v3m9-9h-3M6 12H3M16.24 7.76l-2.12 2.12M7.76 16.24l-2.12 2.12M16.24 16.24l-2.12-2.12M7.76 7.76l-2.12-2.12" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">1:00 PM</span>
-            <div class="font-bold text-lg">Live Lab: Your First AI-powered Component</div>
-            <p class="text-sm text-purple-300 mt-1">Write a full UI block with AI code suggestions; get instant feedback
-              from the mentors.</p>
-            <span
-              class="inline-block mt-2 px-3 py-1 rounded-full bg-green-600/60 text-xs text-white font-medium">Hands-on</span>
-          </div>
-        </li>
-
-        <!-- 1:25 – Q&A -->
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8 17l4 4 4-4m0-5v9M3 5l12-4 12 4v6a9 9 0 01-18 0z" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">1:25 PM</span>
-            <div class="font-bold text-lg">Q<span class="text-xs text-purple-300">&amp;</span>A & Wrap-Up</div>
-            <p class="text-sm text-purple-300 mt-1">
-              Ask anything about AI, coding, or design tooling! Last queries and resource handouts.
-            </p>
-          </div>
-        </li>
-      </ol>
-      <!-- User Tips -->
-      <div class="bg-purple-900/30 rounded-xl px-6 py-4 mt-14 text-purple-200 shadow-lg">
-        <h3 class="font-bold text-purple-100 mb-2">What to Bring:</h3>
-        <ul class="ml-5 list-disc list-inside text-purple-300 text-sm space-y-1">
-          <li>Laptop (VS Code recommended, Chrome/Firefox browser)</li>
-          <li>Free Copilot or ChatGPT/OpenAI account, if available</li>
-          <li>A Figma or Canva account for design</li>
-          <li>Your creativity—the more the better!</li>
-        </ul>
-      </div>
-      <div class="bg-gradient-to-r from-pink-500/10 to-purple-800/10 rounded-xl px-6 py-4 mt-6 shadow">
-        <span class="text-purple-100 font-bold">Accessible to all:</span>
-        <span class="text-purple-300 text-sm">Venue is wheelchair-friendly. Let us know about any accessibility or
-          language needs when registering.</span>
-      </div>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80"
+        alt="AI Development" class="w-full h-full object-cover opacity-20" />
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/90 to-black/90"></div>
     </div>
-  </section>
 
-  <!-- Speaker -->
-  <section class="py-12 bg-gradient-to-b from-[#181134] via-purple-950 to-[#0b0115]">
-    <div class="container mx-auto max-w-3xl px-4">
-      <h2 class="text-3xl font-extrabold text-purple-300 mb-6 text-center">Meet the Host</h2>
-      <div class="flex flex-col sm:flex-row sm:justify-center items-center gap-6">
-        <img src="https://i.pravatar.cc/120?img=33" alt="Mira Patel"
-          class="rounded-full h-28 w-28 object-cover ring-4 ring-fuchsia-400/70 shadow-lg" />
-        <div class="max-w-xl text-center sm:text-left">
-          <h3 class="text-xl font-semibold text-purple-100">Mira Patel</h3>
-          <p class="text-purple-300 mb-2">Head of Front-End, Visma</p>
-          <p class="text-purple-300 text-sm leading-relaxed">
-            Mira leads A.I. integration and accessibility at Visma, demystifying prompt engineering for next-gen design
-            teams. Expect live demos, practical code, and fun!
-          </p>
+    <div class="container mx-auto px-4 relative z-10">
+      <a href="../events.html" class="inline-flex items-center gap-2 text-purple-300 hover:text-white mb-8 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to Events
+      </a>
+
+      <div class="max-w-4xl">
+        <span class="inline-block px-4 py-1 bg-indigo-500 text-white text-xs font-bold rounded-full mb-4 animate-pulse">
+          TUESDAY · 11:00 AM
+        </span>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+          <span class="text-gradient">Frontend Fun with AI</span>
+        </h1>
+        <p class="text-xl text-purple-200 leading-relaxed mb-8">
+          Build intelligent web applications by integrating AI capabilities with React. Learn to use modern AI APIs and
+          create smarter user experiences.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 glass-panel px-4 py-2 rounded-full">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-sm">2.5 hours</span>
+          </div>
+          <div class="flex items-center gap-2 glass-panel px-4 py-2 rounded-full">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+              </path>
+            </svg>
+            <span class="text-sm">35 seats left</span>
+          </div>
+          <div class="flex items-center gap-2 glass-panel px-4 py-2 rounded-full">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
+            </svg>
+            <span class="text-sm">Intermediate Level</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-20 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
-    <div class="container mx-auto max-w-3xl px-4 ">
-      <h2
-        class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-        Frequently Asked Questions
-      </h2>
-      <div class="space-y-6">
-        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
-          <summary class="font-semibold text-purple-200">Is the event free?</summary>
-          <p class="mt-2 text-purple-300 text-sm">Yes! Registration is free but seats are limited. Please reserve early.
-          </p>
-        </details>
-        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
-          <summary class="font-semibold text-purple-200">Do I need to know AI or coding already?</summary>
-          <p class="mt-2 text-purple-300 text-sm">No prerequisites! All levels are welcome. Code samples and prompt
-            templates will be provided.</p>
-        </details>
-        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
-          <summary class="font-semibold text-purple-200">Will slides/resources be provided?</summary>
-          <p class="mt-2 text-purple-300 text-sm">Yes, all prompt templates and slides are sent by email to attendees
-            after the talk.</p>
-        </details>
+  <!-- Content Sections -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid lg:grid-cols-3 gap-8">
+
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-12">
+
+          <!-- About -->
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-white">About This Workshop</h2>
+            <div class="space-y-4 text-purple-200">
+              <p>
+                Explore the exciting intersection of AI and frontend development. This hands-on workshop will teach you
+                how to integrate powerful AI capabilities into your React applications, making them smarter and more
+                intuitive.
+              </p>
+              <p>
+                We'll work with modern AI APIs including OpenAI, natural language processing, and image recognition to
+                build practical features that users love. You'll leave with working code and the confidence to add AI to
+                your projects.
+              </p>
+              <h3 class="text-xl font-semibold text-white mt-6 mb-3">What You'll Learn:</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Integrating OpenAI API into React applications</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Building AI-powered chatbots and assistants</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Image generation and manipulation with AI</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Best practices for API security and rate limiting</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Creating intelligent user interfaces</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Agenda -->
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-white">Session Agenda</h2>
+            <div class="space-y-4">
+              <div class="flex gap-4 p-4 bg-indigo-900/20 rounded-xl">
+                <div class="text-indigo-400 font-bold">11:00</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">AI Fundamentals for Frontend</h4>
+                  <p class="text-sm text-purple-300">Understanding AI APIs and integration patterns</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-indigo-900/20 rounded-xl">
+                <div class="text-indigo-400 font-bold">11:30</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Building Your First AI Feature</h4>
+                  <p class="text-sm text-purple-300">Create an intelligent chatbot in React</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-indigo-900/20 rounded-xl">
+                <div class="text-indigo-400 font-bold">12:15</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Image AI Integration</h4>
+                  <p class="text-sm text-purple-300">Generate and manipulate images with AI</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-indigo-900/20 rounded-xl">
+                <div class="text-indigo-400 font-bold">13:00</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Advanced Topics & Best Practices</h4>
+                  <p class="text-sm text-purple-300">Security, optimization, and deployment</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-indigo-900/20 rounded-xl">
+                <div class="text-indigo-400 font-bold">13:20</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Q&A & Resources</h4>
+                  <p class="text-sm text-purple-300">Open discussion and next steps</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+
+          <!-- Speaker Card -->
+          <div class="glass-panel rounded-3xl p-8 text-center">
+            <div class="relative inline-block mb-4">
+              <div class="absolute inset-0 bg-gradient-to-tr from-indigo-600 to-cyan-500 rounded-full blur opacity-75">
+              </div>
+              <img src="https://i.pravatar.cc/200?img=33" alt="Mira Patel"
+                class="relative w-32 h-32 rounded-full object-cover border-4 border-[#0b0115] mx-auto">
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Mira Patel</h3>
+            <p class="text-purple-400 mb-4">Frontend Lead at PurpleWave</p>
+            <p class="text-sm text-purple-300 mb-6">
+              AI enthusiast and React expert with 8+ years building intelligent web applications.
+            </p>
+            <div class="flex justify-center gap-3">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-purple-900/40 flex items-center justify-center hover:bg-purple-800 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                  </path>
+                </svg>
+              </a>
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-purple-900/40 flex items-center justify-center hover:bg-purple-800 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Registration -->
+          <div class="glass-panel rounded-3xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Reserve Your Spot</h3>
+            <p class="text-purple-300 mb-6">Limited seats available!</p>
+            <a href="../events.html#register"
+              class="block w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-semibold rounded-full text-center transition hover:scale-105">
+              Register Now
+            </a>
+          </div>
+
+          <!-- Requirements -->
+          <div class="glass-panel rounded-3xl p-8">
+            <h3 class="text-xl font-bold text-white mb-4">What You Need</h3>
+            <ul class="space-y-3 text-sm text-purple-300">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                OpenAI API key (free tier OK)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                React knowledge (intermediate)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Node.js development environment
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contact Strip -->
-  <section class="py-12 bg-purple-950 text-center">
-    <h3 class="text-2xl font-bold mb-4">Questions?</h3>
-    <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 hours.</p>
-    <a href="mailto:events@purplewave.com"
-      class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
-      Email the Event Team
-    </a>
-  </section>
+  <!-- Footer -->
+  <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
+        <span class="text-xl font-bold text-white">PurpleWave</span>
+      </div>
+      <p class="text-purple-400 text-sm">© 2024 PurpleWave. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 
 </html>

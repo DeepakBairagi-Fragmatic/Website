@@ -3,183 +3,266 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PurpleWave | Thursday: No-Code Power Hour</title>
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No-Code Power Hour - Thursday Event | PurpleWave</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    @layer utilities {
-      .focus-outline:focus {
-        outline: 2px solid #A78BFA;
-        outline-offset: 2px;
-      }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0115;
+      color: #f3e8ff;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
-
-  <!-- Tracking Script -->
-  <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
-    crossorigin="anonymous">
-  <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-YMPCVDJBLZ');
-  </script>
-
-
   <script src="../js/global-navbar.js" defer></script>
 </head>
 
-<body class="bg-[#0b0115] text-purple-100 font-sans scroll-smooth">
-  <!-- Navbar -->
-  <!-- Navbar -->
+<body class="antialiased">
   <global-navbar></global-navbar>
-  <!-- Hero -->
-  <section
-    class="relative pt-14 pb-8 flex flex-col items-center bg-gradient-to-b from-[#2c1142]/80 via-purple-900/80 to-[#0b0115]">
-    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80"
-      alt="No-Code Power Hour"
-      class="rounded-2xl w-full max-w-3xl aspect-video object-cover shadow-2xl mb-7 border-4 border-purple-700/30" />
-    <h1
-      class="text-3xl sm:text-5xl font-extrabold mb-2 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-      Thursday: No-Code Power Hour
-    </h1>
-    <div class="mb-2 text-purple-300 text-sm">11:00 AM – 12:30 PM</div>
-    <span
-      class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 px-4 py-1 rounded-full text-white font-semibold text-xs mb-5">Demo</span>
-    <p class="max-w-3xl text-purple-200 text-lg text-center px-4 sm:px-0">
-      Ship a landing page in an hour—no code experience needed! Watch and learn as we build, customize, and deploy with
-      tools like Framer and Tailwind Play.
-    </p>
-    <a href="../register.html"
-      class="mt-8 inline-block px-10 py-3 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
-      Register Now
-    </a>
-  </section>
-  <!-- Timeline -->
-  <section class="py-16 bg-black/40 backdrop-blur-lg">
-    <div class="container mx-auto max-w-3xl px-4">
-      <h2 class="text-3xl font-extrabold text-purple-300 mb-10 text-center">
-        Power Hour Agenda
-      </h2>
-      <ol class="relative border-l-4 border-purple-600 ml-3 space-y-10">
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-fuchsia-500 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M9 3v2m6-2v2" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">11:00 AM</span>
-            <div class="font-bold text-lg">No-Code Platforms Overview</div>
-            <p class="text-sm text-purple-300 mt-1">See what’s possible with modern visual builders.</p>
-          </div>
-        </li>
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-purple-700 to-pink-500 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8m-4-4v8" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">11:15 AM</span>
-            <div class="font-bold text-lg">Responsive Layout in Framer</div>
-            <p class="text-sm text-purple-300 mt-1">Hands-on demo for dynamic sections with purple branding.</p>
-          </div>
-        </li>
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center shadow-lg">
-            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="3" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3m9-9h-3M6 12H3" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">11:45 AM</span>
-            <div class="font-bold text-lg">Customize with Tailwind Play</div>
-            <p class="text-sm text-purple-300 mt-1">Editing colors, borders, and gradients—the fast way.</p>
-          </div>
-        </li>
-        <li class="ml-7">
-          <div
-            class="absolute -left-5 top-2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shadow-lg">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="3" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m0 12v3m9-9h-3M6 12H3" />
-            </svg>
-          </div>
-          <div>
-            <span class="font-semibold text-purple-200">12:10 PM</span>
-            <div class="font-bold text-lg">One-Click Deploy & Review</div>
-            <p class="text-sm text-purple-300 mt-1">Launch live, get instant shares and feedback.</p>
-          </div>
-        </li>
-      </ol>
-      <div class="bg-purple-900/30 rounded-xl px-6 py-4 mt-14 text-purple-200 shadow-lg">
-        <h3 class="font-bold text-purple-100 mb-2">What to Bring:</h3>
-        <ul class="ml-5 list-disc list-inside text-purple-300 text-sm space-y-1">
-          <li>Laptop or tablet (any OS)</li>
-          <li>Interest in building websites visually or quickly</li>
-          <li>No coding experience needed!</li>
-        </ul>
-      </div>
+
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+        alt="No-Code Tools" class="w-full h-full object-cover opacity-20" />
+      <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/90 to-black/90"></div>
     </div>
-  </section>
-  <!-- Speaker -->
-  <section class="py-12 bg-gradient-to-b from-[#181134] via-purple-950 to-[#0b0115]">
-    <div class="container mx-auto max-w-3xl px-4">
-      <h2 class="text-3xl font-extrabold text-purple-300 mb-6 text-center">Meet the Host</h2>
-      <div class="flex flex-col sm:flex-row sm:justify-center items-center gap-6">
-        <img src="https://i.pravatar.cc/120?img=49" alt="Dana O’Leary"
-          class="rounded-full h-28 w-28 object-cover ring-4 ring-fuchsia-400/70 shadow-lg" />
-        <div class="max-w-xl text-center sm:text-left">
-          <h3 class="text-xl font-semibold text-purple-100">Dana O’Leary</h3>
-          <p class="text-purple-300 mb-2">UX Researcher, Polyform</p>
-          <p class="text-purple-300 text-sm leading-relaxed">
-            Dana is a no-code/low-code evangelist and usability specialist, helping teams prototype lightning-fast and
-            ship features to the wild.
-          </p>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <a href="../events.html" class="inline-flex items-center gap-2 text-purple-300 hover:text-white mb-8 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to Events
+      </a>
+
+      <div class="max-w-4xl">
+        <span
+          class="inline-block px-4 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full mb-4 animate-pulse">
+          THURSDAY · 2:00 PM
+        </span>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+          <span class="text-gradient">No-Code Power Hour</span>
+        </h1>
+        <p class="text-xl text-purple-200 leading-relaxed mb-8">
+          Build powerful applications without writing a single line of code. Master the leading no-code platforms and
+          ship products faster.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 glass-panel px-4 py-2 rounded-full">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-sm">2 hours</span>
+          </div>
+          <div class="flex items-center gap-2 glass-panel px-4 py-2 rounded-full">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+              </path>
+            </svg>
+            <span class="text-sm">45 seats left</span>
+          </div>
+          <div class="flex items-center gap-2 glass-panel px-4 py-2 rounded-full">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
+            </svg>
+            <span class="text-sm">Beginner Friendly</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- FAQ -->
-  <section class="py-20 bg-gradient-to-b from-[#0b0115] via-purple-950 to-[#0b0115]">
-    <div class="container mx-auto max-w-3xl px-4 ">
-      <h2
-        class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-300 via-fuchsia-400 to-pink-400 text-transparent bg-clip-text">
-        Frequently Asked Questions
-      </h2>
-      <div class="space-y-6">
-        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
-          <summary class="font-semibold text-purple-200">Do I need to know code?</summary>
-          <p class="mt-2 text-purple-300 text-sm">Nope! This is a no-code primer. Designers and newcomers welcome.</p>
-        </details>
-        <details class="bg-white/5 backdrop-blur-sm p-4 rounded-lg ring-1 ring-purple-700/40 cursor-pointer">
-          <summary class="font-semibold text-purple-200">Can I publish my work online?</summary>
-          <p class="mt-2 text-purple-300 text-sm">Yes—deployment is included in the demo, for free.</p>
-        </details>
+
+  <section class="py-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-12">
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-white">About This Workshop</h2>
+            <div class="space-y-4 text-purple-200">
+              <p>
+                Discover the power of no-code development platforms. Whether you're building a web app, mobile app, or
+                automation workflow, no-code tools can help you launch faster and iterate more efficiently.
+              </p>
+              <p>
+                We'll explore popular platforms like Bubble, Webflow, Zapier, and Airtable. You'll build a working
+                prototype during the session and leave with the confidence to tackle your next no-code project.
+              </p>
+              <h3 class="text-xl font-semibold text-white mt-6 mb-3">What You'll Learn:</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Building web apps with Bubble and Webflow</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Creating automation workflows with Zapier and Make</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Database design with Airtable and Google Sheets</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Integrating APIs and third-party services</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>Best practices for scaling no-code projects</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="glass-panel rounded-3xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-white">Session Agenda</h2>
+            <div class="space-y-4">
+              <div class="flex gap-4 p-4 bg-emerald-900/20 rounded-xl">
+                <div class="text-emerald-400 font-bold">2:00</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">No-Code Landscape</h4>
+                  <p class="text-sm text-purple-300">Overview of platforms and use cases</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-emerald-900/20 rounded-xl">
+                <div class="text-emerald-400 font-bold">2:20</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Build a Web App with Bubble</h4>
+                  <p class="text-sm text-purple-300">Create a functional MVP in 30 minutes</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-emerald-900/20 rounded-xl">
+                <div class="text-emerald-400 font-bold">3:00</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Automation & Integrations</h4>
+                  <p class="text-sm text-purple-300">Connect your tools with Zapier</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-4 bg-emerald-900/20 rounded-xl">
+                <div class="text-emerald-400 font-bold">3:30</div>
+                <div>
+                  <h4 class="font-semibold text-white mb-1">Advanced Tips & Q&A</h4>
+                  <p class="text-sm text-purple-300">Scaling and optimization strategies</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="glass-panel rounded-3xl p-8 text-center">
+            <div class="relative inline-block mb-4">
+              <div class="absolute inset-0 bg-gradient-to-tr from-emerald-600 to-teal-500 rounded-full blur opacity-75">
+              </div>
+              <img src="https://i.pravatar.cc/200?img=49" alt="Dana O'Leary"
+                class="relative w-32 h-32 rounded-full object-cover border-4 border-[#0b0115] mx-auto">
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Dana O'Leary</h3>
+            <p class="text-purple-400 mb-4">UX Researcher at PurpleWave</p>
+            <p class="text-sm text-purple-300 mb-6">
+              No-code advocate who has built and shipped 50+ products using no-code tools.
+            </p>
+            <div class="flex justify-center gap-3">
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-purple-900/40 flex items-center justify-center hover:bg-purple-800 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                  </path>
+                </svg>
+              </a>
+              <a href="#"
+                class="w-10 h-10 rounded-full bg-purple-900/40 flex items-center justify-center hover:bg-purple-800 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-panel rounded-3xl p-8">
+            <h3 class="text-2xl font-bold text-white mb-4">Reserve Your Spot</h3>
+            <p class="text-purple-300 mb-6">Limited seats available!</p>
+            <a href="../events.html#register"
+              class="block w-full px-6 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-semibold rounded-full text-center transition hover:scale-105">
+              Register Now
+            </a>
+          </div>
+
+          <div class="glass-panel rounded-3xl p-8">
+            <h3 class="text-xl font-bold text-white mb-4">What You Need</h3>
+            <ul class="space-y-3 text-sm text-purple-300">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Free Bubble account
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Problem-solving mindset
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                No coding experience needed!
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <!-- Contact -->
-  <section class="py-12 bg-purple-950 text-center">
-    <h3 class="text-2xl font-bold mb-4">Questions?</h3>
-    <p class="mb-6 text-purple-300">Drop us a line and we’ll get back within 24 hours.</p>
-    <a href="mailto:events@purplewave.com"
-      class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-3 text-white font-semibold shadow-lg hover:brightness-110 transition focus-outline">
-      Email the Event Team
-    </a>
-  </section>
+
+  <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
+        <span class="text-xl font-bold text-white">PurpleWave</span>
+      </div>
+      <p class="text-purple-400 text-sm">© 2024 PurpleWave. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 
 </html>
