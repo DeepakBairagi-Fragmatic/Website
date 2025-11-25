@@ -1,7 +1,2 @@
-/events/monday     /events/monday.html    200
-/events/tuesday    /events/tuesday.html   200
-/events/wednesday  /events/wednesday.html 200
-/events/thursday   /events/thursday.html  200
-/events/friday     /events/friday.html    200
-/events/saturday   /events/saturday.html  200
-/events/sunday     /events/sunday.html    200
+# Netlify redirects - removed to avoid conflicts
+# HTML files should be served directly by the server
