@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | PurpleWave</title>
+
+    <!-- Tracking Script -->
+    <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+        crossorigin="anonymous">
+    <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Shared utilities -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0115;
+            color: #f3e8ff;
+        }
+
+        @layer utilities {
+            .glass-panel {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(139, 92, 246, 0.15);
+            }
+
+            .glass-panel:hover {
+                background: rgba(255, 255, 255, 0.07);
+                border-color: rgba(139, 92, 246, 0.3);
+            }
+
+            .text-gradient {
+                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YMPCVDJBLZ');
+    </script>
+    <script src="js/global-navbar.js" defer></script>
+</head>
+
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white">
+
+    <!-- Navbar -->
+    <global-navbar></global-navbar>
+
+    <!-- 404 Content -->
+    <main class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl float-animation">
+            </div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl float-animation"
+                style="animation-delay: 1.5s;"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-fuchsia-600/10 rounded-full blur-3xl float-animation"
+                style="animation-delay: 3s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+            <!-- 404 Number -->
+            <div class="mb-8">
+                <h1 class="text-9xl md:text-[12rem] font-extrabold text-gradient leading-none mb-4">
+                    404
+                </h1>
+                <div class="flex items-center justify-center gap-2 text-purple-400/60 text-sm">
+                    <div class="h-px w-12 bg-gradient-to-r from-transparent to-purple-500"></div>
+                    <span>ERROR</span>
+                    <div class="h-px w-12 bg-gradient-to-l from-transparent to-purple-500"></div>
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div class="glass-panel rounded-3xl p-8 md:p-12 mb-8 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Oops! Page Not Found
+                </h2>
+                <p class="text-lg text-purple-200/80 mb-6 leading-relaxed">
+                    The page you're looking for seems to have wandered off into the digital cosmos.
+                    Don't worry though — we'll help you get back on track.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="mb-8">
+                    <div class="relative">
+                        <input type="text" placeholder="Search for pages..." id="searchInput"
+                            class="w-full bg-[#0b0115]/50 border border-purple-700/50 rounded-xl px-5 py-4 pr-12 text-white placeholder-purple-400/50 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 outline-none transition">
+                        <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <div id="searchResults" class="mt-4 space-y-2 hidden"></div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="/"
+                        class="group flex items-center gap-3 px-6 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-900/40 hover:scale-[1.02] transition duration-300">
+                        <svg class="w-5 h-5 group-hover:-translate-x-1 transition" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg>
+                        Go Home
+                    </a>
+
+                    <a href="/events.html"
+                        class="group flex items-center gap-3 px-6 py-4 rounded-xl border border-purple-700/50 text-purple-200 font-semibold hover:bg-purple-900/30 hover:border-purple-500 transition duration-300">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        View Events
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Links -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-purple-400">
+                <a href="/services.html" class="hover:text-pink-400 transition">Services</a>
+                <a href="/aboutus.html" class="hover:text-pink-400 transition">About Us</a>
+                <a href="/blog.html" class="hover:text-pink-400 transition">Blog</a>
+                <a href="/contact.html" class="hover:text-pink-400 transition">Contact</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#05010a] py-8 border-t border-purple-900/30 relative z-10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
+                <span class="text-xl font-bold text-white">PurpleWave</span>
+            </div>
+            <p class="text-purple-400 text-sm">© <span id="year"></span> PurpleWave. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Search Functionality -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const pages = [
+            { title: 'Home', url: '/', keywords: 'home main landing' },
+            { title: 'Services', url: '/services.html', keywords: 'services what we do offerings' },
+            { title: 'Events', url: '/events.html', keywords: 'events workshops schedule calendar' },
+            { title: 'About Us', url: '/aboutus.html', keywords: 'about team company who' },
+            { title: 'Blog', url: '/blog.html', keywords: 'blog articles news updates' },
+            { title: 'Contact', url: '/contact.html', keywords: 'contact reach email support' },
+            { title: 'Careers', url: '/careers.html', keywords: 'careers jobs hiring work' },
+            { title: 'Monday Events', url: '/events/monday.html', keywords: 'monday ui design bootcamp' },
+            { title: 'Tuesday Events', url: '/events/tuesday.html', keywords: 'tuesday frontend ai' },
+            { title: 'Wednesday Events', url: '/events/wednesday.html', keywords: 'wednesday brand lab' },
+            { title: 'Thursday Events', url: '/events/thursday.html', keywords: 'thursday no-code' },
+            { title: 'Friday Events', url: '/events/friday.html', keywords: 'friday animation web' },
+            { title: 'Saturday Events', url: '/events/saturday.html', keywords: 'saturday ama community' },
+            { title: 'Sunday Events', url: '/events/sunday.html', keywords: 'sunday next-gen web3' }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length < 2) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            const matches = pages.filter(page =>
+                page.title.toLowerCase().includes(query) ||
+                page.keywords.includes(query)
+            ).slice(0, 5);
+
+            if (matches.length > 0) {
+                searchResults.innerHTML = matches.map(page => `
+          <a href="${page.url}" 
+             class="block px-4 py-3 rounded-lg bg-purple-900/20 hover:bg-purple-900/40 border border-purple-700/30 hover:border-purple-500/50 transition text-left">
+            <span class="text-white font-medium">${page.title}</span>
+          </a>
+        `).join('');
+                searchResults.classList.remove('hidden');
+            } else {
+                searchResults.innerHTML = '<p class="text-purple-400/60 text-sm py-2">No results found</p>';
+                searchResults.classList.remove('hidden');
+            }
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.add('hidden');
+            }
+        });
+
+        // Handle Enter key in search
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const firstResult = searchResults.querySelector('a');
+                if (firstResult) {
+                    window.location.href = firstResult.href;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

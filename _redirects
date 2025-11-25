@@ -1,2 +1,2 @@
-# Netlify redirects - removed to avoid conflicts
-# HTML files should be served directly by the server
+# Custom 404 page for all not found errors
+/*    /404.html    404
