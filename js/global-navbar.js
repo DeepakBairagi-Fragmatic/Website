@@ -41,7 +41,7 @@ class GlobalNavbar extends HTMLElement {
               <li><a href="${base}aboutus.html" class="nav-link ${currentPage === 'aboutus.html' ? 'active' : ''}">About</a></li>
               <li><a href="${base}services.html" class="nav-link ${currentPage === 'services.html' ? 'active' : ''}">Services</a></li>
               <li><a href="${base}events.html" class="nav-link ${currentPage === 'events.html' ? 'active' : ''}">Events</a></li>
-              <li><a href="${base}careers.html" class="nav-link ${currentPage === 'careers.html' ? 'active' : ''}">Careers</a></li>
+              <li><a href="${base}case-study.html" class="nav-link ${currentPage === 'case-study.html' ? 'active' : ''}">Case Studies</a></li>
               <li><a href="${base}contact.html" class="nav-link ${currentPage === 'contact.html' ? 'active' : ''}">Contact</a></li>
             </ul>
             
@@ -71,7 +71,7 @@ class GlobalNavbar extends HTMLElement {
             <li><a href="${base}aboutus.html" class="mobile-nav-link ${currentPage === 'aboutus.html' ? 'active' : ''}">About</a></li>
             <li><a href="${base}services.html" class="mobile-nav-link ${currentPage === 'services.html' ? 'active' : ''}">Services</a></li>
             <li><a href="${base}events.html" class="mobile-nav-link ${currentPage === 'events.html' ? 'active' : ''}">Events</a></li>
-            <li><a href="${base}careers.html" class="mobile-nav-link ${currentPage === 'careers.html' ? 'active' : ''}">Careers</a></li>
+            <li><a href="${base}case-study.html" class="mobile-nav-link ${currentPage === 'case-study.html' ? 'active' : ''}">Case Studies</a></li>
             <li><a href="${base}contact.html" class="mobile-nav-link ${currentPage === 'contact.html' ? 'active' : ''}">Contact</a></li>
           </ul>
           <div class="mt-6 pt-6 border-t border-purple-900/30">
