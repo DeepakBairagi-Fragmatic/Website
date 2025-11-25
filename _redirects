@@ -1,7 +1,7 @@
-/events/monday     /monday.html    200
-/events/tuesday    /tuesday.html   200
-/events/wednesday  /wednesday.html 200
-/events/thursday   /thursday.html  200
-/events/friday     /friday.html    200
-/events/saturday   /saturday.html  200
-/events/sunday     /sunday.html    200 
+/events/monday     /events/monday.html    200
+/events/tuesday    /events/tuesday.html   200
+/events/wednesday  /events/wednesday.html 200
+/events/thursday   /events/thursday.html  200
+/events/friday     /events/friday.html    200
+/events/saturday   /events/saturday.html  200
+/events/sunday     /events/sunday.html    200
