@@ -279,13 +279,104 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const weeklyEvents = [
-      { day: "Monday", path: "events/monday.html", title: "UI Design Bootcamp", time: "10:00 AM", desc: "Master Figma & Tailwind.", speaker: "Alex Vega", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" },
-      { day: "Tuesday", path: "events/tuesday.html", title: "Frontend Fun with AI", time: "11:00 AM", desc: "Build smarter apps.", speaker: "Mira Patel", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" },
-      { day: "Wednesday", path: "events/wednesday.html", title: "Brand Lab Live", time: "1:00 PM", desc: "Crafting identities.", speaker: "Chris Huang", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" },
-      { day: "Thursday", path: "events/thursday.html", title: "No-Code Power Hour", time: "2:00 PM", desc: "Build without code.", speaker: "Dana O'Leary", img: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80" },
-      { day: "Friday", path: "events/friday.html", title: "Web Animation 101", time: "3:00 PM", desc: "Motion for the web.", speaker: "Alex Vega", img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" },
-      { day: "Saturday", path: "events/saturday.html", title: "Community AMA", time: "4:00 PM", desc: "Ask us anything!", speaker: "Team", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" },
-      { day: "Sunday", path: "events/sunday.html", title: "Next-Gen Web", time: "12:00 PM", desc: "Future trends.", speaker: "Mira Patel", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" }
+      {
+        id: "monday-ui-bootcamp",
+        day: "Monday",
+        path: "events/monday.html",
+        title: "UI Design Bootcamp",
+        time: "10:00 AM",
+        duration: "2 hours",
+        seats: 50,
+        level: "Beginner",
+        tags: ["Design", "UI", "Figma", "Tailwind"],
+        desc: "Master Figma & Tailwind.",
+        speaker: "Alex Vega",
+        img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "tuesday-frontend-ai",
+        day: "Tuesday",
+        path: "events/tuesday.html",
+        title: "Frontend Fun with AI",
+        time: "11:00 AM",
+        duration: "1.5 hours",
+        seats: 40,
+        level: "Intermediate",
+        tags: ["AI", "Frontend", "JavaScript"],
+        desc: "Build smarter apps.",
+        speaker: "Mira Patel",
+        img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "wednesday-brand-lab",
+        day: "Wednesday",
+        path: "events/wednesday.html",
+        title: "Brand Lab Live",
+        time: "1:00 PM",
+        duration: "2 hours",
+        seats: 30,
+        level: "All Levels",
+        tags: ["Branding", "Design", "Marketing"],
+        desc: "Crafting identities.",
+        speaker: "Chris Huang",
+        img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "thursday-nocode",
+        day: "Thursday",
+        path: "events/thursday.html",
+        title: "No-Code Power Hour",
+        time: "2:00 PM",
+        duration: "1 hour",
+        seats: 60,
+        level: "Beginner",
+        tags: ["No-Code", "Tools", "Productivity"],
+        desc: "Build without code.",
+        speaker: "Dana O'Leary",
+        img: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "friday-web-animation",
+        day: "Friday",
+        path: "events/friday.html",
+        title: "Web Animation 101",
+        time: "3:00 PM",
+        duration: "1.5 hours",
+        seats: 45,
+        level: "Intermediate",
+        tags: ["Animation", "CSS", "JavaScript"],
+        desc: "Motion for the web.",
+        speaker: "Alex Vega",
+        img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "saturday-community-ama",
+        day: "Saturday",
+        path: "events/saturday.html",
+        title: "Community AMA",
+        time: "4:00 PM",
+        duration: "1 hour",
+        seats: 100,
+        level: "All Levels",
+        tags: ["Community", "Q&A", "Networking"],
+        desc: "Ask us anything!",
+        speaker: "Team",
+        img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        id: "sunday-nextgen-web",
+        day: "Sunday",
+        path: "events/sunday.html",
+        title: "Next-Gen Web",
+        time: "12:00 PM",
+        duration: "2 hours",
+        seats: 35,
+        level: "Advanced",
+        tags: ["Web3", "Future", "Innovation"],
+        desc: "Future trends.",
+        speaker: "Mira Patel",
+        img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+      }
     ];
 
     const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
