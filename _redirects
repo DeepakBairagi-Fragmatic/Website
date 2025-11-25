@@ -1,2 +1,3 @@
-# Custom 404 page for all not found errors
+# Redirects for PurpleWave site
 /*    /404.html    404
+/*    /terms-of-service    /terms-of-service.html   200 */
