@@ -37,6 +37,12 @@
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+
+            .filter-btn.active {
+                background: rgba(139, 92, 246, 0.3);
+                border-color: rgba(139, 92, 246, 0.6);
+                color: white;
+            }
         }
     </style>
 </head>
@@ -45,7 +51,7 @@
     <global-navbar></global-navbar>
 
     <!-- Hero -->
-    <header class="relative pt-32 pb-20 overflow-hidden">
+    <header class="relative pt-32 pb-12 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-pink-900/20 pointer-events-none"></div>
         <div class="container mx-auto px-4 relative z-10 text-center">
             <span
@@ -53,82 +59,213 @@
                 Studies</span>
             <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">Our
                     Impact</span></h1>
-            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Dive into up to eight of our most
-                exciting projects, each crafted with premium glass‑morphic design.</p>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Dive into our most exciting
+                projects, each crafted with premium glass‑morphic design.</p>
         </div>
     </header>
 
-    <!-- Grid -->
+    <!-- Main Content Layout -->
     <section class="py-12">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <a href="/fintech-dashboard.html"
-                    class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case1/600/400" alt="FinTech Dashboard"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">FinTech Dashboard</h3>
-                    <p class="text-purple-300">Boosted conversion by 45% with a sleek glass‑morphic UI.</p>
-                </a>
-                <!-- Card 2 -->
-                <a href="/ecommerce-revamp.html"
-                    class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case2/600/400" alt="E‑Commerce Revamp"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">E‑Commerce Revamp</h3>
-                    <p class="text-purple-300">Increased sales by 30% through micro‑animations.</p>
-                </a>
-                <!-- Card 3 -->
-                <a href="/healthcare-portal.html"
-                    class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case3/600/400" alt="Healthcare Portal"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">Healthcare Portal</h3>
-                    <p class="text-purple-300">Secure, responsive platform for patient data.</p>
-                </a>
-                <!-- Card 4 -->
-                <a href="/saas-onboarding.html" class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case4/600/400" alt="SaaS Onboarding"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">SaaS Onboarding</h3>
-                    <p class="text-purple-300">Reduced churn by 20% with interactive tutorials.</p>
-                </a>
-                <!-- Card 5 -->
-                <a href="/travel-booking-ui.html"
-                    class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case5/600/400" alt="Travel Booking UI"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">Travel Booking UI</h3>
-                    <p class="text-purple-300">UX boost led to 25% more bookings.</p>
-                </a>
-                <!-- Card 6 -->
-                <a href="/education-platform.html"
-                    class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case6/600/400" alt="Education Platform"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">Education Platform</h3>
-                    <p class="text-purple-300">Gamified learning increased engagement.</p>
-                </a>
-                <!-- Card 7 -->
-                <a href="/real-estate-portal.html"
-                    class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case7/600/400" alt="Real‑Estate Portal"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">Real‑Estate Portal</h3>
-                    <p class="text-purple-300">Map visualisation with glass‑morphic cards.</p>
-                </a>
-                <!-- Card 8 -->
-                <a href="/ai-dashboard.html" class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition">
-                    <img src="https://picsum.photos/seed/case8/600/400" alt="AI Dashboard"
-                        class="w-full h-48 object-cover rounded-md mb-4" />
-                    <h3 class="text-xl font-bold text-white mb-2">AI Dashboard</h3>
-                    <p class="text-purple-300">Dynamic charts showcase AI insights.</p>
-                </a>
+        <div class="container mx-auto px-4 max-w-[1400px]">
+            <div class="flex flex-col lg:flex-row gap-8">
+
+                <!-- Left Sidebar: Filters -->
+                <aside class="lg:w-1/5 space-y-8">
+                    <div class="glass-panel rounded-2xl p-6 sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
+                                </path>
+                            </svg>
+                            Filter by Industry
+                        </h3>
+                        <div class="space-y-2 flex flex-col">
+                            <button
+                                class="filter-btn active text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="all">All Projects</button>
+                            <button
+                                class="filter-btn text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="fintech">FinTech</button>
+                            <button
+                                class="filter-btn text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="ecommerce">E-Commerce</button>
+                            <button
+                                class="filter-btn text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="healthcare">Healthcare</button>
+                            <button
+                                class="filter-btn text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="saas">SaaS</button>
+                            <button
+                                class="filter-btn text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="education">Education</button>
+                            <button
+                                class="filter-btn text-left px-4 py-2 rounded-lg text-purple-300 hover:bg-purple-500/10 hover:text-white transition border border-transparent"
+                                data-filter="real-estate">Real Estate</button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Center: Case Study Grid -->
+                <main class="lg:w-3/5">
+                    <div class="grid md:grid-cols-2 gap-6" id="case-study-grid">
+                        <!-- Card 1 -->
+                        <a href="/fintech-dashboard.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="fintech">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case1/600/400" alt="FinTech Dashboard"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    FinTech</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">FinTech Dashboard</h3>
+                            <p class="text-purple-300 text-sm">Boosted conversion by 45% with a sleek glass‑morphic UI.
+                            </p>
+                        </a>
+                        <!-- Card 2 -->
+                        <a href="/ecommerce-revamp.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="ecommerce">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case2/600/400" alt="E‑Commerce Revamp"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    E-Commerce</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">E‑Commerce Revamp</h3>
+                            <p class="text-purple-300 text-sm">Increased sales by 30% through micro‑animations.</p>
+                        </a>
+                        <!-- Card 3 -->
+                        <a href="/healthcare-portal.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="healthcare">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case3/600/400" alt="Healthcare Portal"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    Healthcare</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Healthcare Portal</h3>
+                            <p class="text-purple-300 text-sm">Secure, responsive platform for patient data.</p>
+                        </a>
+                        <!-- Card 4 -->
+                        <a href="/saas-onboarding.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="saas">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case4/600/400" alt="SaaS Onboarding"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    SaaS</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">SaaS Onboarding</h3>
+                            <p class="text-purple-300 text-sm">Reduced churn by 20% with interactive tutorials.</p>
+                        </a>
+                        <!-- Card 5 -->
+                        <a href="/travel-booking-ui.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="ecommerce">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case5/600/400" alt="Travel Booking UI"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    Travel</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Travel Booking UI</h3>
+                            <p class="text-purple-300 text-sm">UX boost led to 25% more bookings.</p>
+                        </a>
+                        <!-- Card 6 -->
+                        <a href="/education-platform.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="education">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case6/600/400" alt="Education Platform"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    Education</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Education Platform</h3>
+                            <p class="text-purple-300 text-sm">Gamified learning increased engagement.</p>
+                        </a>
+                        <!-- Card 7 -->
+                        <a href="/real-estate-portal.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="real-estate">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case7/600/400" alt="Real‑Estate Portal"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    Real Estate</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Real‑Estate Portal</h3>
+                            <p class="text-purple-300 text-sm">Map visualisation with glass‑morphic cards.</p>
+                        </a>
+                        <!-- Card 8 -->
+                        <a href="/ai-dashboard.html"
+                            class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
+                            data-category="fintech">
+                            <div class="relative overflow-hidden rounded-md mb-4 h-48">
+                                <img src="https://picsum.photos/seed/case8/600/400" alt="AI Dashboard"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" />
+                                <div
+                                    class="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-2 py-1 rounded text-xs text-white font-medium">
+                                    AI / Data</div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">AI Dashboard</h3>
+                            <p class="text-purple-300 text-sm">Dynamic charts showcase AI insights.</p>
+                        </a>
+                    </div>
+                </main>
+
+                <!-- Right Sidebar: CTA & Newsletter -->
+                <aside class="lg:w-1/5 space-y-8">
+                    <!-- CTA Card -->
+                    <div class="glass-panel rounded-2xl p-6 text-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-purple-500/30">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Start Your Project</h3>
+                            <p class="text-purple-200/80 text-sm mb-6">Ready to transform your digital presence? Let's
+                                build something amazing.</p>
+                            <a href="/contact.html"
+                                class="block w-full py-2.5 bg-white text-purple-900 font-bold rounded-lg hover:bg-purple-50 transition shadow-lg">Get
+                                a Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="glass-panel rounded-2xl p-6">
+                        <h3 class="text-lg font-bold text-white mb-4">Stay Inspired</h3>
+                        <p class="text-purple-300 text-xs mb-4">Get the latest design trends and case studies delivered
+                            to your inbox.</p>
+                        <form class="space-y-3" id="newsletterForm">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email"
+                                class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-2 text-sm text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                            <button type="submit"
+                                class="w-full py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold rounded-lg transition">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
@@ -145,6 +282,42 @@
     </footer>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('#case-study-grid > a');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        // Add fade-in animation
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.opacity = '1', 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Newsletter Logic
+        document.getElementById('newsletterForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                window.location.href = `thankyou.html?email=${encodeURIComponent(email)}`;
+            }
+        });
     </script>
 </body>
 
