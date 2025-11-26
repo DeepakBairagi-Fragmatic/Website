@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real-Estate Portal | PurpleWave Case Study</title>
-    <meta name="description" content="Integrated map visualisation with glass-morphic cards." />
+    <title>Real Estate Portal | PurpleWave Case Study</title>
+    <meta name="description" content="Connecting buyers and sellers with immersive virtual tours and smart search." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
@@ -16,19 +16,49 @@
             color: #f3e8ff;
         }
 
-        @layer utilities {
-            .glass-panel {
-                background: rgba(255, 255, 255, 0.03);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(139, 92, 246, 0.15);
-            }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
 
-            .text-gradient {
-                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .toc-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .toc-link.active {
+            color: #fff !important;
+            font-weight: 600;
+            border-left-color: #e879f9 !important;
+            border-left-width: 3px;
+            background: rgba(232, 121, 249, 0.15);
+            padding-left: 14px !important;
+        }
+
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 92, 246, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            transition: width 0.2s ease-out;
+            box-shadow: 0 -2px 12px rgba(232, 121, 249, 0.6);
         }
     </style>
 </head>
@@ -36,47 +66,354 @@
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
     <global-navbar></global-navbar>
 
-    <header class="relative pt-32 pb-16 overflow-hidden">
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header class="relative pt-32 pb-12 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
             <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <a href="/case-study.html"
+            <a href="/case-study"
                 class="inline-block py-1 px-3 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wider mb-6 uppercase hover:bg-purple-800/50 transition">←
                 Back to Case Studies</a>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">Real-Estate
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">Real Estate
                     Portal</span></h1>
-            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Integrated map visualisation with
-                glass-morphic cards.</p>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed mb-4">Connecting buyers and sellers
+                with immersive virtual tours and smart search.</p>
+            <div class="flex items-center justify-center gap-6 text-sm text-purple-300">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    10 min read
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    3 min skim
+                </span>
+            </div>
         </div>
     </header>
 
-    <section class="py-16">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
-                <img src="https://picsum.photos/seed/case7/800/400" alt="Real-Estate Portal"
-                    class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-8">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Challenge</h2>
-                <p class="text-purple-200/90 mb-8">Buyers were struggling to visualize property locations in relation to
-                    amenities like schools and parks. The existing list-based view was unengaging and made it difficult
-                    to compare properties effectively.</p>
+                <aside class="lg:w-1/4">
+                    <div class="glass-panel rounded-2xl p-6 sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#overview"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Overview</a>
+                            <a href="#challenge"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">The
+                                Challenge</a>
+                            <a href="#research"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Research
+                                & Discovery</a>
+                            <a href="#solution"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Solution
+                                Strategy</a>
+                            <a href="#design"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Design
+                                Process</a>
+                            <a href="#implementation"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Implementation</a>
+                            <a href="#results"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Results
+                                & Impact</a>
+                            <a href="#testimonials"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Testimonials</a>
+                        </nav>
+                    </div>
+                </aside>
 
-                <h2 class="text-2xl font-bold text-white mb-4">Solution</h2>
-                <p class="text-purple-200/90 mb-8">We integrated a high-performance interactive map with clustering
-                    capabilities. Properties were displayed as glass-morphic cards floating over the map. Users could
-                    filter properties in real-time and see immediate visual feedback on the map.</p>
+                <article class="lg:w-3/4">
+                    <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Results</h2>
-                <p class="text-purple-200/90 mb-8">The new map-based interface resulted in a higher inquiry rate and
-                    increased the average time-on-site by 40%. Users praised the intuitive ability to explore
-                    neighborhoods visually.</p>
+                        <!-- Overview -->
+                        <section id="overview" class="mb-16 scroll-mt-24">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=600&fit=crop"
+                                alt="Real Estate Portal Overview"
+                                class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+                            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">300%</div>
+                                    <div class="text-sm text-purple-300">More Leads</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">50%</div>
+                                    <div class="text-sm text-purple-300">Faster Sales</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">VR</div>
+                                    <div class="text-sm text-purple-300">Tour Integration</div>
+                                </div>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                A luxury real estate agency approached us to modernize their digital presence. In a
+                                market where physical viewings were becoming difficult due to global events, they needed
+                                a way to showcase high-end properties remotely without losing the "wow" factor. We built
+                                an immersive platform featuring 360° virtual tours, interactive neighborhood maps, and
+                                AI-driven property recommendations.
+                            </p>
+                        </section>
+
+                        <!-- Challenge -->
+                        <section id="challenge" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">The Challenge</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Traditional real estate listings—static photos and text descriptions—were failing to
+                                capture the essence of luxury properties. Potential buyers, often international,
+                                couldn't get a true sense of space or flow from 2D images alone.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&h=500&fit=crop"
+                                alt="Traditional Listings Limitation"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The agency's existing site was also plagued by poor search functionality. Users were
+                                bombarded with irrelevant listings, leading to high bounce rates. Agents were wasting
+                                time on unqualified leads who had misunderstood the property's location or features.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Speed was another issue. High-resolution image galleries were causing slow load times,
+                                frustrating users on mobile devices.
+                            </p>
+                        </section>
+
+                        <!-- Research & Discovery -->
+                        <section id="research" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Research & Discovery</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We interviewed high-net-worth individuals and real estate agents to identify the key
+                                decision-making factors. We learned that "lifestyle" was just as important as the
+                                property itself. Buyers wanted to know about local schools, crime rates, and proximity
+                                to amenities.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&h=400&fit=crop"
+                                    alt="Client Meetings"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                                    alt="Data Analysis"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Heatmap analysis of the old site showed that users were trying to zoom in on floor plans
+                                and photos, often unsuccessfully. This indicated a desire for deeper visual exploration.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                We also found that 70% of property searches started on mobile, yet the desktop site was
+                                the primary focus of the previous design.
+                            </p>
+                        </section>
+
+                        <!-- Solution Strategy -->
+                        <section id="solution" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Solution Strategy</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We proposed a "Digital Twin" strategy. Every listing would include a high-fidelity 3D
+                                virtual tour, allowing users to "walk" through the property from anywhere in the world.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=500&fit=crop"
+                                alt="Virtual Tour Experience"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                To address the search issue, we implemented an AI-powered recommendation engine. By
+                                analyzing user behavior (e.g., time spent on specific listings, price range filters),
+                                the system would suggest similar properties they might have missed.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                We also integrated rich neighborhood data directly into the listing page, pulling in
+                                APIs for school ratings, walk scores, and local points of interest.
+                            </p>
+                        </section>
+
+                        <!-- Design Process -->
+                        <section id="design" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Design Process</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The design aesthetic was "Understated Luxury." We used plenty of white space (or dark
+                                space in our case), elegant serif fonts for headings, and a gold accent color to convey
+                                exclusivity.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop"
+                                    alt="Mobile App Design"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop"
+                                    alt="Wireframes"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We designed a "Map View" search interface that allowed users to draw a custom search
+                                area with their finger—perfect for finding homes in specific school districts or
+                                neighborhoods.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The property detail page was structured like a magazine spread, with full-width images
+                                and immersive storytelling elements.
+                            </p>
+                        </section>
+
+                        <!-- Implementation -->
+                        <section id="implementation" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Implementation</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We built the platform using Next.js for its server-side rendering capabilities, ensuring
+                                excellent SEO performance. The virtual tours were powered by Matterport's SDK,
+                                seamlessly embedded into the React frontend.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=500&fit=crop"
+                                alt="Map Integration"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                To handle the heavy image load, we used a dedicated image CDN with on-the-fly
+                                optimization. This ensured that a user on a mobile connection received a properly sized
+                                image, not the 4K desktop version.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The backend was powered by a headless CMS (Contentful), allowing agents to easily update
+                                listings and upload media without needing technical skills.
+                            </p>
+                        </section>
+
+                        <!-- Results & Impact -->
+                        <section id="results" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Results & Impact</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The new platform was a game-changer. Lead generation increased by 300% in the first
+                                quarter. More importantly, the quality of leads improved drastically—users who requested
+                                a viewing had already "toured" the home virtually and were serious buyers.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop"
+                                    alt="Sales Success"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                                    alt="Growth Metrics"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <div class="bg-green-900/10 border border-green-500/20 rounded-xl p-6 mb-6">
+                                <h3 class="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                                <ul class="space-y-3 text-purple-200/90">
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>300% increase in qualified leads</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>50% reduction in time-to-sale</strong> for listed
+                                            properties</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>20% increase in international buyers</strong> via virtual
+                                            tours</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The agency solidified its reputation as the most innovative player in the luxury market,
+                                attracting new exclusive listings from sellers who wanted the "PurpleWave treatment."
+                            </p>
+                        </section>
+
+                        <!-- Testimonials -->
+                        <section id="testimonials" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Testimonials</h2>
+                            <div class="space-y-6">
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "The virtual tours are incredible. We sold a $5M property to a buyer in London
+                                        who had never set foot in the house. That simply wouldn't have happened with our
+                                        old site."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            JW</div>
+                                        <div>
+                                            <div class="text-white font-semibold">James Wilson</div>
+                                            <div class="text-sm text-purple-300">Senior Partner</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "Searching for a home was actually fun. The map view made it so easy to find
+                                        places near my kids' school."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            LC</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Linda Chen</div>
+                                            <div class="text-sm text-purple-300">Homebuyer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 pb-24">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <div
+                class="bg-gradient-to-br from-purple-900/50 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
+                <h2 class="text-3xl font-bold text-white mb-3 text-center">Let's Work Together</h2>
+                <p class="text-purple-200/80 mb-6 text-center">
+                    Ready for similar results? Get in touch.
+                </p>
+                <form class="max-w-lg mx-auto space-y-4" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                    </div>
+                    <textarea placeholder="Tell us about your project..." rows="3" required
+                        class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+                    <button type="submit"
+                        class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition shadow-lg shadow-purple-500/50">
+                        Send Message →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30 mb-8">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
                 <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
@@ -90,8 +427,66 @@
             </div>
         </div>
     </footer>
+    <script src="../js/global-navbar.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const progressBar = document.getElementById('progressBar');
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        function updateActiveTOC() {
+            let current = '';
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            updateActiveTOC();
+        });
+
+        updateProgressBar();
+        updateActiveTOC();
+
+        document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! We will be in touch soon.');
+            this.reset();
+        });
     </script>
 </body>
 

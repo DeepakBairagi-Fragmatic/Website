@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SaaS Onboarding | PurpleWave Case Study</title>
-    <meta name="description" content="Reduced churn by 20% with interactive tutorials." />
+    <meta name="description" content="Reduced churn by 40% with a personalized user onboarding flow." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
@@ -16,19 +16,49 @@
             color: #f3e8ff;
         }
 
-        @layer utilities {
-            .glass-panel {
-                background: rgba(255, 255, 255, 0.03);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(139, 92, 246, 0.15);
-            }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
 
-            .text-gradient {
-                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .toc-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .toc-link.active {
+            color: #fff !important;
+            font-weight: 600;
+            border-left-color: #e879f9 !important;
+            border-left-width: 3px;
+            background: rgba(232, 121, 249, 0.15);
+            padding-left: 14px !important;
+        }
+
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 92, 246, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            transition: width 0.2s ease-out;
+            box-shadow: 0 -2px 12px rgba(232, 121, 249, 0.6);
         }
     </style>
 </head>
@@ -36,48 +66,355 @@
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
     <global-navbar></global-navbar>
 
-    <header class="relative pt-32 pb-16 overflow-hidden">
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header class="relative pt-32 pb-12 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
             <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <a href="/case-study.html"
+            <a href="/case-study"
                 class="inline-block py-1 px-3 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wider mb-6 uppercase hover:bg-purple-800/50 transition">←
                 Back to Case Studies</a>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">SaaS
                     Onboarding</span></h1>
-            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Reduced churn by 20% with
-                interactive tutorials.</p>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed mb-4">Reduced churn by 40% with a
+                personalized user onboarding flow.</p>
+            <div class="flex items-center justify-center gap-6 text-sm text-purple-300">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    9 min read
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    3 min skim
+                </span>
+            </div>
         </div>
     </header>
 
-    <section class="py-16">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
-                <img src="https://picsum.photos/seed/case4/800/400" alt="SaaS Onboarding"
-                    class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-8">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Challenge</h2>
-                <p class="text-purple-200/90 mb-8">The client noticed a significant drop-off in users during the initial
-                    setup phase of their SaaS product. The process was overwhelming, with too many steps and
-                    insufficient guidance, leading to frustration and churn.</p>
+                <aside class="lg:w-1/4">
+                    <div class="glass-panel rounded-2xl p-6 sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#overview"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Overview</a>
+                            <a href="#challenge"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">The
+                                Challenge</a>
+                            <a href="#research"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Research
+                                & Discovery</a>
+                            <a href="#solution"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Solution
+                                Strategy</a>
+                            <a href="#design"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Design
+                                Process</a>
+                            <a href="#implementation"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Implementation</a>
+                            <a href="#results"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Results
+                                & Impact</a>
+                            <a href="#testimonials"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Testimonials</a>
+                        </nav>
+                    </div>
+                </aside>
 
-                <h2 class="text-2xl font-bold text-white mb-4">Solution</h2>
-                <p class="text-purple-200/90 mb-8">We redesigned the onboarding flow into a gamified, step-by-step
-                    interactive tutorial. We introduced progress bars, celebratory animations upon task completion, and
-                    contextual tooltips. The new flow allowed users to learn by doing, rather than reading lengthy
-                    documentation.</p>
+                <article class="lg:w-3/4">
+                    <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Results</h2>
-                <p class="text-purple-200/90 mb-8">The new onboarding experience led to a <strong>20% reduction in
-                        churn</strong> during the first week. User activation rates soared, and support tickets related
-                    to setup issues decreased by 40%.</p>
+                        <!-- Overview -->
+                        <section id="overview" class="mb-16 scroll-mt-24">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop"
+                                alt="SaaS Onboarding Overview"
+                                class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+                            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">70%</div>
+                                    <div class="text-sm text-purple-300">Faster Time-to-Value</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">40%</div>
+                                    <div class="text-sm text-purple-300">Reduced Churn</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">85%</div>
+                                    <div class="text-sm text-purple-300">Completion Rate</div>
+                                </div>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                A fast-growing B2B SaaS platform was facing a critical retention problem. While their
+                                marketing team was successfully driving sign-ups, 60% of new users abandoned the
+                                platform within the first week. We were brought in to reimagine the onboarding
+                                experience, helping users discover value faster and reducing early-stage churn.
+                            </p>
+                        </section>
+
+                        <!-- Challenge -->
+                        <section id="challenge" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">The Challenge</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The platform was powerful but complex. New users were dropped into a blank dashboard
+                                with no guidance, leading to "blank slate paralysis." They struggled to understand where
+                                to start or how to configure the tool for their specific needs.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&h=500&fit=crop"
+                                alt="User Confusion"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Data analysis showed that users who didn't complete the initial setup within 3 days were
+                                80% likely to churn. The existing "onboarding" consisted of a long, generic email
+                                sequence and a link to a 50-page documentation wiki.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The client needed a solution that would hand-hold users through the "Aha!" moment—the
+                                point where they realized the tool's value—without being intrusive or annoying.
+                            </p>
+                        </section>
+
+                        <!-- Research & Discovery -->
+                        <section id="research" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Research & Discovery</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We started by analyzing the behavior of the "power users"—the top 10% of customers who
+                                were getting the most value from the platform. We identified the key actions they took
+                                in their first week that correlated with long-term retention.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+                                    alt="User Testing"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                                    alt="Data Analysis"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We also conducted usability tests with new sign-ups, observing their frustration as they
+                                tried to navigate the interface. A common theme was "I don't know what I don't know."
+                                They wanted a guided tour, not a map.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Competitor analysis revealed that industry leaders were using interactive checklists and
+                                personalization to tailor the experience. This confirmed our hypothesis that a
+                                "one-size-fits-all" approach was failing.
+                            </p>
+                        </section>
+
+                        <!-- Solution Strategy -->
+                        <section id="solution" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Solution Strategy</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We designed a "Choose Your Own Adventure" onboarding flow. Upon sign-up, users were
+                                asked 3 simple questions about their role and goals. Based on their answers, the
+                                platform would dynamically generate a personalized setup checklist.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&h=500&fit=crop"
+                                alt="Personalized Flow Strategy"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We replaced the empty state dashboard with a "Getting Started" widget that tracked
+                                progress. Completing tasks (e.g., "Invite a teammate," "Create your first project") was
+                                gamified with progress bars and celebratory animations.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Crucially, we introduced interactive tooltips that highlighted key features in context,
+                                rather than forcing users to read external documentation.
+                            </p>
+                        </section>
+
+                        <!-- Design Process -->
+                        <section id="design" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Design Process</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We focused on "frictionless friction." We added steps to the sign-up flow (the
+                                personalization questions), which technically added friction, but actually increased
+                                motivation by showing users that the product was tailored to them.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop"
+                                    alt="Wireframing"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop"
+                                    alt="High Fidelity UI"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The visual design used the "Zeigarnik Effect"—the psychological principle that people
+                                remember uncompleted tasks better than completed ones. We showed a progress bar that was
+                                already 20% full (for creating an account) to encourage users to finish the rest.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                We designed empty states that weren't empty. Instead of "No projects found," we showed a
+                                friendly illustration and a big "Create Project" button with a one-sentence explanation
+                                of why they should.
+                            </p>
+                        </section>
+
+                        <!-- Implementation -->
+                        <section id="implementation" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Implementation</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We built the onboarding layer using React and a state machine to manage the complex
+                                logic of the guided tour. This allowed us to handle edge cases (e.g., user leaves and
+                                comes back) gracefully.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=500&fit=crop"
+                                alt="Development"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We integrated with Segment and Mixpanel to track every step of the funnel. This granular
+                                analytics setup allowed us to see exactly where users were dropping off and iterate on
+                                the copy and design in real-time.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Email triggers were synchronized with in-app behavior. If a user stalled on step 3, they
+                                received a helpful tip via email related specifically to that step, rather than a
+                                generic "Come back!" message.
+                            </p>
+                        </section>
+
+                        <!-- Results & Impact -->
+                        <section id="results" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Results & Impact</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The impact was immediate. The "Time to First Value" (TTFV) decreased from 4 days to 45
+                                minutes. Users were getting set up and seeing results in their first session.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                                    alt="Growth Metrics"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                                    alt="Retention Graph"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <div class="bg-green-900/10 border border-green-500/20 rounded-xl p-6 mb-6">
+                                <h3 class="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                                <ul class="space-y-3 text-purple-200/90">
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>40% reduction in Week 1 churn</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>85% onboarding completion rate</strong> (up from 35%)</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>25% increase in trial-to-paid conversion</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                By helping users find success early, we created a cohort of "sticky" users who were more
+                                likely to upgrade to premium plans and refer colleagues. The onboarding flow became a
+                                key competitive advantage.
+                            </p>
+                        </section>
+
+                        <!-- Testimonials -->
+                        <section id="testimonials" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Testimonials</h2>
+                            <div class="space-y-6">
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "We were losing users faster than we could acquire them. PurpleWave's onboarding
+                                        redesign plugged the leaky bucket. Our retention numbers have never looked
+                                        better."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            DK</div>
+                                        <div>
+                                            <div class="text-white font-semibold">David Kim</div>
+                                            <div class="text-sm text-purple-300">VP of Product</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "I usually skip onboarding tours, but this one was actually helpful. It asked me
+                                        what I wanted to do and then showed me exactly how to do it."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            AS</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Amanda Smith</div>
+                                            <div class="text-sm text-purple-300">New User</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 pb-24">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <div
+                class="bg-gradient-to-br from-purple-900/50 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
+                <h2 class="text-3xl font-bold text-white mb-3 text-center">Let's Work Together</h2>
+                <p class="text-purple-200/80 mb-6 text-center">
+                    Ready for similar results? Get in touch.
+                </p>
+                <form class="max-w-lg mx-auto space-y-4" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                    </div>
+                    <textarea placeholder="Tell us about your project..." rows="3" required
+                        class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+                    <button type="submit"
+                        class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition shadow-lg shadow-purple-500/50">
+                        Send Message →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30 mb-8">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
                 <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
@@ -91,8 +428,66 @@
             </div>
         </div>
     </footer>
+    <script src="../js/global-navbar.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const progressBar = document.getElementById('progressBar');
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        function updateActiveTOC() {
+            let current = '';
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            updateActiveTOC();
+        });
+
+        updateProgressBar();
+        updateActiveTOC();
+
+        document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! We will be in touch soon.');
+            this.reset();
+        });
     </script>
 </body>
 

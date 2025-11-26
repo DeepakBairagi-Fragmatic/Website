@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Healthcare Portal | PurpleWave Case Study</title>
-    <meta name="description" content="Delivered a secure, responsive platform for patient data." />
+    <meta name="description" content="Streamlined patient care with a secure, HIPAA-compliant portal." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
@@ -16,19 +16,49 @@
             color: #f3e8ff;
         }
 
-        @layer utilities {
-            .glass-panel {
-                background: rgba(255, 255, 255, 0.03);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(139, 92, 246, 0.15);
-            }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
 
-            .text-gradient {
-                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .toc-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .toc-link.active {
+            color: #fff !important;
+            font-weight: 600;
+            border-left-color: #e879f9 !important;
+            border-left-width: 3px;
+            background: rgba(232, 121, 249, 0.15);
+            padding-left: 14px !important;
+        }
+
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 92, 246, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            transition: width 0.2s ease-out;
+            box-shadow: 0 -2px 12px rgba(232, 121, 249, 0.6);
         }
     </style>
 </head>
@@ -36,48 +66,365 @@
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
     <global-navbar></global-navbar>
 
-    <header class="relative pt-32 pb-16 overflow-hidden">
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header class="relative pt-32 pb-12 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
             <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <a href="/case-study.html"
+            <a href="/case-study"
                 class="inline-block py-1 px-3 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wider mb-6 uppercase hover:bg-purple-800/50 transition">←
                 Back to Case Studies</a>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">Healthcare
                     Portal</span></h1>
-            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Delivered a secure, responsive
-                platform for patient data.</p>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed mb-4">Streamlined patient care with a
+                secure, HIPAA-compliant portal.</p>
+            <div class="flex items-center justify-center gap-6 text-sm text-purple-300">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    11 min read
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    4 min skim
+                </span>
+            </div>
         </div>
     </header>
 
-    <section class="py-16">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
-                <img src="https://picsum.photos/seed/case3/800/400" alt="Healthcare Portal"
-                    class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-8">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Challenge</h2>
-                <p class="text-purple-200/90 mb-8">The client needed a HIPAA-compliant portal that allowed patients to
-                    access their medical records securely. The existing system was outdated, not mobile-friendly, and
-                    difficult for elderly patients to use.</p>
+                <aside class="lg:w-1/4">
+                    <div class="glass-panel rounded-2xl p-6 sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#overview"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Overview</a>
+                            <a href="#challenge"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">The
+                                Challenge</a>
+                            <a href="#research"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Research
+                                & Discovery</a>
+                            <a href="#solution"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Solution
+                                Strategy</a>
+                            <a href="#design"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Design
+                                Process</a>
+                            <a href="#implementation"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Implementation</a>
+                            <a href="#results"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Results
+                                & Impact</a>
+                            <a href="#testimonials"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Testimonials</a>
+                        </nav>
+                    </div>
+                </aside>
 
-                <h2 class="text-2xl font-bold text-white mb-4">Solution</h2>
-                <p class="text-purple-200/90 mb-8">We designed and developed a secure, encrypted portal with a
-                    mobile-first approach. We prioritized accessibility, ensuring high contrast and large touch targets.
-                    The interface was simplified to guide users effortlessly to their appointments, prescriptions, and
-                    test results.</p>
+                <article class="lg:w-3/4">
+                    <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Results</h2>
-                <p class="text-purple-200/90 mb-8">The new portal achieved <strong>99.9% uptime</strong> and received
-                    <strong>5-star user feedback</strong> for its ease of use. Patient engagement with their health data
-                    increased significantly, leading to better health outcomes.</p>
+                        <!-- Overview -->
+                        <section id="overview" class="mb-16 scroll-mt-24">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=600&fit=crop"
+                                alt="Healthcare Portal Overview"
+                                class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+                            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">60%</div>
+                                    <div class="text-sm text-purple-300">Admin Time Saved</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">100%</div>
+                                    <div class="text-sm text-purple-300">HIPAA Compliant</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">4.9★</div>
+                                    <div class="text-sm text-purple-300">App Store Rating</div>
+                                </div>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                A regional hospital network needed to modernize their patient engagement strategy. Their
+                                existing systems were paper-heavy, causing long wait times and administrative
+                                bottlenecks. We were tasked with building a secure, patient-centric portal that would
+                                simplify appointment scheduling, access to medical records, and communication with
+                                healthcare providers.
+                            </p>
+                        </section>
+
+                        <!-- Challenge -->
+                        <section id="challenge" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">The Challenge</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The hospital's workflow was heavily reliant on manual data entry and phone calls.
+                                Patients had to physically visit the hospital to retrieve test results, and appointment
+                                booking required navigating a complex phone tree. This inefficiency led to a high rate
+                                of no-shows and frustrated patients.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1516549655169-df83a092fc43?w=1200&h=500&fit=crop"
+                                alt="Administrative Challenges"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                From a compliance perspective, the fragmented data storage posed a significant security
+                                risk. Patient records were scattered across different departments, making it difficult
+                                to maintain a unified view of a patient's history. The new system had to adhere to
+                                strict HIPAA regulations while remaining accessible to patients of all ages and
+                                technical abilities.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Additionally, the hospital staff was overwhelmed. Nurses spent hours each day returning
+                                calls for routine inquiries that could easily be handled digitally. The goal was to
+                                offload these administrative tasks to the portal, freeing up medical professionals to
+                                focus on patient care.
+                            </p>
+                        </section>
+
+                        <!-- Research & Discovery -->
+                        <section id="research" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Research & Discovery</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We conducted extensive field research, interviewing doctors, nurses, and administrative
+                                staff to understand their daily pain points. We also mapped the patient journey from
+                                appointment booking to post-visit follow-up.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1576091160550-217358c7db81?w=600&h=400&fit=crop"
+                                    alt="Medical Staff Interview"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&h=400&fit=crop"
+                                    alt="Patient Journey Mapping"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                A key finding was that older patients struggled with complex digital interfaces. They
+                                needed large text, high contrast, and clear instructions. Conversely, younger patients
+                                expected a mobile-first experience similar to the apps they used daily.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                We also performed a technical audit of the hospital's Electronic Health Record (EHR)
+                                system. We identified that while the backend data was robust, the lack of an API layer
+                                made it inaccessible to external applications.
+                            </p>
+                        </section>
+
+                        <!-- Solution Strategy -->
+                        <section id="solution" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Solution Strategy</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We designed a unified patient portal accessible via web and mobile. The core features
+                                included: secure messaging with providers, real-time appointment scheduling, access to
+                                lab results, and prescription refills.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1576091160550-217358c7db81?w=1200&h=500&fit=crop"
+                                alt="Portal Solution Concept"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                To ensure adoption across demographics, we implemented a "Simple Mode" for the
+                                interface, which stripped away non-essential features and increased font sizes. We also
+                                integrated a chatbot for triage, guiding patients to the right care level (e.g., urgent
+                                care vs. primary care appointment).
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Security was baked into the architecture from day one. We utilized multi-factor
+                                authentication (MFA) and role-based access control to ensure that only authorized
+                                personnel could access sensitive data.
+                            </p>
+                        </section>
+
+                        <!-- Design Process -->
+                        <section id="design" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Design Process</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Our design philosophy was "Calm Tech." We used a soothing color palette of soft blues
+                                and greens (adapted to the PurpleWave theme with calming purples) to reduce patient
+                                anxiety. The typography was chosen for maximum legibility.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=600&h=400&fit=crop"
+                                    alt="UI Design Iterations"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                                    alt="Mobile App Design"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We prototyped the appointment booking flow extensively. By reducing the number of steps
+                                from 8 to 3, we made it possible to book a visit in under 60 seconds. We also added a
+                                "Find a Doctor" feature with filters for specialty, language, and gender.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Accessibility testing was rigorous. We ensured full compliance with WCAG 2.1 AAA
+                                standards, including screen reader support and keyboard navigation.
+                            </p>
+                        </section>
+
+                        <!-- Implementation -->
+                        <section id="implementation" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Implementation</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The portal was built on a secure cloud infrastructure using AWS. We used FHIR (Fast
+                                Healthcare Interoperability Resources) standards to integrate with the hospital's
+                                existing Epic EHR system. This ensured seamless data synchronization.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0?w=1200&h=500&fit=crop"
+                                alt="Secure Infrastructure"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The frontend was developed with React Native for the mobile app and React for the web,
+                                allowing for 90% code reuse. We implemented end-to-end encryption for all messages and
+                                file transfers.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                We also built a comprehensive admin dashboard for hospital staff, allowing them to
+                                manage appointments, send bulk notifications (e.g., for flu shot reminders), and view
+                                analytics on patient engagement.
+                            </p>
+                        </section>
+
+                        <!-- Results & Impact -->
+                        <section id="results" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Results & Impact</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The launch was a resounding success. Within 6 months, 75% of the patient base had
+                                registered for the portal. Call center volume dropped by 40%, allowing staff to focus on
+                                complex cases.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop"
+                                    alt="Patient Satisfaction"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1576091160550-217358c7db81?w=600&h=400&fit=crop"
+                                    alt="Efficiency Metrics"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <div class="bg-green-900/10 border border-green-500/20 rounded-xl p-6 mb-6">
+                                <h3 class="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                                <ul class="space-y-3 text-purple-200/90">
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>60% reduction in admin time</strong> for scheduling</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>Zero compliance breaches</strong> in first year of
+                                            operation</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>30% decrease in no-show rates</strong> via automated
+                                            reminders</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Most importantly, patient outcomes improved. With easier access to test results and
+                                direct communication with providers, patients were more engaged in their own care,
+                                leading to better adherence to treatment plans.
+                            </p>
+                        </section>
+
+                        <!-- Testimonials -->
+                        <section id="testimonials" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Testimonials</h2>
+                            <div class="space-y-6">
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "The new portal has transformed how we interact with our patients. It's
+                                        efficient, secure, and easy to use. I can spend more time treating patients and
+                                        less time on paperwork."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            DR</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Dr. Emily Chen</div>
+                                            <div class="text-sm text-purple-300">Chief Medical Officer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "I used to dread calling the hospital to make an appointment. Now I can do it in
+                                        seconds from my phone. It's so much better."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            MJ</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Mark Johnson</div>
+                                            <div class="text-sm text-purple-300">Patient</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 pb-24">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <div
+                class="bg-gradient-to-br from-purple-900/50 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
+                <h2 class="text-3xl font-bold text-white mb-3 text-center">Let's Work Together</h2>
+                <p class="text-purple-200/80 mb-6 text-center">
+                    Ready for similar results? Get in touch.
+                </p>
+                <form class="max-w-lg mx-auto space-y-4" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                    </div>
+                    <textarea placeholder="Tell us about your project..." rows="3" required
+                        class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+                    <button type="submit"
+                        class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition shadow-lg shadow-purple-500/50">
+                        Send Message →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30 mb-8">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
                 <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
@@ -91,8 +438,66 @@
             </div>
         </div>
     </footer>
+    <script src="../js/global-navbar.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const progressBar = document.getElementById('progressBar');
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        function updateActiveTOC() {
+            let current = '';
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            updateActiveTOC();
+        });
+
+        updateProgressBar();
+        updateActiveTOC();
+
+        document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! We will be in touch soon.');
+            this.reset();
+        });
     </script>
 </body>
 

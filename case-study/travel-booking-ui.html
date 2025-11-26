@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Booking UI | PurpleWave Case Study</title>
-    <meta name="description" content="Enhanced UX, leading to a 25% increase in bookings." />
+    <meta name="description" content="Simplifying the travel booking experience for a global audience." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
@@ -16,19 +16,49 @@
             color: #f3e8ff;
         }
 
-        @layer utilities {
-            .glass-panel {
-                background: rgba(255, 255, 255, 0.03);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(139, 92, 246, 0.15);
-            }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
 
-            .text-gradient {
-                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .toc-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .toc-link.active {
+            color: #fff !important;
+            font-weight: 600;
+            border-left-color: #e879f9 !important;
+            border-left-width: 3px;
+            background: rgba(232, 121, 249, 0.15);
+            padding-left: 14px !important;
+        }
+
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 92, 246, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            transition: width 0.2s ease-out;
+            box-shadow: 0 -2px 12px rgba(232, 121, 249, 0.6);
         }
     </style>
 </head>
@@ -36,48 +66,354 @@
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
     <global-navbar></global-navbar>
 
-    <header class="relative pt-32 pb-16 overflow-hidden">
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header class="relative pt-32 pb-12 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
             <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <a href="/case-study.html"
+            <a href="/case-study"
                 class="inline-block py-1 px-3 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wider mb-6 uppercase hover:bg-purple-800/50 transition">←
                 Back to Case Studies</a>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">Travel
                     Booking UI</span></h1>
-            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Enhanced UX, leading to a 25%
-                increase in bookings.</p>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed mb-4">Simplifying the travel booking
+                experience for a global audience.</p>
+            <div class="flex items-center justify-center gap-6 text-sm text-purple-300">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    10 min read
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    3 min skim
+                </span>
+            </div>
         </div>
     </header>
 
-    <section class="py-16">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
-                <img src="https://picsum.photos/seed/case5/800/400" alt="Travel Booking UI"
-                    class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-8">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Challenge</h2>
-                <p class="text-purple-200/90 mb-8">Users were frustrated by confusing search filters, slow load times,
-                    and a lack of visual inspiration when planning their trips. The booking process was cumbersome,
-                    resulting in lost sales.</p>
+                <aside class="lg:w-1/4">
+                    <div class="glass-panel rounded-2xl p-6 sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#overview"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Overview</a>
+                            <a href="#challenge"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">The
+                                Challenge</a>
+                            <a href="#research"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Research
+                                & Discovery</a>
+                            <a href="#solution"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Solution
+                                Strategy</a>
+                            <a href="#design"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Design
+                                Process</a>
+                            <a href="#implementation"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Implementation</a>
+                            <a href="#results"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Results
+                                & Impact</a>
+                            <a href="#testimonials"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Testimonials</a>
+                        </nav>
+                    </div>
+                </aside>
 
-                <h2 class="text-2xl font-bold text-white mb-4">Solution</h2>
-                <p class="text-purple-200/90 mb-8">We rebuilt the search engine from the ground up, implementing a
-                    lightning-fast, intuitive filtering system. We designed immersive destination cards with
-                    high-quality imagery and video backgrounds to inspire travelers. The booking flow was simplified to
-                    just three steps.</p>
+                <article class="lg:w-3/4">
+                    <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Results</h2>
-                <p class="text-purple-200/90 mb-8">The new UI led to a <strong>25% increase in bookings</strong> within
-                    the first month. Page load times improved by 60%, and user session duration increased as travelers
-                    explored more destinations.</p>
+                        <!-- Overview -->
+                        <section id="overview" class="mb-16 scroll-mt-24">
+                            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=600&fit=crop"
+                                alt="Travel Booking Overview"
+                                class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+                            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">50%</div>
+                                    <div class="text-sm text-purple-300">Mobile Bookings</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">2x</div>
+                                    <div class="text-sm text-purple-300">Conversion Rate</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">4.7★</div>
+                                    <div class="text-sm text-purple-300">User Rating</div>
+                                </div>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                A mid-sized travel agency with a global footprint wanted to compete with the giants of
+                                the industry. Their existing website was functional but clunky, failing to capture the
+                                excitement of travel. They needed a mobile-first booking experience that was as
+                                inspiring as the destinations they sold.
+                            </p>
+                        </section>
+
+                        <!-- Challenge -->
+                        <section id="challenge" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">The Challenge</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The travel industry is notoriously complex. Users have to juggle dates, flights, hotels,
+                                and budgets, often across multiple tabs. The client's existing site exacerbated this
+                                stress with a dense, text-heavy interface and a rigid search function that required
+                                exact dates and locations.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=500&fit=crop"
+                                alt="Complex Booking Process"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Mobile performance was a major issue. With over 60% of traffic coming from smartphones,
+                                the non-responsive design was driving potential customers away. The checkout process was
+                                particularly painful on small screens, leading to a 75% abandonment rate.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Furthermore, the site lacked "inspiration." It treated travel like a transaction rather
+                                than an experience. Users who weren't sure where they wanted to go found no guidance or
+                                suggestions.
+                            </p>
+                        </section>
+
+                        <!-- Research & Discovery -->
+                        <section id="research" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Research & Discovery</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We conducted diary studies with 20 travelers, asking them to record their planning
+                                process for an upcoming trip. We found that the "dreaming" phase—browsing destinations
+                                without a set plan—was a huge missed opportunity.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
+                                    alt="User Research"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                                    alt="Market Analysis"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Users also expressed frustration with hidden fees. They wanted "what you see is what you
+                                pay" pricing from the start of the search process.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Our technical audit revealed that the legacy backend was slow to retrieve availability,
+                                causing long loading spinners that killed the user's momentum.
+                            </p>
+                        </section>
+
+                        <!-- Solution Strategy -->
+                        <section id="solution" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Solution Strategy</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We pivoted the strategy from "Search" to "Discover." We built a homepage that featured
+                                curated collections (e.g., "Weekend Getaways," "Tropical Escapes") based on the user's
+                                location and past behavior.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=500&fit=crop"
+                                alt="Discovery Interface"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                For the booking flow, we implemented a "One-Thumb" design philosophy for mobile. All key
+                                actions were placed within the thumb's natural reach zone. We also introduced a
+                                "Flexible Dates" search option, allowing users to see prices for a whole month at a
+                                glance.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                To address trust, we displayed the total price including taxes upfront. No surprises at
+                                checkout.
+                            </p>
+                        </section>
+
+                        <!-- Design Process -->
+                        <section id="design" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Design Process</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We used high-quality, immersive imagery as the centerpiece of the design. The UI chrome
+                                was kept minimal and translucent to let the photos shine.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop"
+                                    alt="Mobile UI Design"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop"
+                                    alt="Interaction Design"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We prototyped complex interactions, such as the date picker, to ensure they were
+                                intuitive on touch screens. We tested three different versions of the search bar before
+                                landing on a natural language input (e.g., "I want to go to [Paris] in [May]").
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Motion design played a key role. Transitions between pages were animated to feel like a
+                                continuous journey, maintaining the user's sense of place.
+                            </p>
+                        </section>
+
+                        <!-- Implementation -->
+                        <section id="implementation" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Implementation</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The frontend was built with Vue.js for its lightweight footprint and reactivity. We used
+                                a Progressive Web App (PWA) architecture to allow for offline access to itineraries—a
+                                crucial feature for travelers without data roaming.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=500&fit=crop"
+                                alt="Technical Implementation"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We integrated with multiple Global Distribution Systems (GDS) via a unified API layer to
+                                fetch real-time pricing and availability. This backend aggregation reduced search times
+                                from 8 seconds to under 2 seconds.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Payment integration included Apple Pay and Google Pay to streamline the checkout process
+                                on mobile devices, removing the friction of entering credit card details.
+                            </p>
+                        </section>
+
+                        <!-- Results & Impact -->
+                        <section id="results" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Results & Impact</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The mobile-first redesign paid off handsomely. Mobile bookings increased by 150%, and
+                                the overall conversion rate doubled. The "Discover" feature became the most visited
+                                section of the site, driving a 20% increase in average order value as users booked more
+                                premium packages.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&h=400&fit=crop"
+                                    alt="Success Metrics"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                                    alt="Growth Chart"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <div class="bg-green-900/10 border border-green-500/20 rounded-xl p-6 mb-6">
+                                <h3 class="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                                <ul class="space-y-3 text-purple-200/90">
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>150% increase in mobile bookings</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>2x overall conversion rate</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>4.7/5 app store rating</strong> (up from 2.5)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The client successfully repositioned themselves as a modern, tech-forward travel brand,
+                                attracting a younger demographic while retaining their loyal customer base.
+                            </p>
+                        </section>
+
+                        <!-- Testimonials -->
+                        <section id="testimonials" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Testimonials</h2>
+                            <div class="space-y-6">
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "PurpleWave didn't just build a website; they built an experience. Our customers
+                                        are spending more time on the site and booking more trips. The ROI has been
+                                        phenomenal."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            RT</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Rachel Thompson</div>
+                                            <div class="text-sm text-purple-300">CMO, Global Travel</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "Finally, a travel site that doesn't give me a headache. I love the 'Flexible
+                                        Dates' feature—it saved me $200 on my last flight!"
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            BK</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Ben King</div>
+                                            <div class="text-sm text-purple-300">Frequent Traveler</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 pb-24">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <div
+                class="bg-gradient-to-br from-purple-900/50 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
+                <h2 class="text-3xl font-bold text-white mb-3 text-center">Let's Work Together</h2>
+                <p class="text-purple-200/80 mb-6 text-center">
+                    Ready for similar results? Get in touch.
+                </p>
+                <form class="max-w-lg mx-auto space-y-4" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                    </div>
+                    <textarea placeholder="Tell us about your project..." rows="3" required
+                        class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+                    <button type="submit"
+                        class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition shadow-lg shadow-purple-500/50">
+                        Send Message →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30 mb-8">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
                 <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
@@ -91,8 +427,66 @@
             </div>
         </div>
     </footer>
+    <script src="../js/global-navbar.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const progressBar = document.getElementById('progressBar');
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        function updateActiveTOC() {
+            let current = '';
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            updateActiveTOC();
+        });
+
+        updateProgressBar();
+        updateActiveTOC();
+
+        document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! We will be in touch soon.');
+            this.reset();
+        });
     </script>
 </body>
 

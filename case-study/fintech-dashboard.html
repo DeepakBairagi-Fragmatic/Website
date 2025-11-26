@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FinTech Dashboard | PurpleWave Case Study</title>
-    <meta name="description" content="Boosted conversion by 45% with a sleek glass-morphic UI." />
+    <meta name="description" content="Empowering financial decisions with real-time analytics and intuitive design." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
@@ -16,19 +16,49 @@
             color: #f3e8ff;
         }
 
-        @layer utilities {
-            .glass-panel {
-                background: rgba(255, 255, 255, 0.03);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(139, 92, 246, 0.15);
-            }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
 
-            .text-gradient {
-                background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .toc-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .toc-link.active {
+            color: #fff !important;
+            font-weight: 600;
+            border-left-color: #e879f9 !important;
+            border-left-width: 3px;
+            background: rgba(232, 121, 249, 0.15);
+            padding-left: 14px !important;
+        }
+
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(139, 92, 246, 0.1);
+            z-index: 9999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            transition: width 0.2s ease-out;
+            box-shadow: 0 -2px 12px rgba(232, 121, 249, 0.6);
         }
     </style>
 </head>
@@ -36,48 +66,365 @@
 <body class="antialiased selection:bg-fuchsia-500 selection:text-white">
     <global-navbar></global-navbar>
 
-    <header class="relative pt-32 pb-16 overflow-hidden">
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <header class="relative pt-32 pb-12 overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
             <div class="absolute top-20 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-600/20 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <a href="/case-study.html"
+            <a href="/case-study"
                 class="inline-block py-1 px-3 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold tracking-wider mb-6 uppercase hover:bg-purple-800/50 transition">←
                 Back to Case Studies</a>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"><span class="text-gradient">FinTech
                     Dashboard</span></h1>
-            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed">Boosted conversion by 45% with a
-                sleek glass-morphic UI.</p>
+            <p class="text-xl text-purple-200/80 max-w-2xl mx-auto leading-relaxed mb-4">Empowering financial decisions
+                with real-time analytics and intuitive design.</p>
+            <div class="flex items-center justify-center gap-6 text-sm text-purple-300">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    10 min read
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    4 min skim
+                </span>
+            </div>
         </div>
     </header>
 
-    <section class="py-16">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
-                <img src="https://picsum.photos/seed/case1/800/400" alt="FinTech Dashboard"
-                    class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col lg:flex-row gap-8">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Challenge</h2>
-                <p class="text-purple-200/90 mb-8">The client's legacy system was cluttered, difficult to navigate, and
-                    failed to instill trust in users handling sensitive financial data. They needed a modern, responsive
-                    platform that could showcase complex financial data while maintaining a premium aesthetic.</p>
+                <aside class="lg:w-1/4">
+                    <div class="glass-panel rounded-2xl p-6 sticky top-24">
+                        <h3 class="text-lg font-bold text-white mb-4">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#overview"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Overview</a>
+                            <a href="#challenge"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">The
+                                Challenge</a>
+                            <a href="#research"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Research
+                                & Discovery</a>
+                            <a href="#solution"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Solution
+                                Strategy</a>
+                            <a href="#design"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Design
+                                Process</a>
+                            <a href="#implementation"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Implementation</a>
+                            <a href="#results"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Results
+                                & Impact</a>
+                            <a href="#testimonials"
+                                class="toc-link block text-sm text-purple-300 hover:text-purple-100 border-l-2 border-purple-500/30 pl-3 py-2 rounded-r">Testimonials</a>
+                        </nav>
+                    </div>
+                </aside>
 
-                <h2 class="text-2xl font-bold text-white mb-4">Solution</h2>
-                <p class="text-purple-200/90 mb-8">We built a single‑page application using vanilla JavaScript, Tailwind
-                    CSS, and a custom glass‑morphism UI. We focused on simplifying the information architecture and
-                    using visual hierarchy to guide users to key actions. Key features included dynamic data
-                    visualisation with animated charts and a dark-mode friendly colour palette.</p>
+                <article class="lg:w-3/4">
+                    <div class="glass-panel rounded-3xl p-8 md:p-12 prose prose-invert prose-purple max-w-none">
 
-                <h2 class="text-2xl font-bold text-white mb-4">Results</h2>
-                <p class="text-purple-200/90 mb-8">After launch, the client saw a <strong>45% increase in conversion
-                        rates</strong> and a <strong>30% reduction in bounce rate</strong>. The sleek design also earned
-                    a feature in <em>Design Weekly</em>, positioning the client as a leader in fintech innovation.</p>
+                        <!-- Overview -->
+                        <section id="overview" class="mb-16 scroll-mt-24">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop"
+                                alt="FinTech Dashboard Overview"
+                                class="w-full h-64 md:h-96 object-cover rounded-2xl mb-8 shadow-2xl border border-purple-500/20" />
+                            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">45%</div>
+                                    <div class="text-sm text-purple-300">Faster Decisions</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">92%</div>
+                                    <div class="text-sm text-purple-300">User Satisfaction</div>
+                                </div>
+                                <div class="bg-purple-900/30 rounded-xl p-4 border border-purple-500/20">
+                                    <div class="text-3xl font-bold text-gradient mb-1">Real-time</div>
+                                    <div class="text-sm text-purple-300">Data Updates</div>
+                                </div>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                A leading investment firm partnered with us to overhaul their internal trading and
+                                analytics dashboard. Their existing tools were fragmented, slow, and visually cluttered,
+                                leading to delayed decision-making and high cognitive load for analysts. Our goal was to
+                                create a unified, high-performance platform that could handle massive data streams with
+                                sub-second latency.
+                            </p>
+                        </section>
+
+                        <!-- Challenge -->
+                        <section id="challenge" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">The Challenge</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Financial analysts were struggling with a legacy system that required opening multiple
+                                applications to track market movements, portfolio performance, and news feeds. This
+                                fragmentation resulted in a "swivel-chair" workflow where critical insights were often
+                                missed due to context switching.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&h=500&fit=crop"
+                                alt="Complex Data Challenge"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Data latency was another major pain point. The old system refreshed data every 60
+                                seconds—an eternity in high-frequency trading. Analysts needed real-time visibility into
+                                market fluctuations to execute timely trades. Furthermore, the UI was dense and poorly
+                                organized, causing eye strain and fatigue during long trading sessions.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The technical debt of the legacy codebase made adding new features nearly impossible.
+                                The client needed a scalable, modern architecture that could evolve with the market and
+                                support advanced features like predictive analytics and automated reporting.
+                            </p>
+                        </section>
+
+                        <!-- Research & Discovery -->
+                        <section id="research" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Research & Discovery</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We conducted a week-long immersion phase, shadowing traders and analysts on the trading
+                                floor. We observed their workflows, noted their frustrations, and identified the key
+                                data points they referenced most frequently.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1553877615-30c734854058?w=600&h=400&fit=crop"
+                                    alt="User Research Session"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                                    alt="Data Analysis"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Interviews revealed that customization was crucial. No two analysts worked exactly the
+                                same way; some prioritized technical charts, while others focused on fundamental data or
+                                news sentiment. A one-size-fits-all dashboard would fail.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                We also analyzed the performance of their current data pipelines. We found that the
+                                bottleneck wasn't the data source itself, but the inefficient way the frontend handled
+                                updates, causing the browser to freeze during high-volume periods.
+                            </p>
+                        </section>
+
+                        <!-- Solution Strategy -->
+                        <section id="solution" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Solution Strategy</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We proposed a modular, widget-based dashboard architecture. This would allow users to
+                                build their own workspaces by dragging and dropping components like charts, watchlists,
+                                and news feeds.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=500&fit=crop"
+                                alt="Solution Architecture"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                To address latency, we architected a WebSocket-based data layer that pushed updates to
+                                the client only when values changed, rather than polling the server. We optimized the
+                                rendering engine to handle thousands of data points per second without UI lag.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Visually, we adopted a "dark mode first" approach to reduce eye strain in low-light
+                                trading environments. We used a high-contrast color palette for data visualization to
+                                ensure critical alerts and trends were instantly recognizable.
+                            </p>
+                        </section>
+
+                        <!-- Design Process -->
+                        <section id="design" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Design Process</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                Our design process was iterative and collaborative. We started with wireframes to define
+                                the grid system and widget interactions. We tested these concepts with a core group of
+                                power users to validate the drag-and-drop mechanics.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop"
+                                    alt="UI Design System"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                                    alt="Dashboard Mockups"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We developed a comprehensive design system specifically for financial data. This
+                                included a set of accessible color scales for heatmaps, clear typography for dense data
+                                tables, and a library of specialized chart types (candlestick, OHLC, depth charts).
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Special attention was paid to "information density." We designed compact modes for
+                                widgets to maximize the amount of data visible on a single screen without sacrificing
+                                readability.
+                            </p>
+                        </section>
+
+                        <!-- Implementation -->
+                        <section id="implementation" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Implementation</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The platform was built using React for the frontend and Node.js for the backend
+                                aggregation layer. We utilized D3.js and WebGL for high-performance charting, enabling
+                                smooth zooming and panning even with historical datasets spanning decades.
+                            </p>
+                            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=1200&h=500&fit=crop"
+                                alt="Code and Development"
+                                class="w-full h-64 object-cover rounded-xl mb-6 shadow-lg border border-purple-500/10" />
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                We implemented a Redux-based state management system with a custom middleware to handle
+                                the WebSocket stream. This ensured that the UI state remained consistent even during
+                                connection interruptions. Redis was used for caching frequently accessed data, reducing
+                                load on the primary databases.
+                            </p>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                Security was paramount. We implemented strict Role-Based Access Control (RBAC) and
+                                end-to-end encryption for all data in transit. The system underwent rigorous penetration
+                                testing to meet financial industry standards.
+                            </p>
+                        </section>
+
+                        <!-- Results & Impact -->
+                        <section id="results" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Results & Impact</h2>
+                            <p class="text-purple-200/90 mb-6 leading-relaxed">
+                                The new dashboard transformed the firm's operations. Decision-making speed increased by
+                                45% thanks to real-time data and improved usability. The customizable workspaces allowed
+                                analysts to tailor their environment to their specific strategies, boosting
+                                productivity.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                                    alt="Performance Graphs"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                                    alt="User Adoption Stats"
+                                    class="w-full h-48 object-cover rounded-xl shadow-lg border border-purple-500/10" />
+                            </div>
+                            <div class="bg-green-900/10 border border-green-500/20 rounded-xl p-6 mb-6">
+                                <h3 class="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                                <ul class="space-y-3 text-purple-200/90">
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>45% faster decision making</strong> due to real-time data</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>92% user satisfaction</strong> score from internal team</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span><strong>60% reduction in system load</strong> via efficient caching</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="text-purple-200/90 leading-relaxed">
+                                The unified platform eliminated the need for multiple disparate tools, saving
+                                significant licensing costs and simplifying IT maintenance. The project was delivered on
+                                time and under budget, setting a new standard for internal tools within the
+                                organization.
+                            </p>
+                        </section>
+
+                        <!-- Testimonials -->
+                        <section id="testimonials" class="mb-16 scroll-mt-24">
+                            <h2 class="text-3xl font-bold text-white mb-6">Testimonials</h2>
+                            <div class="space-y-6">
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "The new dashboard is a game-changer. I can customize my view to see exactly
+                                        what I need, and the speed is incredible. It's like upgrading from a bicycle to
+                                        a Ferrari."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            MR</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Michael Ross</div>
+                                            <div class="text-sm text-purple-300">Senior Quantitative Analyst</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                                    <p class="text-purple-200/90 mb-4 leading-relaxed italic">
+                                        "PurpleWave understood the complexity of our data and delivered a solution that
+                                        is both powerful and beautiful. The dark mode is a lifesaver for our late-night
+                                        trading sessions."
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            JL</div>
+                                        <div>
+                                            <div class="text-white font-semibold">Jennifer Lee</div>
+                                            <div class="text-sm text-purple-300">Head of Trading Technology</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30">
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 pb-24">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <div
+                class="bg-gradient-to-br from-purple-900/50 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
+                <h2 class="text-3xl font-bold text-white mb-3 text-center">Let's Work Together</h2>
+                <p class="text-purple-200/80 mb-6 text-center">
+                    Ready for similar results? Get in touch.
+                </p>
+                <form class="max-w-lg mx-auto space-y-4" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition" />
+                    </div>
+                    <textarea placeholder="Tell us about your project..." rows="3" required
+                        class="w-full bg-purple-900/30 border border-purple-500/30 rounded-lg px-4 py-3 text-white placeholder-purple-400 focus:outline-none focus:border-purple-500 transition resize-none"></textarea>
+                    <button type="submit"
+                        class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition shadow-lg shadow-purple-500/50">
+                        Send Message →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#05010a] py-12 border-t border-purple-900/30 mb-8">
         <div class="container mx-auto px-4 text-center">
             <div class="flex items-center justify-center gap-2 mb-6">
                 <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg"></div>
@@ -91,8 +438,66 @@
             </div>
         </div>
     </footer>
+    <script src="../js/global-navbar.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const progressBar = document.getElementById('progressBar');
+
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        function updateActiveTOC() {
+            let current = '';
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            updateActiveTOC();
+        });
+
+        updateProgressBar();
+        updateActiveTOC();
+
+        document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! We will be in touch soon.');
+            this.reset();
+        });
     </script>
 </body>
 
