@@ -1,3 +1,14 @@
 # Redirects for PurpleWave site
+
+# Case Study Detail Pages
+/case-study/fintech-dashboard       /case-study/fintech-dashboard.html      200
+/case-study/ecommerce-revamp        /case-study/ecommerce-revamp.html       200
+/case-study/healthcare-portal       /case-study/healthcare-portal.html      200
+/case-study/saas-onboarding         /case-study/saas-onboarding.html        200
+/case-study/travel-booking-ui       /case-study/travel-booking-ui.html      200
+/case-study/education-platform      /case-study/education-platform.html     200
+/case-study/real-estate-portal      /case-study/real-estate-portal.html     200
+/case-study/ai-dashboard            /case-study/ai-dashboard.html           200
+
+# 404
 /*    /404.html    404
-/*    /terms-of-service    /terms-of-service.html   200 */
