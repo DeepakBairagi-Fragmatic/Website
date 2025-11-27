@@ -98,9 +98,15 @@
   <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
     <!-- Background Elements -->
     <div class="absolute inset-0 z-0">
-      <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20">
-      </div>
+      <!-- Video Background -->
+      <video autoplay loop muted playsinline
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full object-cover opacity-30">
+        <source src="videos/hero-background.mp4" type="video/mp4">
+        <!-- Fallback for browsers that don't support video -->
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-20">
+        </div>
+      </video>
       <div class="absolute inset-0 bg-gradient-to-b from-[#0b0115] via-transparent to-[#0b0115]"></div>
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
       <div
