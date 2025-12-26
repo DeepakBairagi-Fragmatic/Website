@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Productivity Tools - PurpleWave Resources</title>
+
+    <!-- Tracking Script -->
+    <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+        crossorigin="anonymous">
+    <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/global-navbar.js" defer></script>
+    <script src="../js/global-modal.js" defer></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #05010a 0%, #0a0118 50%, #05010a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1280px;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white">
+    <!-- Navigation -->
+    <global-navbar></global-navbar>
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <nav class="mb-8">
+                <ol class="flex items-center text-sm text-purple-300/70">
+                    <li><a href="../index.html" class="hover:text-purple-300 transition">Home</a></li>
+                    <li class="mx-2">/</li>
+                    <li><a href="../resources.html" class="hover:text-purple-300 transition">Resources</a></li>
+                    <li class="mx-2">/</li>
+                    <li class="text-purple-200">Dev Tools</li>
+                </ol>
+            </nav>
+            <div class="flex items-center gap-6 mb-12">
+                <div
+                    class="w-20 h-20 rounded-3xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-4xl">
+                    💻</div>
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Developer <span class="text-gradient">Productivity
+                            Tools</span></h1>
+                    <p class="text-purple-200/70 text-xl">Essential tools to boost your development workflow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">The Modern Developer's Toolkit</h2>
+                    <p class="text-purple-200/80 leading-relaxed">The right tools can 10x your productivity. Here's a
+                        curated list of essential tools every developer should have in their arsenal.</p>
+                </div>
+
+                <!-- Code Editors -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">💻 Code Editors & IDEs</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-900/20 p-6 rounded-2xl border border-blue-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">VS Code</h3>
+                            <p class="text-purple-300/80 mb-4">Free, fast, and extensible. The most popular editor for
+                                web development.</p>
+                            <h4 class="font-bold text-white mb-2 text-sm">Must-Have Extensions:</h4>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Prettier - Code formatter</li>
+                                <li>• ESLint - JavaScript linter</li>
+                                <li>• GitLens - Git supercharged</li>
+                                <li>• Live Server - Local dev server</li>
+                                <li>• Auto Rename Tag - HTML/JSX</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-900/20 p-6 rounded-2xl border border-blue-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">WebStorm</h3>
+                            <p class="text-purple-300/80 mb-4">Powerful IDE for JavaScript and TypeScript with built-in
+                                tools.</p>
+                            <h4 class="font-bold text-white mb-2 text-sm">Key Features:</h4>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Smart code completion</li>
+                                <li>• Built-in debugger</li>
+                                <li>• Refactoring tools</li>
+                                <li>• Framework integration</li>
+                                <li>• Database tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Quality -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🔍 Code Quality Tools</h2>
+                    <div class="space-y-4">
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">ESLint + Prettier</h3>
+                            <p class="text-purple-200/80 mb-3">Catch errors and enforce consistent code style
+                                automatically.</p>
+                            <div class="bg-black/30 p-4 rounded-lg font-mono text-sm text-green-300">
+                                npm install --save-dev eslint prettier<br />
+                                npx eslint --init
+                            </div>
+                        </div>
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">TypeScript</h3>
+                            <p class="text-purple-200/80 mb-3">Add type safety to JavaScript for fewer runtime errors.
+                            </p>
+                            <ul class="space-y-2 text-purple-200/70">
+                                <li>• Catch bugs at compile time</li>
+                                <li>• Better IDE autocomplete</li>
+                                <li>• Self-documenting code</li>
+                                <li>• Easier refactoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Git Tools -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🚀 Git & Version Control</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">GitHub Desktop</h3>
+                            <p class="text-purple-200/80 text-sm">Visual Git client for easier commits, branches, and
+                                merges.</p>
+                        </div>
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Conventional Commits</h3>
+                            <p class="text-purple-200/80 text-sm">Standardized commit messages for better changelog
+                                generation.</p>
+                        </div>
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Husky</h3>
+                            <p class="text-purple-200/80 text-sm">Git hooks to run tests and linting before commits.</p>
+                        </div>
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">GitLens</h3>
+                            <p class="text-purple-200/80 text-sm">Visualize code authorship and history in VS Code.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal & CLI -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">⚡ Terminal Enhancements</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Oh My Zsh</h3>
+                            <p class="text-purple-200/80 mb-3">Framework for managing Zsh configuration with plugins and
+                                themes.</p>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Git shortcuts</li>
+                                <li>• Auto-suggestions</li>
+                                <li>• Syntax highlighting</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Warp Terminal</h3>
+                            <p class="text-purple-200/80 mb-3">Modern terminal with AI command search and IDE-like
+                                features.</p>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Command palette</li>
+                                <li>• Block-based output</li>
+                                <li>• Workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Development -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🔌 API Development</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-purple-900/20 rounded-xl border border-purple-700/30">
+                            <span class="text-2xl">📮</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Postman</h4>
+                                <p class="text-purple-200/70 text-sm">Test and document APIs with collections and
+                                    environments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-purple-900/20 rounded-xl border border-purple-700/30">
+                            <span class="text-2xl">⚡</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Insomnia</h4>
+                                <p class="text-purple-200/70 text-sm">Lightweight alternative to Postman with GraphQL
+                                    support</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-purple-900/20 rounded-xl border border-purple-700/30">
+                            <span class="text-2xl">📝</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Swagger/OpenAPI</h4>
+                                <p class="text-purple-200/70 text-sm">Auto-generate API documentation from code</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="../resources.html"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 rounded-full text-white font-semibold transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        Back to Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-purple-900/30 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-purple-400/50 text-sm">© 2024 PurpleWave. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -9,14 +9,16 @@ class GlobalNavbar extends HTMLElement {
   }
 
   connectedCallback() {
-    // Determine base path for navigation
     const path = window.location.pathname;
-    const isEventsDir = path.includes('/events/') || path.includes('\\events\\');
-    const base = isEventsDir ? '../' : '';
-    const home = isEventsDir ? '../index.html' : 'index.html';
+    const isSubDir = path.includes('/events/') || path.includes('/case-study/') || path.includes('/resources/');
+    const isLocal = window.location.protocol === 'file:';
+    const ext = isLocal ? '.html' : '';
+    const base = isSubDir ? '../' : '';
+    const home = isSubDir ? `../index${ext}` : `index${ext}`;
 
-    // Get current page for active state
-    const currentPage = path.split('/').pop().split('\\').pop() || 'index.html';
+    // Get current page for active state (handle both .html and clean URLs)
+    const rawPage = path.split('/').pop().split('\\').pop() || 'index.html';
+    const currentPage = rawPage.replace('.html', '').replace('index', '') || 'index';
 
     this.innerHTML = `
     <!-- Navbar -->
@@ -37,16 +39,17 @@ class GlobalNavbar extends HTMLElement {
           <!-- Desktop Navigation -->
           <div class="hidden lg:flex items-center gap-8">
             <ul class="flex items-center gap-1">
-              <li><a href="${home}" class="nav-link ${currentPage === 'index.html' ? 'active' : ''}">Home</a></li>
-              <li><a href="${base}aboutus.html" class="nav-link ${currentPage === 'aboutus.html' ? 'active' : ''}">About</a></li>
-              <li><a href="${base}services.html" class="nav-link ${currentPage === 'services.html' ? 'active' : ''}">Services</a></li>
-              <li><a href="${base}events.html" class="nav-link ${currentPage === 'events.html' ? 'active' : ''}">Events</a></li>
-              <li><a href="${base}case-study.html" class="nav-link ${currentPage === 'case-study.html' ? 'active' : ''}">Case Studies</a></li>
-              <li><a href="${base}contact.html" class="nav-link ${currentPage === 'contact.html' ? 'active' : ''}">Contact</a></li>
+              <li><a href="${home}" class="nav-link ${currentPage === 'index' ? 'active' : ''}">Home</a></li>
+              <li><a href="${base}aboutus${ext}" class="nav-link ${currentPage === 'aboutus' ? 'active' : ''}">About</a></li>
+              <li><a href="${base}services${ext}" class="nav-link ${currentPage === 'services' ? 'active' : ''}">Services</a></li>
+              <li><a href="${base}events${ext}" class="nav-link ${currentPage === 'events' ? 'active' : ''}">Events</a></li>
+              <li><a href="${base}resources${ext}" class="nav-link ${currentPage === 'resources' ? 'active' : ''}">Resources</a></li>
+              <li><a href="${base}case-study${ext}" class="nav-link ${currentPage === 'case-study' ? 'active' : ''}">Case Studies</a></li>
+              <li><a href="${base}contact${ext}" class="nav-link ${currentPage === 'contact' ? 'active' : ''}">Contact</a></li>
             </ul>
             
             <!-- CTA Button -->
-            <a href="${base}contact.html" class="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-900/30">
+            <a href="${base}contact${ext}" class="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-900/30">
               Get Started
             </a>
           </div>
@@ -67,15 +70,16 @@ class GlobalNavbar extends HTMLElement {
       <div id="mobileMenu" class="lg:hidden hidden border-t border-purple-900/30 bg-[#0b0115]/95 backdrop-blur-xl">
         <div class="container mx-auto px-4 py-6">
           <ul class="space-y-2">
-            <li><a href="${home}" class="mobile-nav-link ${currentPage === 'index.html' ? 'active' : ''}">Home</a></li>
-            <li><a href="${base}aboutus.html" class="mobile-nav-link ${currentPage === 'aboutus.html' ? 'active' : ''}">About</a></li>
-            <li><a href="${base}services.html" class="mobile-nav-link ${currentPage === 'services.html' ? 'active' : ''}">Services</a></li>
-            <li><a href="${base}events.html" class="mobile-nav-link ${currentPage === 'events.html' ? 'active' : ''}">Events</a></li>
-            <li><a href="${base}case-study.html" class="mobile-nav-link ${currentPage === 'case-study.html' ? 'active' : ''}">Case Studies</a></li>
-            <li><a href="${base}contact.html" class="mobile-nav-link ${currentPage === 'contact.html' ? 'active' : ''}">Contact</a></li>
+            <li><a href="${home}" class="mobile-nav-link ${currentPage === 'index' ? 'active' : ''}">Home</a></li>
+            <li><a href="${base}aboutus${ext}" class="mobile-nav-link ${currentPage === 'aboutus' ? 'active' : ''}">About</a></li>
+            <li><a href="${base}services${ext}" class="mobile-nav-link ${currentPage === 'services' ? 'active' : ''}">Services</a></li>
+            <li><a href="${base}events${ext}" class="mobile-nav-link ${currentPage === 'events' ? 'active' : ''}">Events</a></li>
+            <li><a href="${base}resources${ext}" class="mobile-nav-link ${currentPage === 'resources' ? 'active' : ''}">Resources</a></li>
+            <li><a href="${base}case-study${ext}" class="mobile-nav-link ${currentPage === 'case-study' ? 'active' : ''}">Case Studies</a></li>
+            <li><a href="${base}contact${ext}" class="mobile-nav-link ${currentPage === 'contact' ? 'active' : ''}">Contact</a></li>
           </ul>
           <div class="mt-6 pt-6 border-t border-purple-900/30">
-            <a href="${base}contact.html" class="block text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-full transition-all duration-300">
+            <a href="${base}contact${ext}" class="block text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold rounded-full transition-all duration-300">
               Get Started
             </a>
           </div>

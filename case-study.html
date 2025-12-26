@@ -5,11 +5,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Case Studies | PurpleWave</title>
+
+    <!-- Tracking Script -->
+    <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+        crossorigin="anonymous">
+    <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
     <meta name="description"
         content="Explore PurpleWave case studies showcasing premium digital product work with modern design." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
         rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMPCVDJBLZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YMPCVDJBLZ');
+    </script>
+    <script src="js/global-navbar.js" defer></script>
+    <script src="js/global-modal.js" defer></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -120,7 +137,7 @@
                 <main class="lg:w-3/5">
                     <div class="grid md:grid-cols-2 gap-6" id="case-study-grid">
                         <!-- Card 1 -->
-                        <a href="/case-study/fintech-dashboard"
+                        <a href="case-study/fintech-dashboard.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="fintech">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -135,7 +152,7 @@
                             </p>
                         </a>
                         <!-- Card 2 -->
-                        <a href="/case-study/ecommerce-revamp"
+                        <a href="case-study/ecommerce-revamp.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="ecommerce">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -149,7 +166,7 @@
                             <p class="text-purple-300 text-sm">Increased sales by 30% through micro‑animations.</p>
                         </a>
                         <!-- Card 3 -->
-                        <a href="/case-study/healthcare-portal"
+                        <a href="case-study/healthcare-portal.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="healthcare">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -163,7 +180,7 @@
                             <p class="text-purple-300 text-sm">Secure, responsive platform for patient data.</p>
                         </a>
                         <!-- Card 4 -->
-                        <a href="/case-study/saas-onboarding"
+                        <a href="case-study/saas-onboarding.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="saas">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -177,7 +194,7 @@
                             <p class="text-purple-300 text-sm">Reduced churn by 20% with interactive tutorials.</p>
                         </a>
                         <!-- Card 5 -->
-                        <a href="/case-study/travel-booking-ui"
+                        <a href="case-study/travel-booking-ui.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="ecommerce">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -191,7 +208,7 @@
                             <p class="text-purple-300 text-sm">UX boost led to 25% more bookings.</p>
                         </a>
                         <!-- Card 6 -->
-                        <a href="/case-study/education-platform"
+                        <a href="case-study/education-platform.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="education">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -205,7 +222,7 @@
                             <p class="text-purple-300 text-sm">Gamified learning increased engagement.</p>
                         </a>
                         <!-- Card 7 -->
-                        <a href="/case-study/real-estate-portal"
+                        <a href="case-study/real-estate-portal.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="real-estate">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -219,7 +236,7 @@
                             <p class="text-purple-300 text-sm">Map visualisation with glass‑morphic cards.</p>
                         </a>
                         <!-- Card 8 -->
-                        <a href="/case-study/ai-dashboard"
+                        <a href="case-study/ai-dashboard.html"
                             class="glass-panel rounded-2xl p-6 block hover:scale-[1.02] transition group"
                             data-category="fintech">
                             <div class="relative overflow-hidden rounded-md mb-4 h-48">
@@ -253,7 +270,7 @@
                             <h3 class="text-lg font-bold text-white mb-2">Start Your Project</h3>
                             <p class="text-purple-200/80 text-sm mb-6">Ready to transform your digital presence? Let's
                                 build something amazing.</p>
-                            <a href="/contact.html"
+                            <a href="contact"
                                 class="block w-full py-2.5 bg-white text-purple-900 font-bold rounded-lg hover:bg-purple-50 transition shadow-lg">Get
                                 a Quote</a>
                         </div>
@@ -284,13 +301,13 @@
             </div>
             <p class="text-purple-400 text-sm mb-8">© <span id="year"></span> PurpleWave. All rights reserved.</p>
             <div class="flex justify-center gap-6 text-sm text-purple-300">
-                <a href="/privacy.html" class="hover:text-white transition">Privacy Policy</a>
-                <a href="/terms-of-service.html" class="hover:text-white transition">Terms of Service</a>
-                <a href="/contact.html" class="hover:text-white transition">Contact</a>
+                <a href="privacy" class="hover:text-white transition">Privacy Policy</a>
+                <a href="terms-of-service" class="hover:text-white transition">Terms of Service</a>
+                <a href="contact" class="hover:text-white transition">Contact</a>
             </div>
         </div>
     </footer>
-    <script src="js/global-navbar.js"></script>
+    </footer>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 

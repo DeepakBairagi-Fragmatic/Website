@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Guides - PurpleWave Resources</title>
+
+    <!-- Tracking Script -->
+    <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+        crossorigin="anonymous">
+    <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/global-navbar.js" defer></script>
+    <script src="../js/global-modal.js" defer></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #05010a 0%, #0a0118 50%, #05010a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1280px;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white">
+    <!-- Navigation -->
+    <global-navbar></global-navbar>
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <nav class="mb-8">
+                <ol class="flex items-center text-sm text-purple-300/70">
+                    <li><a href="../index.html" class="hover:text-purple-300 transition">Home</a></li>
+                    <li class="mx-2">/</li>
+                    <li><a href="../resources.html" class="hover:text-purple-300 transition">Resources</a></li>
+                    <li class="mx-2">/</li>
+                    <li class="text-purple-200">Tech Stack</li>
+                </ol>
+            </nav>
+            <div class="flex items-center gap-6 mb-12">
+                <div
+                    class="w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-4xl">
+                    ⚛️</div>
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Tech <span class="text-gradient">Stack Guides</span>
+                    </h1>
+                    <p class="text-purple-200/70 text-xl">Modern frameworks for building scalable applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">The Modern Web Stack</h2>
+                    <p class="text-purple-200/80 leading-relaxed">Choose the right tools for your project. Here's our
+                        curated guide to the most popular and powerful tech stacks in 2024.</p>
+                </div>
+
+                <!-- React Ecosystem -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">⚛️ React Ecosystem</h2>
+                    <div class="space-y-6">
+                        <div class="bg-blue-900/20 p-6 rounded-2xl border border-blue-700/30">
+                            <h3 class="text-2xl font-bold text-white mb-3">Next.js</h3>
+                            <p class="text-purple-300/80 mb-4">The React framework for production. Server-side
+                                rendering, static generation, and API routes built-in.</p>
+                            <h4 class="font-bold text-white mb-2">When to Use:</h4>
+                            <ul class="space-y-2 text-purple-200/70 mb-4">
+                                <li>• SEO-critical applications</li>
+                                <li>• E-commerce sites</li>
+                                <li>• Marketing websites</li>
+                                <li>• Full-stack applications</li>
+                            </ul>
+                            <div class="bg-black/30 p-4 rounded-lg font-mono text-sm text-green-300">
+                                npx create-next-app@latest my-app
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-900/20 p-6 rounded-2xl border border-blue-700/30">
+                            <h3 class="text-2xl font-bold text-white mb-3">Remix</h3>
+                            <p class="text-purple-300/80 mb-4">Full-stack web framework focused on web standards and
+                                modern UX.</p>
+                            <h4 class="font-bold text-white mb-2">Key Features:</h4>
+                            <ul class="space-y-2 text-purple-200/70">
+                                <li>• Nested routing</li>
+                                <li>• Progressive enhancement</li>
+                                <li>• Optimistic UI</li>
+                                <li>• Error boundaries</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-blue-900/20 p-6 rounded-2xl border border-blue-700/30">
+                            <h3 class="text-2xl font-bold text-white mb-3">Vite + React</h3>
+                            <p class="text-purple-300/80 mb-4">Lightning-fast dev server with instant HMR for SPAs.</p>
+                            <h4 class="font-bold text-white mb-2">Perfect For:</h4>
+                            <ul class="space-y-2 text-purple-200/70">
+                                <li>• Internal dashboards</li>
+                                <li>• Admin panels</li>
+                                <li>• Prototypes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🟢 Node.js Backend</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-900/20 p-6 rounded-2xl border border-green-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Express.js</h3>
+                            <p class="text-purple-300/80 mb-3 text-sm">Minimalist web framework for Node.js.
+                                Battle-tested and widely adopted.</p>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Flexible middleware</li>
+                                <li>• Large ecosystem</li>
+                                <li>• Easy to learn</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-900/20 p-6 rounded-2xl border border-green-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Fastify</h3>
+                            <p class="text-purple-300/80 mb-3 text-sm">Fast and low overhead web framework with
+                                schema-based validation.</p>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• High performance</li>
+                                <li>• TypeScript support</li>
+                                <li>• Plugin architecture</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-900/20 p-6 rounded-2xl border border-green-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">NestJS</h3>
+                            <p class="text-purple-300/80 mb-3 text-sm">Enterprise-grade framework with Angular-like
+                                architecture.</p>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Dependency injection</li>
+                                <li>• Modular structure</li>
+                                <li>• GraphQL support</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-900/20 p-6 rounded-2xl border border-green-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">tRPC</h3>
+                            <p class="text-purple-300/80 mb-3 text-sm">End-to-end typesafe APIs without code generation.
+                            </p>
+                            <ul class="space-y-1 text-purple-200/70 text-sm">
+                                <li>• Full TypeScript</li>
+                                <li>• No schema files</li>
+                                <li>• Autocomplete APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">📦 Database Solutions</h2>
+                    <div class="space-y-4">
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <div class="flex items-start gap-4">
+                                <span class="text-3xl">🐘</span>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2">PostgreSQL</h3>
+                                    <p class="text-purple-200/80 mb-3">Powerful, open-source relational database with
+                                        advanced features.</p>
+                                    <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                        <div>
+                                            <h4 class="font-bold text-white mb-1">Best For:</h4>
+                                            <ul class="text-purple-200/70 space-y-1">
+                                                <li>• Complex queries</li>
+                                                <li>• ACID compliance</li>
+                                                <li>• JSON data</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-white mb-1">Tools:</h4>
+                                            <ul class="text-purple-200/70 space-y-1">
+                                                <li>• Prisma ORM</li>
+                                                <li>• Drizzle ORM</li>
+                                                <li>• Supabase</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <div class="flex items-start gap-4">
+                                <span class="text-3xl">🍃</span>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2">MongoDB</h3>
+                                    <p class="text-purple-200/80 mb-3">NoSQL document database for flexible, scalable
+                                        applications.</p>
+                                    <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                        <div>
+                                            <h4 class="font-bold text-white mb-1">Best For:</h4>
+                                            <ul class="text-purple-200/70 space-y-1">
+                                                <li>• Rapid prototyping</li>
+                                                <li>• Flexible schemas</li>
+                                                <li>• Real-time apps</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-white mb-1">Tools:</h4>
+                                            <ul class="text-purple-200/70 space-y-1">
+                                                <li>• Mongoose</li>
+                                                <li>• MongoDB Atlas</li>
+                                                <li>• Realm</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <div class="flex items-start gap-4">
+                                <span class="text-3xl">⚡</span>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2">Redis</h3>
+                                    <p class="text-purple-200/80 mb-3">In-memory data store for caching, sessions, and
+                                        real-time features.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs">Caching</span>
+                                        <span
+                                            class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs">Sessions</span>
+                                        <span
+                                            class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs">Pub/Sub</span>
+                                        <span
+                                            class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-xs">Queues</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Stacks -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🎯 Recommended Full Stacks</h2>
+                    <div class="space-y-4">
+                        <div
+                            class="p-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-2xl border border-blue-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">T3 Stack (Recommended for Startups)</h3>
+                            <p class="text-purple-200/80 mb-3">Next.js + TypeScript + tRPC + Prisma + Tailwind</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-blue-900/50 text-blue-200 rounded-full text-xs">Type-safe</span>
+                                <span class="px-3 py-1 bg-blue-900/50 text-blue-200 rounded-full text-xs">Fast DX</span>
+                                <span
+                                    class="px-3 py-1 bg-blue-900/50 text-blue-200 rounded-full text-xs">Scalable</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-6 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-2xl border border-green-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">MERN Stack (Classic)</h3>
+                            <p class="text-purple-200/80 mb-3">MongoDB + Express + React + Node.js</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-green-900/50 text-green-200 rounded-full text-xs">JavaScript
+                                    everywhere</span>
+                                <span
+                                    class="px-3 py-1 bg-green-900/50 text-green-200 rounded-full text-xs">Flexible</span>
+                                <span class="px-3 py-1 bg-green-900/50 text-green-200 rounded-full text-xs">Large
+                                    community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="../resources.html"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 rounded-full text-white font-semibold transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        Back to Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-purple-900/30 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-purple-400/50 text-sm">© 2024 PurpleWave. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

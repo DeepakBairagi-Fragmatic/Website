@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Essentials - PurpleWave Resources</title>
+
+    <!-- Tracking Script -->
+    <link id="frgm-css" rel="stylesheet" href="https://frgm-tracker.vidhata.me/js-app/css/77e28c28/frgm-no-flicker.css"
+        crossorigin="anonymous">
+    <script id="FRGM-tracker" src="https://frgm-tracker.vidhata.me/js-app/js/77e28c28-tracker.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/global-navbar.js" defer></script>
+    <script src="../js/global-modal.js" defer></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #05010a 0%, #0a0118 50%, #05010a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #d8b4fe, #e879f9, #f472b6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1280px;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white">
+    <!-- Navigation -->
+    <global-navbar></global-navbar>
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <nav class="mb-8">
+                <ol class="flex items-center text-sm text-purple-300/70">
+                    <li><a href="../index.html" class="hover:text-purple-300 transition">Home</a></li>
+                    <li class="mx-2">/</li>
+                    <li><a href="../resources.html" class="hover:text-purple-300 transition">Resources</a></li>
+                    <li class="mx-2">/</li>
+                    <li class="text-purple-200">Cybersecurity</li>
+                </ol>
+            </nav>
+            <div class="flex items-center gap-6 mb-12">
+                <div
+                    class="w-20 h-20 rounded-3xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-4xl">
+                    🔐</div>
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Cybersecurity <span
+                            class="text-gradient">Essentials</span></h1>
+                    <p class="text-purple-200/70 text-xl">Protect your applications and user data</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">Security First Approach</h2>
+                    <p class="text-purple-200/80 leading-relaxed">Security isn't optional—it's essential. Learn the
+                        fundamentals to protect your users and your business from threats.</p>
+                </div>
+
+                <!-- Authentication -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🔐 Authentication & Authorization</h2>
+                    <div class="space-y-6">
+                        <div class="bg-red-900/20 p-6 rounded-2xl border border-red-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">OAuth 2.0 & OpenID Connect</h3>
+                            <p class="text-purple-300/80 mb-4">Industry-standard protocols for secure authentication.
+                            </p>
+                            <h4 class="font-bold text-white mb-2 text-sm">Popular Providers:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs">Auth0</span>
+                                <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs">Clerk</span>
+                                <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs">Supabase
+                                    Auth</span>
+                                <span
+                                    class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs">NextAuth.js</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-900/20 p-6 rounded-2xl border border-red-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">JWT Tokens</h3>
+                            <p class="text-purple-300/80 mb-4">Stateless authentication with JSON Web Tokens.</p>
+                            <h4 class="font-bold text-white mb-2 text-sm">Best Practices:</h4>
+                            <ul class="space-y-2 text-purple-200/70 text-sm">
+                                <li>• Use short expiration times (15 min)</li>
+                                <li>• Implement refresh tokens</li>
+                                <li>• Store securely (httpOnly cookies)</li>
+                                <li>• Sign with strong secrets</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-red-900/20 p-6 rounded-2xl border border-red-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Multi-Factor Authentication (MFA)</h3>
+                            <p class="text-purple-300/80 mb-4">Add an extra layer of security beyond passwords.</p>
+                            <div class="grid md:grid-cols-3 gap-3 text-sm">
+                                <div class="p-3 bg-black/30 rounded-lg">
+                                    <h5 class="font-bold text-white mb-1">SMS/Email</h5>
+                                    <p class="text-purple-200/70 text-xs">Easy but less secure</p>
+                                </div>
+                                <div class="p-3 bg-black/30 rounded-lg">
+                                    <h5 class="font-bold text-white mb-1">TOTP Apps</h5>
+                                    <p class="text-purple-200/70 text-xs">Google Authenticator</p>
+                                </div>
+                                <div class="p-3 bg-black/30 rounded-lg">
+                                    <h5 class="font-bold text-white mb-1">WebAuthn</h5>
+                                    <p class="text-purple-200/70 text-xs">Biometric/hardware</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Protection -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🛡️ Data Protection</h2>
+                    <div class="space-y-4">
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Encryption at Rest</h3>
+                            <p class="text-purple-200/80 mb-3">Protect stored data from unauthorized access.</p>
+                            <ul class="space-y-2 text-purple-200/70 text-sm">
+                                <li>• Database encryption (AES-256)</li>
+                                <li>• Encrypt sensitive fields separately</li>
+                                <li>• Secure key management (AWS KMS, Vault)</li>
+                                <li>• Never store passwords in plain text</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Encryption in Transit</h3>
+                            <p class="text-purple-200/80 mb-3">Secure data as it moves across networks.</p>
+                            <ul class="space-y-2 text-purple-200/70 text-sm">
+                                <li>• HTTPS everywhere (TLS 1.3)</li>
+                                <li>• Certificate pinning for mobile apps</li>
+                                <li>• Secure WebSocket connections (WSS)</li>
+                                <li>• VPN for internal services</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">GDPR & Privacy Compliance</h3>
+                            <p class="text-purple-200/80 mb-3">Respect user privacy and comply with regulations.</p>
+                            <ul class="space-y-2 text-purple-200/70 text-sm">
+                                <li>• Cookie consent banners</li>
+                                <li>• Data deletion requests</li>
+                                <li>• Privacy policy & terms</li>
+                                <li>• Data portability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Vulnerabilities -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🔎 Common Vulnerabilities (OWASP Top 10)</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3 p-4 bg-red-900/20 rounded-xl border border-red-700/30">
+                            <span class="text-xl">⚠️</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">SQL Injection</h4>
+                                <p class="text-purple-200/70 text-sm">Use parameterized queries or ORMs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-red-900/20 rounded-xl border border-red-700/30">
+                            <span class="text-xl">⚠️</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">XSS (Cross-Site Scripting)</h4>
+                                <p class="text-purple-200/70 text-sm">Sanitize user input, use CSP headers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-red-900/20 rounded-xl border border-red-700/30">
+                            <span class="text-xl">⚠️</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">CSRF (Cross-Site Request Forgery)</h4>
+                                <p class="text-purple-200/70 text-sm">Use CSRF tokens, SameSite cookies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-red-900/20 rounded-xl border border-red-700/30">
+                            <span class="text-xl">⚠️</span>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Broken Authentication</h4>
+                                <p class="text-purple-200/70 text-sm">Implement MFA, rate limiting, secure sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Tools -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">🛠️ Security Tools & Scanning</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Dependency Scanning</h3>
+                            <ul class="space-y-2 text-purple-200/70 text-sm">
+                                <li>• npm audit / yarn audit</li>
+                                <li>• Snyk</li>
+                                <li>• Dependabot</li>
+                                <li>• OWASP Dependency-Check</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-900/20 p-6 rounded-2xl border border-purple-700/30">
+                            <h3 class="text-xl font-bold text-white mb-3">Penetration Testing</h3>
+                            <ul class="space-y-2 text-purple-200/70 text-sm">
+                                <li>• OWASP ZAP</li>
+                                <li>• Burp Suite</li>
+                                <li>• Metasploit</li>
+                                <li>• Professional audits</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Checklist -->
+                <div class="glass-panel p-8 rounded-3xl mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-6">✅ Pre-Launch Security Checklist</h2>
+                    <div class="space-y-2">
+                        <label
+                            class="flex items-center gap-3 p-3 bg-purple-900/20 rounded-lg cursor-pointer hover:bg-purple-900/30 transition">
+                            <input type="checkbox" class="w-5 h-5 rounded border-purple-500">
+                            <span class="text-purple-200">HTTPS enabled with valid SSL certificate</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-3 bg-purple-900/20 rounded-lg cursor-pointer hover:bg-purple-900/30 transition">
+                            <input type="checkbox" class="w-5 h-5 rounded border-purple-500">
+                            <span class="text-purple-200">Authentication & authorization implemented</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-3 bg-purple-900/20 rounded-lg cursor-pointer hover:bg-purple-900/30 transition">
+                            <input type="checkbox" class="w-5 h-5 rounded border-purple-500">
+                            <span class="text-purple-200">Input validation & sanitization</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-3 bg-purple-900/20 rounded-lg cursor-pointer hover:bg-purple-900/30 transition">
+                            <input type="checkbox" class="w-5 h-5 rounded border-purple-500">
+                            <span class="text-purple-200">Rate limiting on APIs</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-3 bg-purple-900/20 rounded-lg cursor-pointer hover:bg-purple-900/30 transition">
+                            <input type="checkbox" class="w-5 h-5 rounded border-purple-500">
+                            <span class="text-purple-200">Security headers configured (CSP, HSTS, etc.)</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-3 bg-purple-900/20 rounded-lg cursor-pointer hover:bg-purple-900/30 transition">
+                            <input type="checkbox" class="w-5 h-5 rounded border-purple-500">
+                            <span class="text-purple-200">Dependency vulnerabilities scanned</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="../resources.html"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 rounded-full text-white font-semibold transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        Back to Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-purple-900/30 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-purple-400/50 text-sm">© 2024 PurpleWave. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

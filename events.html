@@ -267,9 +267,9 @@
       </div>
       <p class="text-purple-400 text-sm mb-8">© <span id="year"></span> PurpleWave. All rights reserved.</p>
       <div class="flex justify-center gap-6 text-sm text-purple-300">
-        <a href="#" class="hover:text-white transition">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition">Terms of Service</a>
-        <a href="mailto:events@purplewave.com" class="hover:text-white transition">Contact Support</a>
+        <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+        <a href="terms-of-service.html" class="hover:text-white transition">Terms of Service</a>
+        <a href="contact.html" class="hover:text-white transition">Contact Support</a>
       </div>
     </div>
   </footer>
@@ -282,7 +282,7 @@
       {
         id: "monday-ui-bootcamp",
         day: "Monday",
-        path: "/events/monday.html",
+        path: "/events/monday",
         title: "UI Design Bootcamp",
         time: "10:00 AM",
         duration: "2 hours",
@@ -296,7 +296,7 @@
       {
         id: "tuesday-frontend-ai",
         day: "Tuesday",
-        path: "/events/tuesday.html",
+        path: "/events/tuesday",
         title: "Frontend Fun with AI",
         time: "11:00 AM",
         duration: "1.5 hours",
@@ -310,7 +310,7 @@
       {
         id: "wednesday-brand-lab",
         day: "Wednesday",
-        path: "/events/wednesday.html",
+        path: "/events/wednesday",
         title: "Brand Lab Live",
         time: "1:00 PM",
         duration: "2 hours",
@@ -324,7 +324,7 @@
       {
         id: "thursday-nocode",
         day: "Thursday",
-        path: "/events/thursday.html",
+        path: "/events/thursday",
         title: "No-Code Power Hour",
         time: "2:00 PM",
         duration: "1 hour",
@@ -338,7 +338,7 @@
       {
         id: "friday-web-animation",
         day: "Friday",
-        path: "/events/friday.html",
+        path: "/events/friday",
         title: "Web Animation 101",
         time: "3:00 PM",
         duration: "1.5 hours",
@@ -352,7 +352,7 @@
       {
         id: "saturday-community-ama",
         day: "Saturday",
-        path: "/events/saturday.html",
+        path: "/events/saturday",
         title: "Community AMA",
         time: "4:00 PM",
         duration: "1 hour",
@@ -366,7 +366,7 @@
       {
         id: "sunday-nextgen-web",
         day: "Sunday",
-        path: "/events/sunday.html",
+        path: "/events/sunday",
         title: "Next-Gen Web",
         time: "12:00 PM",
         duration: "2 hours",
@@ -408,7 +408,7 @@
 
     // Render Weekly Grid
     const gridHTML = weeklyEvents.map(event => `
-      <a href="${event.path}" class="group relative bg-[#1a0b2e] rounded-2xl overflow-hidden border border-purple-900/50 hover:border-pink-500/50 transition duration-300 hover:-translate-y-1">
+      <a href="\${event.path}.html" class="group relative bg-[#1a0b2e] rounded-2xl overflow-hidden border border-purple-900/50 hover:border-pink-500/50 transition duration-300 hover:-translate-y-1">
         <div class="h-40 overflow-hidden">
           <img src="${event.img}" alt="${event.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-80 group-hover:opacity-100">
         </div>

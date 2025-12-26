@@ -10,5 +10,19 @@
 /case-study/real-estate-portal      /case-study/real-estate-portal.html     200!
 /case-study/ai-dashboard            /case-study/ai-dashboard.html           200!
 
+# Root Pages - Clean URLs
+/aboutus                            /aboutus.html                           200!
+/services                           /services.html                          200!
+/events                             /events.html                            200!
+/resources                          /resources.html                         200!
+/case-study                         /case-study.html                        200!
+/contact                            /contact.html                           200!
+/careers                            /careers.html                           200!
+/privacy                            /privacy.html                           200!
+/blog                               /blog.html                              200!
+/terms-of-service                   /terms-of-service.html                  200!
+/consent                            /consent.html                           200!
+/CaseStudyGallery                   /CaseStudyGallery.html                  200!
+
 # 404
 /*    /404.html    404
