@@ -2,6 +2,24 @@
  * GlobalNavbar - Professional responsive navbar component
  * Features: Mobile menu, active page highlighting, smooth animations
  */
+
+// Inject styles immediately to handle :defined state and prevent layout shift
+(function injectNavbarStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    global-navbar:not(:defined) {
+      display: block;
+      height: 80px; /* Match navbar height */
+      background: #0b0115;
+    }
+    global-navbar {
+      display: block;
+      min-height: 80px;
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
 class GlobalNavbar extends HTMLElement {
   constructor() {
     super();
