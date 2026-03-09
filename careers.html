@@ -291,20 +291,20 @@
             </div>
 
             <!-- Application container (no <form> tag) -->
-            <div class="glass-panel rounded-3xl p-8 md:p-12" id="applicationContainer">
+            <div class="glass-panel rounded-3xl p-8 md:p-12" id="qaContainer">
 
                 <!-- Row 1: Name & Email -->
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="applicantName">Full
+                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaName">Full
                             Name <span class="text-pink-400">*</span></label>
-                        <input type="text" id="applicantName" placeholder="e.g. Jane Doe"
+                        <input type="text" id="qaName" placeholder="e.g. Jane Doe"
                             class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition" />
                     </div>
                     <div>
-                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="applicantEmail">Email
+                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaEmail">Email
                             Address <span class="text-pink-400">*</span></label>
-                        <input type="email" id="applicantEmail" placeholder="jane@example.com"
+                        <input type="email" id="qaEmail" placeholder="jane@example.com"
                             class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition" />
                     </div>
                 </div>
@@ -312,15 +312,15 @@
                 <!-- Row 2: Phone & Position -->
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="applicantPhone">Phone
+                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaPhone">Phone
                             Number</label>
-                        <input type="tel" id="applicantPhone" placeholder="+1 (555) 000-0000"
+                        <input type="tel" id="qaPhone" placeholder="+1 (555) 000-0000"
                             class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition" />
                     </div>
                     <div>
-                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="applicantPosition">Position
+                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaPosition">Position
                             of Interest <span class="text-pink-400">*</span></label>
-                        <select id="applicantPosition"
+                        <select id="qaPosition"
                             class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition appearance-none cursor-pointer">
                             <option value="" class="bg-[#0f021a]">Select a position...</option>
                             <option value="Senior UX Designer" class="bg-[#0f021a]">Senior UX Designer</option>
@@ -335,9 +335,9 @@
                 <!-- Row 3: Experience & Portfolio -->
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="applicantExperience">Years
+                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaExperience">Years
                             of Experience <span class="text-pink-400">*</span></label>
-                        <select id="applicantExperience"
+                        <select id="qaExperience"
                             class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition appearance-none cursor-pointer">
                             <option value="" class="bg-[#0f021a]">Select experience level...</option>
                             <option value="0-1" class="bg-[#0f021a]">0 – 1 year</option>
@@ -348,34 +348,34 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-purple-300 text-sm font-semibold mb-2"
-                            for="applicantPortfolio">Portfolio / LinkedIn URL</label>
-                        <input type="url" id="applicantPortfolio" placeholder="https://linkedin.com/in/janedoe"
+                        <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaPortfolio">Portfolio /
+                            LinkedIn URL</label>
+                        <input type="url" id="qaPortfolio" placeholder="https://linkedin.com/in/janedoe"
                             class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition" />
                     </div>
                 </div>
 
                 <!-- Row 4: Message -->
                 <div class="mb-8">
-                    <label class="block text-purple-300 text-sm font-semibold mb-2" for="applicantMessage">Why do
+                    <label class="block text-purple-300 text-sm font-semibold mb-2" for="qaMessage">Why do
                         you want to join PurpleWave?</label>
-                    <textarea id="applicantMessage" rows="4"
+                    <textarea id="qaMessage" rows="4"
                         placeholder="Tell us a bit about yourself, your passion, and what excites you about PurpleWave..."
                         class="w-full bg-purple-950/40 border border-purple-700/40 rounded-xl px-4 py-3 text-white placeholder-purple-400/50 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition resize-none"></textarea>
                 </div>
 
                 <!-- Submit Button & Feedback -->
                 <div class="flex flex-col sm:flex-row items-center gap-4">
-                    <button id="submitApplicationBtn" onclick="submitQuickApplication()"
+                    <button id="qaSubmitBtn" onclick="submitQuickApplication()"
                         class="px-10 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold shadow-lg shadow-purple-900/30 hover:shadow-purple-900/50 hover:scale-105 transition duration-300 cursor-pointer">
                         Submit Application
                     </button>
-                    <span id="applicationFeedback" class="text-sm hidden"></span>
+                    <span id="qaFeedback" class="text-sm hidden"></span>
                 </div>
             </div>
 
             <!-- Success state (hidden by default) -->
-            <div id="applicationSuccess" class="glass-panel rounded-3xl p-12 text-center hidden">
+            <div id="qaSuccess" class="glass-panel rounded-3xl p-12 text-center hidden">
                 <div
                     class="w-20 h-20 rounded-full bg-green-500/20 border border-green-400/30 flex items-center justify-center mx-auto mb-6">
                     <svg class="w-10 h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -392,11 +392,11 @@
 
     <script>
         function submitQuickApplication() {
-            const name = document.getElementById('applicantName').value.trim();
-            const email = document.getElementById('applicantEmail').value.trim();
-            const position = document.getElementById('applicantPosition').value;
-            const experience = document.getElementById('applicantExperience').value;
-            const feedback = document.getElementById('applicationFeedback');
+            const name = document.getElementById('qaName').value.trim();
+            const email = document.getElementById('qaEmail').value.trim();
+            const position = document.getElementById('qaPosition').value;
+            const experience = document.getElementById('qaExperience').value;
+            const feedback = document.getElementById('qaFeedback');
 
             // Reset feedback
             feedback.classList.add('hidden');
@@ -416,14 +416,14 @@
             }
 
             // Simulate submission
-            const btn = document.getElementById('submitApplicationBtn');
+            const btn = document.getElementById('qaSubmitBtn');
             btn.disabled = true;
             btn.textContent = 'Submitting...';
             btn.classList.add('opacity-60');
 
             setTimeout(() => {
-                document.getElementById('applicationContainer').classList.add('hidden');
-                document.getElementById('applicationSuccess').classList.remove('hidden');
+                document.getElementById('qaContainer').classList.add('hidden');
+                document.getElementById('qaSuccess').classList.remove('hidden');
             }, 1500);
         }
     </script>
