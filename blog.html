@@ -10,17 +10,10 @@
         href="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/ae9cf178-8df9-4332-a028-bec658ac4510.png" />
 
     <!-- Tracking Script -->
-    <link
-          id="frgm-css"
-          rel="stylesheet"
-          href="https://preprod-1e2f308t.fragmatic.io/js-app/css/77e28c28/frgm-no-flicker.css"
-          crossOrigin="anonymous"
-        />
-        <script
-          id="frgm-tracker"
-          src="https://preprod-1e2f308t.fragmatic.io/js-app/js/77e28c28-tracker.js"
-          defer>
-        </script>
+    <link id="frgm-css" rel="stylesheet"
+        href="https://preprod-1e2f308t.fragmatic.io/js-app/css/77e28c28/frgm-no-flicker.css" crossOrigin="anonymous" />
+    <script id="frgm-tracker" src="https://preprod-1e2f308t.fragmatic.io/js-app/js/77e28c28-tracker.js" defer>
+    </script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -194,245 +187,17 @@
     <!-- Blog Posts Grid -->
     <section class="py-20">
         <div class="container mx-auto px-4 max-w-7xl">
-            <h2 class="text-3xl font-bold text-purple-100 mb-12">Latest Articles</h2>
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-3xl font-bold text-purple-100">Latest Articles</h2>
+                <span id="blogCount" class="text-purple-400 text-sm"></span>
+            </div>
 
             <div id="blogGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="development">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=600&q=80"
-                            alt="React Development" class="w-full h-full object-cover" />
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">Development</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
-                            <span>Dec 15, 2024</span>
-                            <span>•</span>
-                            <span>8 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
-                            Building Scalable React Applications with TypeScript
-                        </h3>
-                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
-                            Learn best practices for structuring large-scale React applications using TypeScript for
-                            better type safety and developer experience.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/32?img=2" alt="Author" class="w-8 h-8 rounded-full" />
-                                <span class="text-sm text-purple-300">Mike Torres</span>
-                            </div>
-                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="design">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80"
-                            alt="UI Design" class="w-full h-full object-cover" />
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full">Design</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
-                            <span>Dec 12, 2024</span>
-                            <span>•</span>
-                            <span>6 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
-                            Mastering Color Theory in Modern UI Design
-                        </h3>
-                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
-                            Explore how to create harmonious color palettes that enhance user experience and strengthen
-                            brand identity.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/32?img=3" alt="Author" class="w-8 h-8 rounded-full" />
-                                <span class="text-sm text-purple-300">Emma Wilson</span>
-                            </div>
-                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="business">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80"
-                            alt="Business Strategy" class="w-full h-full object-cover" />
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="px-3 py-1 bg-pink-600 text-white text-xs font-semibold rounded-full">Business</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
-                            <span>Dec 10, 2024</span>
-                            <span>•</span>
-                            <span>7 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
-                            Digital Transformation: A Strategic Roadmap
-                        </h3>
-                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
-                            A comprehensive guide to leading your organization through successful digital transformation
-                            initiatives.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/32?img=4" alt="Author" class="w-8 h-8 rounded-full" />
-                                <span class="text-sm text-purple-300">James Park</span>
-                            </div>
-                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="tech">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80"
-                            alt="AI Technology" class="w-full h-full object-cover" />
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="px-3 py-1 bg-cyan-600 text-white text-xs font-semibold rounded-full">Technology</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
-                            <span>Dec 8, 2024</span>
-                            <span>•</span>
-                            <span>10 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
-                            The Rise of AI in Web Development
-                        </h3>
-                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
-                            How machine learning and AI tools are transforming the landscape of web development and
-                            design workflows.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/32?img=5" alt="Author" class="w-8 h-8 rounded-full" />
-                                <span class="text-sm text-purple-300">Alex Kumar</span>
-                            </div>
-                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 5 -->
-                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="development">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
-                            alt="Code Editor" class="w-full h-full object-cover" />
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full">Development</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
-                            <span>Dec 5, 2024</span>
-                            <span>•</span>
-                            <span>5 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
-                            10 VS Code Extensions Every Developer Needs
-                        </h3>
-                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
-                            Boost your productivity with these essential Visual Studio Code extensions that every
-                            developer should have installed.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/32?img=6" alt="Author" class="w-8 h-8 rounded-full" />
-                                <span class="text-sm text-purple-300">Lisa Chen</span>
-                            </div>
-                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Blog Post 6 -->
-                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="design">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80"
-                            alt="UX Design" class="w-full h-full object-cover" />
-                        <div class="absolute top-4 left-4">
-                            <span
-                                class="px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full">Design</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
-                            <span>Dec 3, 2024</span>
-                            <span>•</span>
-                            <span>9 min read</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
-                            Designing for Accessibility: A Complete Guide
-                        </h3>
-                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
-                            Learn how to create inclusive digital experiences that work for everyone, regardless of
-                            their abilities.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="https://i.pravatar.cc/32?img=7" alt="Author" class="w-8 h-8 rounded-full" />
-                                <span class="text-sm text-purple-300">David Lee</span>
-                            </div>
-                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                <!-- Cards rendered by JS -->
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button
-                    class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
-                    Load More Articles
-                </button>
-            </div>
+            <!-- Pagination -->
+            <div id="paginationContainer" class="flex items-center justify-center gap-2 mt-14"></div>
         </div>
     </section>
 
@@ -452,14 +217,14 @@
                     Get the latest articles, insights, and updates delivered straight to your inbox. No spam, just
                     quality content.
                 </p>
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" placeholder="Enter your email" required
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email"
                         class="flex-1 px-6 py-3 rounded-full bg-black/50 border border-purple-500/30 text-white placeholder-purple-400/50 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" />
-                    <button type="submit"
-                        class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold rounded-full transition hover:scale-105">
+                    <button onclick="document.getElementById('newsletterEmail').value=''; alert('Subscribed!')"
+                        class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold rounded-full transition hover:scale-105 cursor-pointer">
                         Subscribe
                     </button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -480,18 +245,454 @@
         </div>
     </footer>
 
-    <!-- Category Filter Script -->
+    <!-- Blog Engine Script -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
+        // ─── Blog Data (26 posts) ───
+        const blogPosts = [
+            {
+                title: "Building Scalable React Applications with TypeScript",
+                excerpt: "Learn best practices for structuring large-scale React applications using TypeScript for better type safety and developer experience.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Dec 15, 2024",
+                readTime: "8 min read",
+                author: "Mike Torres",
+                authorImg: "https://i.pravatar.cc/32?img=2",
+                image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Mastering Color Theory in Modern UI Design",
+                excerpt: "Explore how to create harmonious color palettes that enhance user experience and strengthen brand identity.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Dec 12, 2024",
+                readTime: "6 min read",
+                author: "Emma Wilson",
+                authorImg: "https://i.pravatar.cc/32?img=3",
+                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Digital Transformation: A Strategic Roadmap",
+                excerpt: "A comprehensive guide to leading your organization through successful digital transformation initiatives.",
+                category: "business",
+                categoryLabel: "Business",
+                categoryColor: "bg-pink-600",
+                date: "Dec 10, 2024",
+                readTime: "7 min read",
+                author: "James Park",
+                authorImg: "https://i.pravatar.cc/32?img=4",
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "The Rise of AI in Web Development",
+                excerpt: "How machine learning and AI tools are transforming the landscape of web development and design workflows.",
+                category: "tech",
+                categoryLabel: "Technology",
+                categoryColor: "bg-cyan-600",
+                date: "Dec 8, 2024",
+                readTime: "10 min read",
+                author: "Alex Kumar",
+                authorImg: "https://i.pravatar.cc/32?img=5",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "10 VS Code Extensions Every Developer Needs",
+                excerpt: "Boost your productivity with these essential Visual Studio Code extensions that every developer should have installed.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Dec 5, 2024",
+                readTime: "5 min read",
+                author: "Lisa Chen",
+                authorImg: "https://i.pravatar.cc/32?img=6",
+                image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Designing for Accessibility: A Complete Guide",
+                excerpt: "Learn how to create inclusive digital experiences that work for everyone, regardless of their abilities.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Dec 3, 2024",
+                readTime: "9 min read",
+                author: "David Lee",
+                authorImg: "https://i.pravatar.cc/32?img=7",
+                image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Micro-Interactions That Delight Users",
+                excerpt: "Small animations and transitions can make a huge difference in user satisfaction. Here's how to design them effectively.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Nov 30, 2024",
+                readTime: "6 min read",
+                author: "Sophie Martin",
+                authorImg: "https://i.pravatar.cc/32?img=8",
+                image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "GraphQL vs REST: Choosing the Right API Architecture",
+                excerpt: "A deep comparison of GraphQL and REST APIs to help you make the best choice for your next project's data layer.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Nov 27, 2024",
+                readTime: "11 min read",
+                author: "Ryan O'Brien",
+                authorImg: "https://i.pravatar.cc/32?img=9",
+                image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Building a Brand That Stands Out in 2025",
+                excerpt: "Strategies for crafting a memorable brand identity that resonates with your target audience in a crowded digital landscape.",
+                category: "business",
+                categoryLabel: "Business",
+                categoryColor: "bg-pink-600",
+                date: "Nov 24, 2024",
+                readTime: "8 min read",
+                author: "Olivia Grant",
+                authorImg: "https://i.pravatar.cc/32?img=10",
+                image: "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "WebAssembly: The Future of Browser Performance",
+                excerpt: "Explore how WebAssembly is enabling near-native performance in the browser and what it means for web applications.",
+                category: "tech",
+                categoryLabel: "Technology",
+                categoryColor: "bg-cyan-600",
+                date: "Nov 21, 2024",
+                readTime: "12 min read",
+                author: "Carlos Mendez",
+                authorImg: "https://i.pravatar.cc/32?img=11",
+                image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Design Systems: From Concept to Implementation",
+                excerpt: "How to build a scalable design system that maintains consistency across your entire product ecosystem.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Nov 18, 2024",
+                readTime: "10 min read",
+                author: "Nina Patel",
+                authorImg: "https://i.pravatar.cc/32?img=12",
+                image: "https://images.unsplash.com/photo-1581291518633-83b4eef1d2fd?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Serverless Architecture: When and Why to Use It",
+                excerpt: "Understanding serverless computing and the scenarios where it truly shines versus traditional server setups.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Nov 15, 2024",
+                readTime: "9 min read",
+                author: "Jake Morrison",
+                authorImg: "https://i.pravatar.cc/32?img=13",
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "The Psychology Behind Great User Experiences",
+                excerpt: "Cognitive psychology principles that every UX designer should know to create intuitive and engaging interfaces.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Nov 12, 2024",
+                readTime: "7 min read",
+                author: "Dr. Amy Rhodes",
+                authorImg: "https://i.pravatar.cc/32?img=14",
+                image: "https://images.unsplash.com/photo-1576595580361-90a855b84b20?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Scaling Your SaaS: Lessons from Hypergrowth Startups",
+                excerpt: "Real-world strategies from companies that scaled from 0 to millions of users — and the mistakes they made along the way.",
+                category: "business",
+                categoryLabel: "Business",
+                categoryColor: "bg-pink-600",
+                date: "Nov 9, 2024",
+                readTime: "13 min read",
+                author: "Marcus Webb",
+                authorImg: "https://i.pravatar.cc/32?img=15",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Edge Computing and the New Internet Architecture",
+                excerpt: "How edge computing is reshaping content delivery, reducing latency, and enabling real-time applications at scale.",
+                category: "tech",
+                categoryLabel: "Technology",
+                categoryColor: "bg-cyan-600",
+                date: "Nov 6, 2024",
+                readTime: "8 min read",
+                author: "Priya Sharma",
+                authorImg: "https://i.pravatar.cc/32?img=16",
+                image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "CSS Container Queries: A Game Changer for Responsive Design",
+                excerpt: "Container queries let components adapt to their parent, not the viewport. Here's how to start using them today.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Nov 3, 2024",
+                readTime: "6 min read",
+                author: "Lisa Chen",
+                authorImg: "https://i.pravatar.cc/32?img=6",
+                image: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Motion Design Principles for the Web",
+                excerpt: "Master the 12 principles of animation adapted for web interfaces — timing, easing, choreography, and more.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Oct 31, 2024",
+                readTime: "10 min read",
+                author: "Emma Wilson",
+                authorImg: "https://i.pravatar.cc/32?img=3",
+                image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Client Retention Strategies for Digital Agencies",
+                excerpt: "Proven frameworks for keeping clients happy, increasing project scope, and turning one-time engagements into partnerships.",
+                category: "business",
+                categoryLabel: "Business",
+                categoryColor: "bg-pink-600",
+                date: "Oct 28, 2024",
+                readTime: "7 min read",
+                author: "James Park",
+                authorImg: "https://i.pravatar.cc/32?img=4",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Zero-Trust Security for Modern Web Applications",
+                excerpt: "Implement zero-trust architecture in your web apps with practical patterns for authentication, authorization, and data protection.",
+                category: "tech",
+                categoryLabel: "Technology",
+                categoryColor: "bg-cyan-600",
+                date: "Oct 25, 2024",
+                readTime: "11 min read",
+                author: "Alex Kumar",
+                authorImg: "https://i.pravatar.cc/32?img=5",
+                image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Next.js 15: What's New and Why It Matters",
+                excerpt: "A comprehensive overview of the latest Next.js release — from Server Actions improvements to the new caching model.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Oct 22, 2024",
+                readTime: "9 min read",
+                author: "Mike Torres",
+                authorImg: "https://i.pravatar.cc/32?img=2",
+                image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Typography in Digital Products: A Masterclass",
+                excerpt: "From choosing typefaces to perfecting vertical rhythm — everything you need to elevate your product's typography.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Oct 19, 2024",
+                readTime: "8 min read",
+                author: "Sophie Martin",
+                authorImg: "https://i.pravatar.cc/32?img=8",
+                image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "How to Price Digital Services Without Losing Clients",
+                excerpt: "Value-based pricing, retainer models, and project quotes — find the right pricing strategy for your agency or freelance business.",
+                category: "business",
+                categoryLabel: "Business",
+                categoryColor: "bg-pink-600",
+                date: "Oct 16, 2024",
+                readTime: "6 min read",
+                author: "Olivia Grant",
+                authorImg: "https://i.pravatar.cc/32?img=10",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Progressive Web Apps in 2025: Still Relevant?",
+                excerpt: "Evaluating the current state of PWAs — browser support, capabilities, and when they're the right choice over native apps.",
+                category: "tech",
+                categoryLabel: "Technology",
+                categoryColor: "bg-cyan-600",
+                date: "Oct 13, 2024",
+                readTime: "7 min read",
+                author: "Carlos Mendez",
+                authorImg: "https://i.pravatar.cc/32?img=11",
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "CI/CD Pipelines for Frontend Teams: A Practical Guide",
+                excerpt: "Set up automated testing, preview deployments, and production releases using GitHub Actions and modern CI/CD tools.",
+                category: "development",
+                categoryLabel: "Development",
+                categoryColor: "bg-purple-600",
+                date: "Oct 10, 2024",
+                readTime: "10 min read",
+                author: "Jake Morrison",
+                authorImg: "https://i.pravatar.cc/32?img=13",
+                image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Dark Mode Done Right: Design and Implementation",
+                excerpt: "Best practices for designing and coding dark mode — from color token systems to respecting user preferences.",
+                category: "design",
+                categoryLabel: "Design",
+                categoryColor: "bg-indigo-600",
+                date: "Oct 7, 2024",
+                readTime: "7 min read",
+                author: "Nina Patel",
+                authorImg: "https://i.pravatar.cc/32?img=12",
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                title: "Remote Team Culture: Building Connection Across Time Zones",
+                excerpt: "Practical tactics for fostering collaboration, trust, and belonging in distributed teams — beyond just Slack and Zoom.",
+                category: "business",
+                categoryLabel: "Business",
+                categoryColor: "bg-pink-600",
+                date: "Oct 4, 2024",
+                readTime: "8 min read",
+                author: "Marcus Webb",
+                authorImg: "https://i.pravatar.cc/32?img=15",
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+            }
+        ];
 
+        // ─── State ───
+        const POSTS_PER_PAGE = 10;
+        let currentPage = 1;
+        let activeCategory = 'all';
+
+        // ─── Category color mapping ───
+        const catColors = {
+            development: 'bg-purple-600',
+            design: 'bg-indigo-600',
+            business: 'bg-pink-600',
+            tech: 'bg-cyan-600'
+        };
+
+        // ─── Render a single card ───
+        function renderCard(post) {
+            return `
+                <article class="blog-card glass-panel rounded-2xl overflow-hidden" data-category="${post.category}">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover" loading="lazy" />
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 ${post.categoryColor} text-white text-xs font-semibold rounded-full">${post.categoryLabel}</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3 text-xs text-purple-400">
+                            <span>${post.date}</span>
+                            <span>•</span>
+                            <span>${post.readTime}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 hover:text-gradient transition cursor-pointer">
+                            ${post.title}
+                        </h3>
+                        <p class="text-purple-300/70 text-sm mb-4 leading-relaxed">
+                            ${post.excerpt}
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="${post.authorImg}" alt="${post.author}" class="w-8 h-8 rounded-full" />
+                                <span class="text-sm text-purple-300">${post.author}</span>
+                            </div>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>`;
+        }
+
+        // ─── Get filtered posts ───
+        function getFilteredPosts() {
+            if (activeCategory === 'all') return blogPosts;
+            return blogPosts.filter(p => p.category === activeCategory);
+        }
+
+        // ─── Render grid + pagination ───
+        function renderPage() {
+            const filtered = getFilteredPosts();
+            const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+            const start = (currentPage - 1) * POSTS_PER_PAGE;
+            const pagePosts = filtered.slice(start, start + POSTS_PER_PAGE);
+
+            // Grid
+            const grid = document.getElementById('blogGrid');
+            grid.innerHTML = pagePosts.map(renderCard).join('');
+
+            // Count
+            document.getElementById('blogCount').textContent =
+                `Showing ${start + 1}–${Math.min(start + POSTS_PER_PAGE, filtered.length)} of ${filtered.length} articles`;
+
+            // Pagination
+            const pagContainer = document.getElementById('paginationContainer');
+            if (totalPages <= 1) {
+                pagContainer.innerHTML = '';
+                return;
+            }
+
+            let pagHTML = '';
+            // Prev
+            pagHTML += `<button onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}
+                class="w-10 h-10 rounded-full flex items-center justify-center transition cursor-pointer
+                ${currentPage === 1
+                    ? 'bg-purple-900/20 text-purple-600 cursor-not-allowed'
+                    : 'bg-purple-900/40 text-purple-300 hover:bg-purple-800/60 hover:text-white'}">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>`;
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                pagHTML += `<button onclick="goToPage(${i})"
+                    class="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm transition cursor-pointer
+                    ${i === currentPage
+                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-900/30'
+                        : 'bg-purple-900/30 text-purple-300 hover:bg-purple-800/50 hover:text-white'}">
+                    ${i}
+                </button>`;
+            }
+
+            // Next
+            pagHTML += `<button onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}
+                class="w-10 h-10 rounded-full flex items-center justify-center transition cursor-pointer
+                ${currentPage === totalPages
+                    ? 'bg-purple-900/20 text-purple-600 cursor-not-allowed'
+                    : 'bg-purple-900/40 text-purple-300 hover:bg-purple-800/60 hover:text-white'}">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>`;
+
+            pagContainer.innerHTML = pagHTML;
+        }
+
+        // ─── Navigation ───
+        function goToPage(page) {
+            const totalPages = Math.ceil(getFilteredPosts().length / POSTS_PER_PAGE);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderPage();
+            document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ─── Category Filter ───
+        const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                const category = btn.dataset.category;
+                activeCategory = btn.dataset.category;
+                currentPage = 1;
 
-                // Update active button
+                // Update active button styles
                 filterBtns.forEach(b => {
                     b.classList.remove('bg-purple-600', 'text-white');
                     b.classList.add('bg-purple-900/30', 'text-purple-300');
@@ -499,18 +700,12 @@
                 btn.classList.remove('bg-purple-900/30', 'text-purple-300');
                 btn.classList.add('bg-purple-600', 'text-white');
 
-                // Filter posts
-                blogCards.forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'block';
-                        setTimeout(() => card.style.opacity = '1', 10);
-                    } else {
-                        card.style.opacity = '0';
-                        setTimeout(() => card.style.display = 'none', 300);
-                    }
-                });
+                renderPage();
             });
         });
+
+        // ─── Initial render ───
+        renderPage();
     </script>
 
 </body>
